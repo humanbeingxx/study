@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<configuration>
+
+    <!-- 设置日志输出根目录 -->
+    <property name="log.dir" value="logs" />
+
+    <property name="encoding" value="UTF-8" />
+    <property name="normal-pattern"
+              value="%d{yyyy-MM-dd.HH:mm:ss} %-5level %X{QTRACER} [%thread] %logger.%M:%L  %msg%n" />
+    <property name="plain-pattern" value="%d{yyyy-MM-dd.HH:mm:ss} %msg%n" />
+    <property name="content-only" value="%msg%n"/>
+
+    <!-- ch.qos.logback.core.ConsoleAppender 控制台输出 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${normal-pattern}</pattern>
+            <charset>${encoding}</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">　　
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.dir}/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${normal-pattern}</pattern>
+            <charset>${encoding}</charset>
+        </encoder>
+    </appender>
+
+    <appender name="testFile" class="ch.qos.logback.core.rolling.RollingFileAppender">　　
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>target/logs/testFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${normal-pattern}</pattern>
+            <charset>${encoding}</charset>
+        </encoder>
+    </appender>
+
+    <logger name="testFile" level="INFO" additivity="false">
+        <appender-ref ref="testFile" />
+    </logger>
+
+    <!-- 日志级别 -->
+    <!--日志输出的最低级别(不区分大小写)-->
+    <root level="info">
+        <appender-ref ref="file"/>
+    </root>
+
+</configuration>
