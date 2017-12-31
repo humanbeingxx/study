@@ -26,9 +26,25 @@ public class SortUtil {
     }
 
     private static void quickSortRe(int[] array, int from, int to) {
+        if (from >= to) {
+            return;
+        }
         int low = from;
         int high = to;
-
+        int pivot = array[from];
+        while (low < high) {
+            while (low < high && array[high] >= pivot) {
+                high--;
+            }
+            array[low] = array[high];
+            while (low < high && array[low] <= pivot) {
+                low++;
+            }
+            array[high] = array[low];
+        }
+        array[high] = pivot;
+        quickSortRe(array, from, low - 1);
+        quickSortRe(array, low + 1, to);
     }
 
     private static void exchange(int[] array, int x, int y) {
