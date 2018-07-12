@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/6/21 下午5:12

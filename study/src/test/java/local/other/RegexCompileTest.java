@@ -6,7 +6,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/6/14 上午10:40
