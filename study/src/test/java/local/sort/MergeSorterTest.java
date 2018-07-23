@@ -3,7 +3,6 @@ package local.sort;
 import com.google.common.collect.Lists;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MergeSorterTest {
@@ -19,8 +18,8 @@ public class MergeSorterTest {
     public void testMerge() throws Exception {
         List<Integer> data = Lists.newArrayList(5, 4, 3, 2, 1);
         MergeSorter<Integer> sorter = new MergeSorter<>(data);
-        ArrayList<Integer> to = Lists.newArrayList(new Integer[6]);
-        ArrayList<Integer> result = Lists.newArrayList(1, 3, 5, 2, 4, 6);
+        List<Integer> to = Lists.newArrayList(new Integer[6]);
+        List<Integer> result = Lists.newArrayList(1, 3, 5, 2, 4, 6);
         sorter.merge(result, 0, 2, 5, to);
         System.out.println(to);
         System.out.println(result);
