@@ -6,7 +6,6 @@ import java.util.Observable;
 import java.util.Observer;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/7/23 下午8:05

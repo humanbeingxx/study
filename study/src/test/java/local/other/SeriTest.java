@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/7/23 上午10:50

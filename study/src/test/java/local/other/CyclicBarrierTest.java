@@ -6,7 +6,6 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/7/18 下午5:57

@@ -3,7 +3,6 @@ package local.other;
 import org.junit.Test;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/7/16 下午4:48
