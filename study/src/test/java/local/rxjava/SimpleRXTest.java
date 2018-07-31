@@ -1,7 +1,7 @@
 package local.rxjava;
 
 import com.google.common.collect.Lists;
-import org.junit.Test;
+import org.testng.annotations.Test;
 import rx.Observable;
 import rx.Observer;
 
@@ -13,7 +13,6 @@ import java.util.concurrent.Executors;
  * Created by pc on 2017/11/16.
  */
 public class SimpleRXTest {
-
 
     @Test
     public void testCreate() throws Exception {
@@ -28,7 +27,6 @@ public class SimpleRXTest {
             return null;
         };
     }
-
 
 
     private Observer<String> getObserver() {

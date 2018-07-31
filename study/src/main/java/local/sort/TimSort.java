@@ -103,7 +103,7 @@ public class TimSort {
             temp[indexTemp++] = originData[index1++];
         }
 
-        while (index2 <= array2.end){
+        while (index2 <= array2.end) {
             temp[indexTemp++] = originData[index2++];
         }
 

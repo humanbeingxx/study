@@ -1,13 +1,11 @@
 package local.rxjava;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import rx.Observer;
 import rx.subjects.AsyncSubject;
 import rx.subjects.BehaviorSubject;
 import rx.subjects.PublishSubject;
 import rx.subjects.ReplaySubject;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by pc on 2017/11/16.

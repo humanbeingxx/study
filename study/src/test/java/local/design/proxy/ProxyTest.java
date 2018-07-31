@@ -1,7 +1,7 @@
 package local.design.proxy;
 
 import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

@@ -2,7 +2,6 @@ package local.sort;
 
 import com.google.common.collect.Lists;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 /**
@@ -59,7 +58,7 @@ public class MergeSorter<T extends Comparable<T>> {
             temp.set(indexTo++, data.get(index1++));
         }
 
-        while (index2 <= to){
+        while (index2 <= to) {
             temp.set(indexTo++, data.get(index2++));
         }
 

@@ -6,7 +6,6 @@ package local.algorithm;
  */
 public class SubStringExchange {
     /**
-     *
      * @param str
      * @param from
      * @param to
@@ -30,10 +29,9 @@ public class SubStringExchange {
             exchange(str, from + lengthRight, to, from + lengthLeft - 1);
         } else {
             exchangeSameLength(str, from, from + lengthRight, lengthLeft);
-            exchange(str, from, from + lengthRight - 1,from + lengthLeft - 1);
+            exchange(str, from, from + lengthRight - 1, from + lengthLeft - 1);
         }
     }
-
 
 
     public static void exchangeSameLength(char[] str, int start1, int start2, int length) {

@@ -1,7 +1,7 @@
 package local.sort;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ public class HeapSorterTest {
         Integer[] data = new Integer[]{5, 4, 3, 2, 1};
         new HeapSorter<Integer>().sort(data);
         System.out.println(Arrays.toString(data));
-        Assert.assertArrayEquals(new Integer[]{5, 4, 3, 2, 1}, data);
+        Assert.assertEquals(new Integer[]{5, 4, 3, 2, 1}, data);
     }
 
     @Test
@@ -19,7 +19,7 @@ public class HeapSorterTest {
         Integer[] data = new Integer[]{1, 4, 4, 2, 1};
         new HeapSorter<Integer>().sort(data);
         System.out.println(Arrays.toString(data));
-        Assert.assertArrayEquals(new Integer[]{4, 4, 2, 1, 1}, data);
+        Assert.assertEquals(new Integer[]{4, 4, 2, 1, 1}, data);
     }
 
     @Test
@@ -60,7 +60,7 @@ public class HeapSorterTest {
         Integer[] data = new Integer[]{5, 4, 3, 2, 1};
         new HeapSorter<Integer>().makeHeap(data);
         System.out.println(Arrays.toString(data));
-        Assert.assertArrayEquals(new Integer[]{1, 2, 3, 5, 4}, data);
+        Assert.assertEquals(new Integer[]{1, 2, 3, 5, 4}, data);
     }
 
     @Test

@@ -1,12 +1,11 @@
 package local.other;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/6/14 上午10:40
  **/

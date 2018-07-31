@@ -1,7 +1,7 @@
 package local.other;
 
 import com.google.common.collect.Lists;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/23 上午10:50
  **/

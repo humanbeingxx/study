@@ -1,7 +1,7 @@
 package local.other;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
  * @author xiaoshuang.cui

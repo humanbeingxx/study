@@ -1,11 +1,10 @@
 package local.sort;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-import static org.junit.Assert.assertArrayEquals;
 
 public class SortUtilTest {
     @Test
@@ -28,7 +27,7 @@ public class SortUtilTest {
 
         System.out.println(Arrays.toString(array));
         int[] expectedArray = new int[]{0, 0, 1, 1, 2, 4, 5, 5, 6, 7, 7};
-        assertArrayEquals(expectedArray, array);
+        Assert.assertEquals(expectedArray, array);
 
     }
 
@@ -39,7 +38,7 @@ public class SortUtilTest {
 
         System.out.println(Arrays.toString(array));
         int[] expectedArray = new int[]{0, 0, 0, 0, 0};
-        assertArrayEquals(expectedArray, array);
+        Assert.assertEquals(expectedArray, array);
 
     }
 
@@ -50,6 +49,6 @@ public class SortUtilTest {
         SortUtil.bubbleSort(array);
 
         int[] expectedArray = new int[]{0, 0, 1, 1, 2, 4, 5, 5, 6, 7, 7};
-        assertArrayEquals(expectedArray, array);
+        Assert.assertEquals(expectedArray, array);
     }
 }

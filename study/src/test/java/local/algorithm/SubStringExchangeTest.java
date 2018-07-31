@@ -1,9 +1,8 @@
 package local.algorithm;
 
-import org.junit.Assert;
-import org.junit.Test;
 
-import static org.junit.Assert.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class SubStringExchangeTest {
     @Test
@@ -11,7 +10,7 @@ public class SubStringExchangeTest {
         char[] str = new char[]{'1', '2', '3', '4', '5', '6', '7', '8'};
         SubStringExchange.exchange(str, 0, 7, 2);
 
-        Assert.assertArrayEquals(new char[]{'4', '5', '6', '7', '8', '1', '2', '3'}, str);
+        Assert.assertEquals(new char[]{'4', '5', '6', '7', '8', '1', '2', '3'}, str);
 
         char[] str2 = new char[]{'1', '2', '3', '4', '5', '6', '7', '8'};
         SubStringExchange.exchange(str2, 0, 2, 0);

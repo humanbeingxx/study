@@ -1,10 +1,9 @@
 package local.design.state;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/3 下午7:56
  **/

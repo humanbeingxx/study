@@ -1,12 +1,11 @@
 package local.design.observer;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.Observable;
 import java.util.Observer;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/23 下午8:05
  **/

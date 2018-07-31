@@ -3,7 +3,6 @@ package local.other;
 import java.io.Serializable;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/23 上午11:00
  **/

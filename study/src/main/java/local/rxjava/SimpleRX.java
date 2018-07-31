@@ -3,7 +3,6 @@ package local.rxjava;
 import com.google.common.collect.Lists;
 import rx.Observable;
 import rx.Observer;
-import rx.functions.Action3;
 import rx.functions.Func0;
 import rx.functions.Func3;
 import rx.observables.AsyncOnSubscribe;

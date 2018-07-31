@@ -5,10 +5,9 @@ import local.design.factory.cook.abs.NoodleMaker;
 import local.design.factory.cook.common.JiaoziCook;
 import local.design.factory.cook.common.NoodleCook;
 import local.design.factory.food.WheatenFood;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/23 下午9:09
  **/

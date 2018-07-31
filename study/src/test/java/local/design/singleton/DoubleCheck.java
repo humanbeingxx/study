@@ -1,7 +1,6 @@
 package local.design.singleton;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/24 下午3:06
  **/

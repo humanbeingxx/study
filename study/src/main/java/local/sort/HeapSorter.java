@@ -12,7 +12,7 @@ public class HeapSorter<T extends Comparable<? super T>> {
         makeHeap(data);
         for (int i = data.length - 1; i >= 0; i--) {
             exchange(data, 0, i);
-            adjust(data, 0, i -1);
+            adjust(data, 0, i - 1);
         }
     }
 

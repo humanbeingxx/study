@@ -1,9 +1,9 @@
 package local.reservoir;
 
 import com.google.common.collect.ImmutableList;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -14,7 +14,7 @@ public class ReservoirSampleTest {
 
     private Thread fillThread;
 
-    @Before
+    @BeforeMethod
     public void setUp() throws Exception {
         fillThread = new Thread(() -> {
             int initValue = 1;
@@ -31,7 +31,7 @@ public class ReservoirSampleTest {
         fillThread.start();
     }
 
-    @After
+    @AfterMethod
     public void tearDown() throws Exception {
         fillThread.interrupt();
     }

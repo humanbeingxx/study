@@ -1,9 +1,8 @@
 package local.other;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/16 下午4:48
  **/

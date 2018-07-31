@@ -2,8 +2,8 @@ package local.hystrix;
 
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixObservableCommand;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import rx.Observable;
 import rx.Observer;
 import rx.observables.BlockingObservable;
@@ -56,7 +56,7 @@ public class SimpleHystrixTest {
         });
     }
 
-    @Test(expected = ExecutionException.class)
+    @Test(expectedExceptions = ExecutionException.class)
     public void testCreateSimpleObservableCommandWithFuture() throws Exception {
         HystrixObservableCommand<String> testSimpleCommandObservable
                 = SimpleHystrix.createSimpleObservableCommand("testSimpleCommandObservable");

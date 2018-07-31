@@ -1,12 +1,11 @@
 package local.other;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/7/18 下午5:57
  **/
