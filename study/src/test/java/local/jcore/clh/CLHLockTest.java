@@ -17,6 +17,16 @@ public class CLHLockTest {
     private static CLHLock lock = new CLHLock();
 
     @Test
+    public void test() throws InterruptedException {
+        new Thread(() -> {
+            lock.lock();
+            lock.unlock();
+        }).start();
+
+        Thread.sleep(100);
+    }
+
+    @Test
     public void testWithSleep() throws InterruptedException {
         withSleep(200);
     }

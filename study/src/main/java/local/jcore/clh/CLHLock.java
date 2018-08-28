@@ -11,9 +11,16 @@ import java.util.concurrent.locks.Lock;
  **/
 public class CLHLock implements Lock {
 
-    private AtomicReference<CLHNode> tail = new AtomicReference<>();
+    private AtomicReference<CLHNode> tail;
 
     private ThreadLocal<CLHNode> myNode = ThreadLocal.withInitial(CLHNode::new);
+
+    public CLHLock() {
+        // 根据dog李的jdk源码，CLH需要一个伪头结点。但是实际上这段代码，头为空也能工作，因为没有preNode
+        CLHNode dummy = new CLHNode();
+        dummy.unlock();
+        tail = new AtomicReference<>(dummy);
+    }
 
     public void lockWithSleep() {
         CLHNode currentMyNode = myNode.get();
