@@ -5,7 +5,7 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.List;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
+
  *
  * @author xiaoshuang.cui
  * @date 2018/8/17 下午8:41

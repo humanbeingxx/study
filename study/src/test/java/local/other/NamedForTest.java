@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.Random;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
+
  *
  * @author xiaoshuang.cui
  * @date 2018/8/13 下午9:49
