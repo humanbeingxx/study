@@ -6,40 +6,21 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 
 /**
-
- *
  * @author xiaoshuang.cui
  * @date 2018/8/27 下午2:49
  **/
 public class CLHLock implements Lock {
 
-    private AtomicReference<CLHNode> tail;
+    private AtomicReference<CLHNode> tail = new AtomicReference<>();
 
-    private ThreadLocal<CLHNode> myNode;
-
-    private ThreadLocal<CLHNode> preNode;
-
-    public CLHLock() {
-        this.tail = new AtomicReference<>(new CLHNode(Thread.currentThread().getName()));
-        this.myNode = new ThreadLocal<CLHNode>(){
-            @Override
-            protected CLHNode initialValue() {
-                return new CLHNode(Thread.currentThread().getName());
-            }
-        };
-        this.preNode = new ThreadLocal<CLHNode>() {
-            @Override
-            protected CLHNode initialValue() {
-                return null;
-            }
-        };
-    }
+    private ThreadLocal<CLHNode> myNode = ThreadLocal.withInitial(CLHNode::new);
 
     public void lockWithSleep() {
         CLHNode currentMyNode = myNode.get();
-        currentMyNode.lock();
         CLHNode preTail = tail.getAndSet(currentMyNode);
-        preNode.set(preTail);
+        if (preTail == null) {
+            return;
+        }
         int tryCount = 0;
         while (preTail.isLocked()) {
             tryCount++;
@@ -57,10 +38,10 @@ public class CLHLock implements Lock {
     @Override
     public void lock() {
         CLHNode currentMyNode = myNode.get();
-        currentMyNode.lock();
         CLHNode preTail = tail.getAndSet(currentMyNode);
-        preNode.set(preTail);
-        while (preTail.isLocked()) {
+        if (preTail != null) {
+            while (preTail.isLocked()) {
+            }
         }
     }
 
@@ -82,8 +63,13 @@ public class CLHLock implements Lock {
     @Override
     public void unlock() {
         CLHNode clhNode = myNode.get();
+
+        if (clhNode == null || !clhNode.isLocked()) {
+            return;
+        }
+
+        myNode.remove();
         clhNode.unlock();
-        myNode.set(preNode.get());
     }
 
     @Override

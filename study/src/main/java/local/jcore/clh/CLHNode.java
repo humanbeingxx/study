@@ -8,25 +8,7 @@ package local.jcore.clh;
  **/
 public class CLHNode {
 
-    private String name;
-
-    private boolean isLocked;
-
-    public CLHNode(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void lock() {
-        isLocked = true;
-    }
+    private volatile boolean isLocked = true;
 
     public void unlock() {
         isLocked = false;
