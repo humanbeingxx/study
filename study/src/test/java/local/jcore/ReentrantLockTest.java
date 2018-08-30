@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/8/29 下午5:10

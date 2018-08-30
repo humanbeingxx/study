@@ -1,8 +1,6 @@
 package local.jcore.clh;
 
 /**
-
- *
  * @author xiaoshuang.cui
  * @date 2018/8/27 下午2:51
  **/

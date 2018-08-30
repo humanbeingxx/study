@@ -27,7 +27,7 @@ public class GapInList {
         int preUpData = -1;
 
 
-        for (; down < data.length;) {
+        for (; down < data.length; ) {
             int curGap = data[up] - data[down];
             if (curGap == gap && data[down] != preDownData && data[up] != preUpData) {
                 count++;

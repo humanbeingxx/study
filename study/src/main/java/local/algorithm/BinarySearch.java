@@ -5,8 +5,6 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.List;
 
 /**
-
- *
  * @author xiaoshuang.cui
  * @date 2018/8/17 下午8:41
  **/

@@ -7,8 +7,6 @@ import org.testng.collections.Lists;
 import java.util.List;
 
 /**
-
- *
  * @author xiaoshuang.cui
  * @date 2018/8/27 下午3:32
  **/
@@ -33,6 +31,7 @@ public class CLHLockTest {
 
     /**
      * 没有睡眠中断的
+     *
      * @throws InterruptedException
      */
     @Test
@@ -53,7 +52,8 @@ public class CLHLockTest {
                     lock.unlock();
                 }
             }));
-        };
+        }
+        ;
 
         for (Thread thread : threads) {
             thread.start();
@@ -87,7 +87,8 @@ public class CLHLockTest {
                     lock.unlock();
                 }
             }));
-        };
+        }
+        ;
 
         for (Thread thread : threads) {
             thread.start();

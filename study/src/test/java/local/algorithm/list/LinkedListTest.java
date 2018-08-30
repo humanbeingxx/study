@@ -2,10 +2,7 @@ package local.algorithm.list;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/8/30 下午5:07

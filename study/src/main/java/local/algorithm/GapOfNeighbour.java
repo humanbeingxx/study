@@ -1,7 +1,6 @@
 package local.algorithm;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  * <p>
  * 计算无序数组排序后相邻元素最大的差值
  *
