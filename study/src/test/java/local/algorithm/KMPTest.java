@@ -7,7 +7,6 @@ import java.util.Arrays;
 import static org.testng.Assert.*;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午4:56

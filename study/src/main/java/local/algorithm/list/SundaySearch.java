@@ -1,7 +1,6 @@
 package local.algorithm.list;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午5:40
