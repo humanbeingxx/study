@@ -1,4 +1,4 @@
-package local.algorithm.list;
+package local.algorithm;
 
 /**
  *

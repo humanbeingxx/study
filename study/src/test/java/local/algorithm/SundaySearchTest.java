@@ -1,8 +1,7 @@
-package local.algorithm.list;
+package local.algorithm;
 
+import local.algorithm.SundaySearch;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
 
 import static org.testng.Assert.*;
 
