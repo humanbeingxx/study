@@ -10,7 +10,6 @@ import org.apache.commons.collections.CollectionUtils;
 import java.util.*;
 
 /**
- * Copyright © 2018 QUNAR.COM. All rights reserved.
  *
  * @author xiaoshuang.cui
  * @date 2018/9/5 下午8:52
