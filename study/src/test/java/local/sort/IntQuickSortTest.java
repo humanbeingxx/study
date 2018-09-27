@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-import static org.testng.Assert.*;
-
 /**
  * @author xiaoshuang.cui
  * @date 2018/9/26 下午5:44
@@ -66,5 +64,14 @@ public class IntQuickSortTest {
 
         System.out.println(Arrays.toString(data));
         Assert.assertEquals(data, new int[]{1, 3});
+    }
+
+    @Test
+    public void test2() {
+        int[] data = {1, 2, 3, 4};
+
+        IntQuickSort.sort(data);
+
+        Assert.assertEquals(data, new int[]{1, 2, 3, 4});
     }
 }

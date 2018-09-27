@@ -7,6 +7,6 @@ package local.jcore.err;
 public class MyOuterClass {
 
     public static MyClassContainer getMyClassContainer(){
-        return null;
+        throw new RuntimeException();
     }
 }

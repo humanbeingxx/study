@@ -13,4 +13,24 @@ public class ClassDefErrorTest {
         new Thread(MyClassUser::use).start();
         Thread.sleep(1000);
     }
+
+    public static void main(String[] args) throws InterruptedException {
+//        new Thread(MyClassUser::use).start();
+//        Thread.sleep(1000);
+        try {
+            MyClassUser.use();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("*****************");
+
+        try {
+            MyClassUser.use();
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(MyClassUser.name);;
+    }
 }

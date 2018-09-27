@@ -37,7 +37,7 @@ public class IntQuickSort {
         data[begin] = data[low];
         data[low] = pivot;
 
-        sortRec(data, begin, low);
+        sortRec(data, begin, low - 1);
         sortRec(data, low + 1, end);
     }
 
