@@ -21,14 +21,14 @@ public class LinkedListTest {
     }
 
     @Test
-    public void testReverse() {
+    public void testreverse2() {
         LinkedList linkedList = new LinkedList();
         linkedList.add(new LinkedList.Node(1));
         linkedList.add(new LinkedList.Node(2));
         linkedList.add(new LinkedList.Node(3));
         linkedList.add(new LinkedList.Node(4));
 
-        linkedList.reverse();
+        linkedList.reverse2();
 
         System.out.println(linkedList);
     }
@@ -38,7 +38,7 @@ public class LinkedListTest {
         LinkedList linkedList = new LinkedList();
         linkedList.add(new LinkedList.Node(1));
 
-        linkedList.reverse();
+        linkedList.reverse2();
 
         System.out.println(linkedList);
     }
@@ -51,7 +51,7 @@ public class LinkedListTest {
         linkedList.add(new LinkedList.Node(3));
         linkedList.add(new LinkedList.Node(4));
 
-        linkedList.reverse();
+        linkedList.reverse2();
 
         linkedList.add(new LinkedList.Node(1));
         linkedList.add(new LinkedList.Node(2));
@@ -60,7 +60,7 @@ public class LinkedListTest {
 
         System.out.println(linkedList);
 
-        linkedList.reverse();
+        linkedList.reverse2();
         System.out.println(linkedList);
     }
 }

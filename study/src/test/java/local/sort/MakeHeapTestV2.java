@@ -16,13 +16,16 @@ public class MakeHeapTestV2 {
     }
 
     private void adjust(int[] data, int from) {
-        for (int i = from / 2; i > 0; i /= 2) {
+        for (int i = from / 2; i >= 0; i /= 2) {
             int bigChild = i * 2;
             if (i * 2 + 1 < data.length && data[i * 2 + 1] > data[i * 2]) {
                 bigChild = i * 2 + 1;
             }
-            if (data[i] > data[bigChild]) {
-                exchange(data, from, bigChild);
+            if (data[i] < data[bigChild]) {
+                exchange(data, i, bigChild);
+            }
+            if (i == 0) {
+                return;
             }
         }
     }
@@ -38,7 +41,7 @@ public class MakeHeapTestV2 {
         int[] data = {1, 2, 3, 4, 5, 5, 6, 7, 8};
         makeBigHeap(data);
 
-        Assert.assertEquals(8, data[0]);
+        Assert.assertEquals(data[0], 8);
     }
 
     @Test

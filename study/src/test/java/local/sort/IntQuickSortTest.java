@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * @author xiaoshuang.cui
@@ -73,5 +74,24 @@ public class IntQuickSortTest {
         IntQuickSort.sort(data);
 
         Assert.assertEquals(data, new int[]{1, 2, 3, 4});
+    }
+
+    @Test
+    public void testMany() {
+        Random random = new Random();
+
+        for (int i = 0; i < 1000; i++) {
+            int[] data = new int[100];
+            int[] java = new int[100];
+            for (int j = 0; j < 100; j++) {
+                int anInt = random.nextInt(100000);
+                data[j] = anInt;
+                java[j] = anInt;
+            }
+            IntQuickSort.sort(data);
+            Arrays.sort(java);
+            Assert.assertEquals(data, java);
+        }
+
     }
 }

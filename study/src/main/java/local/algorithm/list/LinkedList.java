@@ -57,6 +57,29 @@ public class LinkedList {
         reverseRec(next, nnext);
     }
 
+    public void reverse2() {
+        if (head.next == null) {
+            return;
+        }
+
+        Node next = head.next;
+        Node nnext = head.next.next;
+        next.next = null;
+        reverseRec2(next, nnext);
+    }
+
+    private void reverseRec2(Node next, Node nnext) {
+        head.next = next;
+        if (nnext == null) {
+            return;
+        }
+        System.out.println(next.data + " - " + nnext.data);
+
+        Node newNNext = nnext.next;
+        nnext.next = next;
+        reverseRec2(nnext, newNNext);
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder("head->");
