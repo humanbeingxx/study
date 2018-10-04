@@ -8,11 +8,17 @@ public class ClassNewSeq {
 
     public static final Object STATIC_FINAL_DATA = newFinalData();
 
-    public static final Object STATIC_DATA = newStaticData();
+    public static Object STATIC_DATA = newStaticData();
 
     static {
         System.out.println("static block");
     }
+
+    static {
+        num = 0;
+    }
+
+    public static int num = 1;
 
     private static Object newFinalData() {
         System.out.println("STATIC_FINAL_DATA");
@@ -21,6 +27,13 @@ public class ClassNewSeq {
 
     private static Object newStaticData() {
         System.out.println("STATIC_DATA");
+        return new Object();
+    }
+
+    private Object normalFinalData = newNormalFinalData();
+
+    private Object newNormalFinalData() {
+        System.out.println("normal final");
         return new Object();
     }
 
@@ -38,5 +51,9 @@ public class ClassNewSeq {
 
     public ClassNewSeq() {
         System.out.println("construct");
+    }
+
+    public static void justForClassUsage() {
+        System.out.println("invoking justForClassUsage");
     }
 }

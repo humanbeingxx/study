@@ -2,8 +2,6 @@ package local.jcore.err;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author xiaoshuang.cui
  * @date 2018/9/29 下午7:36
