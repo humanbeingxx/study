@@ -1,15 +1,12 @@
 package local.jcore.clh;
 
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 
 /**
  * @author xiaoshuang.cui
  * @date 2018/8/27 下午2:49
  **/
-public class CLHLock implements Lock {
+public class CLHLock {
 
     private AtomicReference<CLHNode> tail;
 
@@ -42,7 +39,6 @@ public class CLHLock implements Lock {
         }
     }
 
-    @Override
     public void lock() {
         CLHNode currentMyNode = myNode.get();
         CLHNode preTail = tail.getAndSet(currentMyNode);
@@ -52,22 +48,6 @@ public class CLHLock implements Lock {
         }
     }
 
-    @Override
-    public void lockInterruptibly() throws InterruptedException {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean tryLock() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
     public void unlock() {
         CLHNode clhNode = myNode.get();
 
@@ -77,11 +57,6 @@ public class CLHLock implements Lock {
 
         myNode.remove();
         clhNode.unlock();
-    }
-
-    @Override
-    public Condition newCondition() {
-        throw new UnsupportedOperationException();
     }
 
 }

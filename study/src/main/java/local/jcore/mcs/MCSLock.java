@@ -35,6 +35,7 @@ public class MCSLock {
             if (tail.compareAndSet(current, null)) {
                 return;
             }
+            // 这里等待新设置的tail节点将next设置为本节点（preTail.next = current）
             while (current.next == null) {
 
             }

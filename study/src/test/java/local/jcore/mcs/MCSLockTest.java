@@ -42,10 +42,9 @@ public class MCSLockTest {
             }).start();
         }
 
-        Thread.sleep(100);
-        lock.lock();
+        Thread.sleep(10000);
         assertEquals(data.size(), 200);
-        lock.unlock();
+
     }
 
 }
