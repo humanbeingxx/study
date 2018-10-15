@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class HeapSorterTest {
     @Test
@@ -70,4 +71,17 @@ public class HeapSorterTest {
         System.out.println(Arrays.toString(data));
     }
 
+    @Test
+    public void testRandom() {
+        Random random = new Random();
+
+        Integer[] data = new Integer[10];
+        for (int i = 0; i < 10; i++) {
+            data[i] = random.nextInt(1000);
+        }
+
+        new HeapSorter<Integer>().sort(data);
+
+        System.out.println(Arrays.toString(data));
+    }
 }
