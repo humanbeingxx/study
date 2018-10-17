@@ -1,6 +1,7 @@
 package local.algorithm;
 
-import org.testng.collections.Lists;
+
+import com.google.common.collect.Lists;
 
 import java.util.List;
 
