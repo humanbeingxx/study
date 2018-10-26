@@ -1,7 +1,6 @@
 package local.algorithm;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午5:40
  **/
@@ -52,9 +51,7 @@ public class SundaySearch {
 
         for (int i = 0; i < chars.length; i++) {
             char c = chars[i];
-            if (shifts[c - 'a'] == -1) {
-                shifts[c - 'a'] = chars.length - i;
-            }
+            shifts[c - 'a'] = chars.length - i;
         }
 
         return shifts;

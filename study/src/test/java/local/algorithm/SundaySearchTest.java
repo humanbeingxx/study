@@ -1,6 +1,7 @@
 package local.algorithm;
 
 import local.algorithm.SundaySearch;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
@@ -31,5 +32,11 @@ public class SundaySearchTest {
         assertEquals(SundaySearch.search("substring searching", ""), -1);
         assertEquals(SundaySearch.search("", "searchx"), -1);
         assertEquals(SundaySearch.search("", ""), -1);
+    }
+
+    @Test
+    public void testOne() {
+        int result = SundaySearch.search("aacc", "acc");
+        Assert.assertEquals(result, 1);
     }
 }
