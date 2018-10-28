@@ -8,6 +8,8 @@ import org.apache.commons.lang3.tuple.Pair;
  **/
 public class LCSequence {
 
+    // trans[i][j]为一个以str1[i]和str1[j]结尾的子串相等的最大长度
+
     public static int length(String str1, String str2) {
         int[][] trans = new int[str1.length()][str2.length()];
 
