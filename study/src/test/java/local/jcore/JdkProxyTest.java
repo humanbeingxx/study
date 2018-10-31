@@ -12,17 +12,17 @@ import java.lang.reflect.Proxy;
  **/
 public class JdkProxyTest {
 
-    interface Test1 {
+    public interface Test1 {
         void test1();
     }
 
 
-    interface Test2 {
+    public interface Test2 {
         void test2();
     }
 
 
-    interface Test3 {
+    public interface Test3 {
         void test1();
     }
 
