@@ -36,4 +36,6 @@ public class HashEqualTest {
         Assert.assertNotEquals(myTest1.hashCode(), myTest2.hashCode());
         Assert.assertEquals(myTest1, myTest2);
     }
+
+
 }
