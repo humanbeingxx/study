@@ -2,6 +2,10 @@ package local.before.d1101;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.collections.Lists;
+
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * @author xiaoshuang.cui
@@ -35,5 +39,18 @@ public class HashEqualTest {
 
         Assert.assertNotEquals(myTest1.hashCode(), myTest2.hashCode());
         Assert.assertEquals(myTest1, myTest2);
+    }
+
+    @Test
+    public void testSort() {
+        Collections.sort(Lists.newArrayList(new MyTest(1), new MyTest(2)), new Comparator<MyTest>() {
+            @Override
+            public int compare(MyTest o1, MyTest o2) {
+                if (o1 == null || o2 == null) {
+                    return 0;
+                }
+                return o1.num - o2.num;
+            }
+        });
     }
 }
