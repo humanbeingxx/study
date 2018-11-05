@@ -1,0 +1,30 @@
+package priv.cxs.springboot2;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@SpringBootApplication
+@MapperScan(basePackages = {"priv.cxs.springboot2.dao"})
+public class Springboot2Application extends SpringBootServletInitializer {
+
+    @RequestMapping("/")
+    @ResponseBody
+    public String index() {
+        return "hello boot";
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(Springboot2Application.class);
+    }
+
+    public static void main(String[] args) {
+		SpringApplication.run(Springboot2Application.class, args);
+	}
+}
