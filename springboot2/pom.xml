@@ -134,9 +134,16 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 	<build>
+		<finalName>spring-boot-study</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -157,6 +164,8 @@
                 <configuration>
                     <port>8080</port>
                     <uriEncoding>UTF-8</uriEncoding>
+					<path>/test_tomcat</path>
+                    <!--<port>8081</port>-->
                 </configuration>
             </plugin>
 		</plugins>

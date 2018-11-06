@@ -4,3 +4,10 @@ spring:
       username: test
       password: test1234
       url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+  mvc:
+    servlet:
+      path: /test_yml
+  profiles:
+    active: dev
+server:
+  port: 8082
