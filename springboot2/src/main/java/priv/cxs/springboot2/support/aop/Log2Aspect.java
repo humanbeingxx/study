@@ -1,9 +1,10 @@
 package priv.cxs.springboot2.support.aop;
 
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,7 +23,28 @@ public class Log2Aspect {
 
     @Before("pointCut()")
     public void before() {
-        log.info("before2 execution......");
+        log.info("before 2 execution......");
     }
+
+    @Around("pointCut()")
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+        log.info("around 2 before......");
+        try {
+            return joinPoint.proceed();
+        } finally {
+            log.info("around 2 after......");
+        }
+    }
+
+    @After("pointCut()")
+    public void after() {
+        log.info("after 2 execution......");
+    }
+
+    @AfterReturning(value = "pointCut()", returning = "ret")
+    public void afterReturning(JoinPoint joinPoint, Object ret) {
+        log.info("after 2 returning execution......result {}", ret);
+    }
+
 
 }
