@@ -1,5 +1,8 @@
 package local.jcore.clh;
 
+import com.google.common.collect.Lists;
+
+import java.util.Collections;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
@@ -58,5 +61,4 @@ public class CLHLock {
         myNode.remove();
         clhNode.unlock();
     }
-
 }

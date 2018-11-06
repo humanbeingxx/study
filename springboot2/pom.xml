@@ -143,7 +143,6 @@
     </dependencies>
 
 	<build>
-		<finalName>spring-boot-study</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -164,8 +163,7 @@
                 <configuration>
                     <port>8080</port>
                     <uriEncoding>UTF-8</uriEncoding>
-					<path>/test_tomcat</path>
-                    <!--<port>8081</port>-->
+					<warSourceDirectory>${basedir}/src/main/webapps</warSourceDirectory>
                 </configuration>
             </plugin>
 		</plugins>

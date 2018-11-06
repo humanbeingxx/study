@@ -1,7 +1,11 @@
 package local.jcore;
 
+import com.google.common.base.Function;
 import org.testng.annotations.Test;
+import sun.misc.URLClassPath;
 
+import javax.annotation.Nullable;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
@@ -31,5 +35,11 @@ public class ClassLoaderTest {
         MyLoader myLoader = new MyLoader();
         Class<?> myClass = myLoader.loadClass("MyClass");
         System.out.println(myClass.getName());
+    }
+
+    @Test
+    public void testClassFile() throws ClassNotFoundException {
+        Class<?> aClass = Class.forName("rx.Observer");
+        System.out.println(aClass);
     }
 }

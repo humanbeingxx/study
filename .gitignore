@@ -39,3 +39,6 @@ zz_dev_deploy_gongdan.sh
 # maintain shell
 fretch_url_gongdan.sh
 /monitor
+
+# jrebel
+rebel.xml
