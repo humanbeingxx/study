@@ -25,4 +25,9 @@ public class JobServiceTest {
     public void insertOne() {
         jobService.insertOne(Job.builder().name("java 后端").level(6).address("朝阳区").salary(30000).build());
     }
+
+    @Test
+    public void selectAll() {
+        System.out.println(jobService.getAll());
+    }
 }

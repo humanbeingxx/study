@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.service.JobService;
+import priv.cxs.springboot2.support.aop.TimeRecord;
 
 import javax.annotation.Resource;
 
@@ -33,9 +34,9 @@ public class JobController {
     }
 
     @RequestMapping("list")
+    @TimeRecord
     public String list(Model model) {
-        model.addAttribute("jobs", Lists.newArrayList(
-                Job.builder().name("test").level(3).salary(30000).address("testAddress").build()));
+        model.addAttribute("jobs", jobService.getAll());
         return "job";
     }
 }

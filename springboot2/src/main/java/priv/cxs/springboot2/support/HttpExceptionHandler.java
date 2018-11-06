@@ -1,5 +1,6 @@
 package priv.cxs.springboot2.support;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2018/11/4 1:57
  */
 @ControllerAdvice(basePackages = {"priv.cxs.springboot2.controller"})
+@Slf4j
 public class HttpExceptionHandler {
 
     @ExceptionHandler(value = DuplicateKeyException.class)
@@ -20,6 +22,7 @@ public class HttpExceptionHandler {
 
     @ExceptionHandler(value = Exception.class)
     public String processException(Exception e) {
+        log.error("system internal error!!!", e);
         return "error.html";
     }
 }
