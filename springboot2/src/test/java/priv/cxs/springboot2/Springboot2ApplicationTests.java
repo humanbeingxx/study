@@ -20,9 +20,13 @@ public class Springboot2ApplicationTests {
 	@Test
 	public void contextLoads() {
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
-		Map<String, String> config = context.getBean("config1", Map.class);
-		System.out.println(config);
+    }
+
+    @Test
+    public void testWithSingleConfig() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(TestConfig.class);
+        Map<String, String> config = context.getBean("config1", Map.class);
+        System.out.println(config);
 
         try {
             Object testService = context.getBean("testService");
@@ -30,7 +34,6 @@ public class Springboot2ApplicationTests {
         } catch (BeansException e) {
             e.printStackTrace();
         }
-
     }
 
 }

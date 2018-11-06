@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.ibatis.type.Alias;
 
 /**
  * @author humanbeingxx@sina.com
@@ -13,10 +14,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Alias("job")
 public class Job {
 
     private String name;
     private int salary;
     private String address;
     private int level;
+    private JobType jobType;
 }
