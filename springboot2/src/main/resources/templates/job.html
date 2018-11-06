@@ -9,10 +9,11 @@
 <div>
     <ul>
         <li th:each="job:${jobs}">
-            <span th:text="${job.name}"></span>-
-            <span th:text="${job.address}"></span>-
-            <span th:text="${job.salary}"></span>-
-            <span th:text="${job.level}"></span>
+            <span th:text="${job.name}"></span> -
+            <span th:text="${job.address}"></span> -
+            <span th:text="${job.salary}"></span> -
+            <span th:text="${job.level}"></span> -
+            <span th:text="${job.jobType}"></span>
         </li>
     </ul>
 </div>

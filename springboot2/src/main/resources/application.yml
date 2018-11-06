@@ -11,3 +11,6 @@ spring:
     active: dev
 server:
   port: 8082
+mybatis:
+  type-handlers-package: priv.cxs.springboot2.dao.config
+  config-location: classpath:mybatis-config.xml
