@@ -1,13 +1,12 @@
 package priv.cxs.springboot2.controller;
 
-import com.google.common.collect.Lists;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import priv.cxs.springboot2.model.Job;
-import priv.cxs.springboot2.service.JobService;
+import priv.cxs.springboot2.service.JobServiceImpl;
 import priv.cxs.springboot2.support.aop.TimeRecord;
 
 import javax.annotation.Resource;
@@ -21,7 +20,7 @@ import javax.annotation.Resource;
 public class JobController {
 
     @Resource
-    private JobService jobService;
+    private JobServiceImpl jobService;
 
     @RequestMapping("add")
     @ResponseBody

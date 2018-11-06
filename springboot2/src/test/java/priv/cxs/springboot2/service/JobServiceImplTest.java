@@ -8,18 +8,16 @@ import priv.cxs.springboot2.model.Job;
 
 import javax.annotation.Resource;
 
-import static org.junit.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 1:40
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JobServiceTest {
+public class JobServiceImplTest {
 
     @Resource
-    private JobService jobService;
+    private JobServiceImpl jobService;
 
     @Test
     public void insertOne() {

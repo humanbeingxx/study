@@ -1,9 +1,8 @@
 package priv.cxs.springboot2.support;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import priv.cxs.springboot2.service.JobService;
+import priv.cxs.springboot2.service.JobServiceImpl;
 
-import javax.annotation.Resource;
 import javax.servlet.*;
 import java.io.IOException;
 
@@ -14,7 +13,7 @@ import java.io.IOException;
 public class TestFilter implements Filter {
 
     @Autowired
-    private JobService jobService;
+    private JobServiceImpl jobService;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
