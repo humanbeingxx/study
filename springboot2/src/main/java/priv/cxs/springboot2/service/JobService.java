@@ -13,4 +13,8 @@ public interface JobService {
     void insertOne(Job job);
 
     List<Job> getAll();
+
+    void deleteTwiceWithNewTransaction(String name);
+
+    void deleteTwiceWithNestedTransaction(String name);
 }

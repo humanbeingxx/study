@@ -9,6 +9,10 @@ spring:
       path: /test_yml
   profiles:
     active: dev
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 100ms
 server:
   port: 8082
 mybatis:

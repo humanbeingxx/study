@@ -1,8 +1,6 @@
 package priv.cxs.springboot2.dao;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import priv.cxs.springboot2.model.Job;
 
@@ -20,4 +18,7 @@ public interface JobDao {
 
     @Select("select name, address, salary, level, job_type from tb_job")
     List<Job> selectAll();
+
+    @Delete("delete from tb_job where name = #{name}")
+    void deleteByName(@Param("name") String name);
 }

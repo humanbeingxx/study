@@ -28,4 +28,14 @@ public class JobServiceImplTest {
     public void selectAll() {
         System.out.println(jobService.getAll());
     }
+
+    @Test
+    public void testNew() {
+        jobService.deleteTwiceWithNewTransaction("java");
+    }
+
+    @Test
+    public void testNested() {
+        jobService.deleteTwiceWithNestedTransaction("java");
+    }
 }
