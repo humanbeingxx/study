@@ -10,7 +10,9 @@ import java.util.List;
  **/
 public interface JobService {
 
-    void insertOne(Job job);
+    Job insertOne(Job job);
+
+    Job getOne(String name);
 
     List<Job> getAll();
 

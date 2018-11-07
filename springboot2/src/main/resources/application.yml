@@ -13,6 +13,13 @@ spring:
     host: 127.0.0.1
     port: 6379
     timeout: 100ms
+  cache:
+    type: redis
+    cache-names: redisCache
+    redis:
+      time-to-live: 5m
+      key-prefix: cache_
+      use-key-prefix: true
 server:
   port: 8082
 mybatis:

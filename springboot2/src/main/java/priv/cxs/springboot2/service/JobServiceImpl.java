@@ -1,6 +1,8 @@
 package priv.cxs.springboot2.service;
 
 import org.springframework.aop.framework.AopContext;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -25,9 +27,19 @@ public class JobServiceImpl implements JobService {
 
     @Override
     @TimeRecord
-    public void insertOne(Job job) {
+    @CachePut(value = "redisCache", key = "'job_' + #job.getName()")
+    public Job insertOne(Job job) {
         jobDao.insertOne(job);
+        return job;
     }
+
+
+    @Override
+    @Cacheable(value = "redisCache", key = "'job_' + #name")
+    public Job getOne(String name) {
+        return jobDao.selectOne(name);
+    }
+
 
     @Override
     @TimeRecord
