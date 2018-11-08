@@ -38,4 +38,10 @@ public class JobServiceImplTest {
     public void testNested() {
         jobService.deleteTwiceWithNestedTransaction("java");
     }
+
+    @Test
+    public void testQueryOne() {
+        Job job = jobService.getOne("java3");
+        System.out.println(job);
+    }
 }

@@ -16,10 +16,6 @@ spring:
   cache:
     type: redis
     cache-names: redisCache
-    redis:
-      time-to-live: 5m
-      key-prefix: cache_
-      use-key-prefix: true
 server:
   port: 8082
 mybatis:

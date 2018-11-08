@@ -35,9 +35,11 @@ public class JobServiceImpl implements JobService {
 
 
     @Override
-    @Cacheable(value = "redisCache", key = "'job_' + #name")
+    @Cacheable(value = "redisCache", condition = "#name.length() > 4",
+            unless = "#result == null", key = "'job_' + #name")
     public Job getOne(String name) {
-        return jobDao.selectOne(name);
+        Job job = jobDao.selectOne("java1");
+        return job;
     }
 
 
