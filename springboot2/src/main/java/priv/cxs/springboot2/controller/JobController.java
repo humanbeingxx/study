@@ -25,12 +25,13 @@ public class JobController {
 
     @RequestMapping("add")
     @ResponseBody
-    public String add(@RequestParam(value = "name", required = false) String name,
+    public String add(@RequestParam(value = "name") String name,
+                      @RequestParam(value = "code") int code,
                       @RequestParam(value = "salary", required = false) int salary,
                       @RequestParam(value = "address", required = false) String address,
                       @RequestParam(value = "level", required = false) int level,
                       @RequestParam("jobType") int jobType) {
-        jobService.insertOne(Job.builder().name(name).salary(salary).address(address).level(level)
+        jobService.insertOne(Job.builder().code(code).name(name).salary(salary).address(address).level(level)
                 .jobType(JobType.codeOf(jobType)).build());
         return "操作成功";
     }
@@ -44,8 +45,14 @@ public class JobController {
 
     @RequestMapping("query")
     @TimeRecord
-    public String query(@RequestParam(value = "name") String name, Model model) {
-        model.addAttribute("jobs", jobService.getOne(name));
+    public String query(@RequestParam(value = "name", required = false) String name,
+                        @RequestParam(value = "code", required = false, defaultValue = "0") int code,
+                        Model model) {
+        if (code > 0) {
+            model.addAttribute("jobs", jobService.getByCode(code));
+        } else {
+            model.addAttribute("jobs", jobService.getOne(name));
+        }
         return "job";
     }
 }

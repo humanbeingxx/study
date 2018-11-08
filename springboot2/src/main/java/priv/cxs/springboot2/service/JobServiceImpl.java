@@ -27,7 +27,7 @@ public class JobServiceImpl implements JobService {
 
     @Override
     @TimeRecord
-    @CachePut(value = "redisCache", key = "'job_' + #job.getName()")
+    @CachePut(value = "redisCache", key = "'job_' + #job.getName()", cacheManager = "defaultCache")
     public Job insertOne(Job job) {
         jobDao.insertOne(job);
         return job;
@@ -36,12 +36,16 @@ public class JobServiceImpl implements JobService {
 
     @Override
     @Cacheable(value = "redisCache", condition = "#name.length() > 4",
-            unless = "#result == null", key = "'job_' + #name")
+            unless = "#result == null", key = "'job_' + #name", cacheManager = "shortLivedCache")
     public Job getOne(String name) {
-        Job job = jobDao.selectOne("java1");
-        return job;
+        return jobDao.selectByName(name);
     }
 
+    @Override
+    @Cacheable(value = "shortNullCache", key = "'job_' + #code", cacheManager = "myRedisCacheManager")
+    public Job getByCode(int code) {
+        return jobDao.selectByCode(code);
+    }
 
     @Override
     @TimeRecord

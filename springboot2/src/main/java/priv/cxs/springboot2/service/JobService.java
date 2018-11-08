@@ -1,5 +1,6 @@
 package priv.cxs.springboot2.service;
 
+import org.springframework.cache.annotation.Cacheable;
 import priv.cxs.springboot2.model.Job;
 
 import java.util.List;
@@ -13,6 +14,8 @@ public interface JobService {
     Job insertOne(Job job);
 
     Job getOne(String name);
+
+    Job getByCode(int code);
 
     List<Job> getAll();
 

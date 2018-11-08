@@ -19,6 +19,7 @@ import java.io.Serializable;
 @Alias("job")
 public class Job implements Serializable {
     private static final long serialVersionUID = 4508600780045372954L;
+    private int code;
     private String name;
     private int salary;
     private String address;
