@@ -1,6 +1,5 @@
-package priv.cxs.springboot2.dao.config;
+package priv.cxs.springboot2.dao.config.redis;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
@@ -8,7 +7,6 @@ import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import com.google.common.collect.Lists;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
-import org.springframework.cache.support.NullValue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -21,7 +19,6 @@ import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import redis.clients.jedis.JedisPoolConfig;
 
-import java.nio.charset.Charset;
 import java.time.Duration;
 
 /**

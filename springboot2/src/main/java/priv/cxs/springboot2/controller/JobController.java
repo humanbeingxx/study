@@ -1,5 +1,6 @@
 package priv.cxs.springboot2.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.model.JobType;
-import priv.cxs.springboot2.service.JobServiceImpl;
+import priv.cxs.springboot2.service.JobService;
 import priv.cxs.springboot2.support.aop.TimeRecord;
 
 import javax.annotation.Resource;
@@ -21,7 +22,7 @@ import javax.annotation.Resource;
 public class JobController {
 
     @Resource
-    private JobServiceImpl jobService;
+    private JobService jobService;
 
     @RequestMapping("add")
     @ResponseBody
@@ -54,5 +55,34 @@ public class JobController {
             model.addAttribute("jobs", jobService.getOne(name));
         }
         return "job";
+    }
+
+    @RequestMapping("update")
+    @ResponseBody
+    @TimeRecord
+    public String update(@RequestParam(value = "name", required = false) String name,
+                         @RequestParam(value = "code") int code,
+                         @RequestParam(value = "salary", required = false) int salary,
+                         @RequestParam(value = "address", required = false) String address,
+                         @RequestParam(value = "level", required = false) int level,
+                         @RequestParam("jobType") int jobType) {
+        Job job;
+        if (code > 0) {
+            job = jobService.getByCode(code);
+        } else if (StringUtils.isNotBlank(name)) {
+            job = jobService.getOne(name);
+        } else {
+            jobService.flushCache(code, name);
+            return "操作成功";
+        }
+
+        job.setCode(code);
+        job.setSalary(salary);
+        job.setAddress(address);
+        job.setLevel(level);
+        job.setJobType(JobType.codeOf(jobType));
+
+        jobService.updateByCode(job);
+        return "操作完成";
     }
 }

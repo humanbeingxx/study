@@ -11,7 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
-import priv.cxs.springboot2.dao.config.RedisConfiguration;
+import priv.cxs.springboot2.dao.config.redis.RedisConfiguration;
 
 import java.util.List;
 

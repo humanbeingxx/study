@@ -1,4 +1,4 @@
-package priv.cxs.springboot2.dao.config;
+package priv.cxs.springboot2.dao.config.mysql;
 
 import org.apache.ibatis.type.BaseTypeHandler;
 import org.apache.ibatis.type.JdbcType;

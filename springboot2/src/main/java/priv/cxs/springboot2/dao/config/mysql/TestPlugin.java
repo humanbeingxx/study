@@ -1,4 +1,4 @@
-package priv.cxs.springboot2.dao.config;
+package priv.cxs.springboot2.dao.config.mysql;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.executor.statement.StatementHandler;

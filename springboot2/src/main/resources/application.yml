@@ -21,3 +21,4 @@ server:
 mybatis:
   type-handlers-package: priv.cxs.springboot2.dao.config
   config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml

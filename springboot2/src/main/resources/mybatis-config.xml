@@ -6,7 +6,7 @@
         <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <plugins>
-        <plugin interceptor="priv.cxs.springboot2.dao.config.TestPlugin">
+        <plugin interceptor="priv.cxs.springboot2.dao.config.mysql.TestPlugin">
             <property name="key1" value="value1"/>
             <property name="key2" value="value2"/>
         </plugin>

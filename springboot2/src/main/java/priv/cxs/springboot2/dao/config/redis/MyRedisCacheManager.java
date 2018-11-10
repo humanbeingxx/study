@@ -1,4 +1,4 @@
-package priv.cxs.springboot2.dao.config;
+package priv.cxs.springboot2.dao.config.redis;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Maps;

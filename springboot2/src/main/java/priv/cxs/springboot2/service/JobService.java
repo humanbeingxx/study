@@ -22,4 +22,8 @@ public interface JobService {
     void deleteTwiceWithNewTransaction(String name);
 
     void deleteTwiceWithNestedTransaction(String name);
+
+    void updateByCode(Job job);
+
+    void flushCache(int code, String name);
 }

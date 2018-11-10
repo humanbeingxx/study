@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.ibatis.type.Alias;
+import priv.cxs.springboot2.dao.config.redis.MultiKeyCacheable;
 
 import java.io.Serializable;
 
@@ -17,7 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @Alias("job")
-public class Job implements Serializable {
+public class Job implements MultiKeyCacheable, Serializable {
     private static final long serialVersionUID = 4508600780045372954L;
     private int code;
     private String name;
@@ -25,4 +26,9 @@ public class Job implements Serializable {
     private String address;
     private int level;
     private JobType jobType;
+
+    @Override
+    public String generateKey() {
+        return MultiKeyCacheable.MULTI_KEY_JOINER.join("job_" + code, "job_" + name);
+    }
 }
