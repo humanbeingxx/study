@@ -19,9 +19,9 @@ public class ContinuousOnesTest {
         int[][] matrix = {{0, 1, 0, 0}, {1, 1, 0, 0}, {0, 0, 1, 1}, {1, 1, 0, 0}};
         List<List<Pair<Integer, Integer>>> result = ContinuousOnes.find(matrix);
         List<List<Pair<Integer, Integer>>> expected = Lists.newArrayList(
-                Lists.newArrayList(Pair.of(0,1), Pair.of(1,0), Pair.of(1,1)),
-                Lists.newArrayList(Pair.of(2,2), Pair.of(2,3)),
-                Lists.newArrayList(Pair.of(3,0), Pair.of(3,1))
+                Lists.newArrayList(Pair.of(0, 1), Pair.of(1, 0), Pair.of(1, 1)),
+                Lists.newArrayList(Pair.of(2, 2), Pair.of(2, 3)),
+                Lists.newArrayList(Pair.of(3, 0), Pair.of(3, 1))
         );
         assertEqual(result, expected);
     }

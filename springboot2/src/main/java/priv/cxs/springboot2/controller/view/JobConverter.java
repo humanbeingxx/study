@@ -20,7 +20,7 @@ public class JobConverter implements Converter<String, Job> {
 
     @Override
     public Job convert(String source) {
-         List<String> list = Lists.newArrayList(splitter.split(source));
+        List<String> list = Lists.newArrayList(splitter.split(source));
         Job job = new Job();
         job.setCode(Integer.parseInt(list.get(0)));
         job.setName(list.get(1));

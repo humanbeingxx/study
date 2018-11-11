@@ -7,7 +7,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 import priv.cxs.springboot2.support.TestConfig;
 
@@ -17,8 +16,8 @@ import java.util.Map;
 @SpringBootTest
 public class Springboot2ApplicationTests {
 
-	@Test
-	public void contextLoads() {
+    @Test
+    public void contextLoads() {
 
     }
 

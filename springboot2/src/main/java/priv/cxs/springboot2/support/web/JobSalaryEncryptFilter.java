@@ -1,13 +1,14 @@
 package priv.cxs.springboot2.support.web;
 
-import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Map;
 
 /**
  * @author humanbeingxx@sina.com

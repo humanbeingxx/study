@@ -13,6 +13,7 @@ import java.io.File;
 public class ListenFileStatusWithApacheMonitor {
 
     private FileAlterationMonitor monitor;
+
     public ListenFileStatusWithApacheMonitor(long interval) {
         monitor = new FileAlterationMonitor(interval);
     }
@@ -22,15 +23,18 @@ public class ListenFileStatusWithApacheMonitor {
         monitor.addObserver(observer);
         observer.addListener(listener);
     }
-    public void stop() throws Exception{
+
+    public void stop() throws Exception {
         monitor.stop();
     }
+
     public void start() throws Exception {
         monitor.start();
     }
+
     public static void main(String[] args) throws Exception {
         ListenFileStatusWithApacheMonitor m = new ListenFileStatusWithApacheMonitor(1000);
-        m.monitor("/Users/xiaoshuang.cui/temp",new ListenFileStatusWithApacheListener());
+        m.monitor("/Users/xiaoshuang.cui/temp", new ListenFileStatusWithApacheListener());
         m.start();
     }
 }

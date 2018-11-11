@@ -30,7 +30,7 @@ public class RedisTest {
     @BeforeClass
     public static void init() {
         context = new AnnotationConfigApplicationContext(RedisConfiguration.class);
-        template = (RedisTemplate<String, String>)context.getBean(RedisTemplate.class);
+        template = (RedisTemplate<String, String>) context.getBean(RedisTemplate.class);
     }
 
     @Test

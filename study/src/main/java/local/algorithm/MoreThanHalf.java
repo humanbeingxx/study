@@ -9,7 +9,6 @@ package local.algorithm;
 public class MoreThanHalf {
 
     /**
-     *
      * @return char的int表示，没有符合条件返回-1
      */
     public static int find(char[] data) {
@@ -31,7 +30,7 @@ public class MoreThanHalf {
             }
         }
 
-        if (count >= data.length/2 + 1) {
+        if (count >= data.length / 2 + 1) {
             return candidate;
         }
         return -1;

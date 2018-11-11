@@ -30,7 +30,7 @@ public class TakeNFromMEZ {
         }
         for (int i = 0; i < source.size(); i++) {
             collector[n - 1] = source.get(i);
-            rec(source, n -1 , collector, result);
+            rec(source, n - 1, collector, result);
         }
     }
 }

@@ -1,6 +1,5 @@
 package local.before.d1101;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.HashSet;

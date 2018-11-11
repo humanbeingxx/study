@@ -1,6 +1,6 @@
 package priv.cxs.springboot2.dao;
 
-import org.apache.ibatis.annotations.*;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import priv.cxs.springboot2.model.Job;
 

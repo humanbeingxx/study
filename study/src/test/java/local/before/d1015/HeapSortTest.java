@@ -3,7 +3,6 @@ package local.before.d1015;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -86,7 +85,7 @@ public class HeapSortTest {
     public void assertBound() {
         int[] data1 = {};
         int[] data2 = {1};
-        int[] data3 = {2,1,};
+        int[] data3 = {2, 1,};
 
         HeapSort.sort(data1);
         HeapSort.sort(data2);

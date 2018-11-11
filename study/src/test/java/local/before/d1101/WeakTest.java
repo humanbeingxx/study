@@ -24,6 +24,7 @@ public class WeakTest {
             return value;
         }
     }
+
     @Test
     public void test() throws InterruptedException {
         String value = new String("123");
@@ -40,7 +41,7 @@ public class WeakTest {
     public void test2() throws InterruptedException {
         String ref = new String("123");
         String value = new String("456");
-        MyWeakReference<String> reference = new MyWeakReference<String>(ref,value);
+        MyWeakReference<String> reference = new MyWeakReference<String>(ref, value);
         ref = null;
         value = null;
         System.gc();

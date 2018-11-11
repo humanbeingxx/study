@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/8/30 下午7:15
  **/

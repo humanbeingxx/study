@@ -51,6 +51,6 @@ public class JdkProxyTest {
                 return ret;
             }
         });
-        ((Test1)proxy).test1();
+        ((Test1) proxy).test1();
     }
 }

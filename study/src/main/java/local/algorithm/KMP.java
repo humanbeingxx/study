@@ -1,7 +1,6 @@
 package local.algorithm;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午4:54
  **/
@@ -16,7 +15,7 @@ public class KMP {
         int indexOfSearch = 0;
         int indexOfFrom = 0;
 
-        for (;indexOfFrom < from.length();indexOfFrom++) {
+        for (; indexOfFrom < from.length(); indexOfFrom++) {
             while (indexOfSearch > 0 && from.charAt(indexOfFrom) != search.charAt(indexOfSearch)) {
                 indexOfSearch = nexts[indexOfSearch - 1];
             }

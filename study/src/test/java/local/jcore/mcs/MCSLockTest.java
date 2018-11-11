@@ -9,7 +9,6 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/8/28 下午4:50
  **/

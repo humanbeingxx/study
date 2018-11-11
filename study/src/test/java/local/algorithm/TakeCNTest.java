@@ -68,7 +68,6 @@ public class TakeCNTest {
         long expect = (factorN(20) / factorN(10)) / factorN(10);
 
 
-
         Assert.assertEquals(result.size(), expect);
     }
 

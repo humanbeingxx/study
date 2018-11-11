@@ -7,10 +7,7 @@ import org.testng.collections.Lists;
 
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/5 下午10:36
  **/

@@ -34,6 +34,5 @@ public class ListenFileStatusWithLog4j {
         }
 
 
-
     }
 }

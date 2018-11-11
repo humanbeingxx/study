@@ -26,6 +26,6 @@ public class JobEnhanceAspectTest {
     public void test() {
         List<Job> all = jobService.getAll();
         System.out.println(all);
-        ((JobEnhance)jobService).enhanceTest();
+        ((JobEnhance) jobService).enhanceTest();
     }
 }

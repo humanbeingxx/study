@@ -29,6 +29,7 @@ public class EventTest {
             return value3;
         }
     }
+
     private static Notifier notifier = new Notifier();
 
     @BeforeClass

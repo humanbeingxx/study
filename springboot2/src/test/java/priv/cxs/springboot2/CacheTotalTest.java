@@ -1,16 +1,16 @@
 package priv.cxs.springboot2;
-import org.junit.Assert;
-import priv.cxs.springboot2.dao.config.redis.RedisNullValue;
-import priv.cxs.springboot2.model.JobType;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import priv.cxs.springboot2.dao.JobDao;
+import priv.cxs.springboot2.dao.config.redis.RedisNullValue;
 import priv.cxs.springboot2.model.Job;
+import priv.cxs.springboot2.model.JobType;
 import priv.cxs.springboot2.service.JobService;
 
 import javax.annotation.Resource;

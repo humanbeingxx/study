@@ -5,10 +5,9 @@ import com.google.common.collect.Multiset;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/5 下午9:41
  **/

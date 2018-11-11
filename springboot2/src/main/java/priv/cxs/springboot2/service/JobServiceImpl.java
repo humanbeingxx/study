@@ -83,7 +83,7 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    @CacheEvict(value = "shortNullCache",cacheManager = "myRedisCacheManager",
+    @CacheEvict(value = "shortNullCache", cacheManager = "myRedisCacheManager",
             key = "#job.generateKey()")
     public void updateByCode(Job job) {
         jobDao.updateByCode(job);
@@ -91,7 +91,7 @@ public class JobServiceImpl implements JobService {
 
     @Override
     public void flushCache(int code, String name) {
-        redisTemplate.delete(Lists.newArrayList("job_"+code, "job_" + name));
+        redisTemplate.delete(Lists.newArrayList("job_" + code, "job_" + name));
     }
 
     @Transactional(rollbackFor = RuntimeException.class, propagation = Propagation.NESTED)

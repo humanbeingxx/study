@@ -17,16 +17,16 @@ public class GuavaCacheTest {
 
     LoadingCache<String, String> cache_no_refresh = CacheBuilder.newBuilder()
             .expireAfterWrite(1, TimeUnit.MILLISECONDS).build(
-            new CacheLoader<String, String>() {
-                Random random = new Random();
+                    new CacheLoader<String, String>() {
+                        Random random = new Random();
 
-                @Override
-                public String load(String key) throws Exception {
-                    Thread.sleep(1000);
-                    return "test" + random.nextInt(10);
-                }
-            }
-    );
+                        @Override
+                        public String load(String key) throws Exception {
+                            Thread.sleep(1000);
+                            return "test" + random.nextInt(10);
+                        }
+                    }
+            );
 
     LoadingCache<String, String> cache = CacheBuilder.newBuilder().refreshAfterWrite(1, TimeUnit.MILLISECONDS).build(
             new CacheLoader<String, String>() {

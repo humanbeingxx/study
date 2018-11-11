@@ -3,7 +3,6 @@ package local.jcore.mcs;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/8/28 下午4:40
  **/

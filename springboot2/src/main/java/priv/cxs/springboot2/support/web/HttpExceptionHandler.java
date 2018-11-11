@@ -1,4 +1,4 @@
-package priv.cxs.springboot2.support;
+package priv.cxs.springboot2.support.web;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;

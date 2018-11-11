@@ -1,6 +1,5 @@
 package priv.cxs.springboot2.support.aop;
 
-import lombok.Getter;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.DeclareParents;
 import org.springframework.stereotype.Component;

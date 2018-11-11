@@ -1,7 +1,6 @@
 package priv.cxs.springboot2.dao.config.redis;
 
 import com.google.common.base.Preconditions;
-import com.google.common.base.Splitter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.cache.Cache;
@@ -16,6 +15,7 @@ import java.util.regex.Pattern;
 
 /**
  * 支持自定义时间格式缓存，拼接在key中。e.g. key = @@60@@origin_key，表示60s超时，原始key是origin_key
+ *
  * @author xiaoshuang.cui
  * @date 2018/11/8 下午5:45
  **/

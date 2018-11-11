@@ -7,10 +7,12 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.commons.collections.CollectionUtils;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/5 下午8:52
  **/
@@ -33,7 +35,7 @@ public class ConsistentHash {
     public void addNode(String newNode) {
         int hashCode = unionHash(newNode);
         for (int i = 0; i < hashNodes.size(); i++) {
-            if (hashNodes.get(i).code > hashCode){
+            if (hashNodes.get(i).code > hashCode) {
                 hashNodes.add(i, new HashNode(newNode, hashNode(newNode)));
                 return;
             }
@@ -44,7 +46,7 @@ public class ConsistentHash {
     public void removeNode(String oldNode) {
         Iterator<HashNode> iterator = hashNodes.iterator();
         while (iterator.hasNext()) {
-            HashNode next =  iterator.next();
+            HashNode next = iterator.next();
             if (next.code == unionHash(oldNode)) {
                 iterator.remove();
                 return;

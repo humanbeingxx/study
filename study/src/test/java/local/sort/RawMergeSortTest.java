@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/26 下午4:42
  **/

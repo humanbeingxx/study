@@ -1,13 +1,11 @@
 package local.algorithm;
 
-import local.algorithm.SundaySearch;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午5:50
  **/

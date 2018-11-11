@@ -3,7 +3,6 @@ package local.algorithm.list;
 import org.testng.annotations.Test;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/8/30 下午5:07
  **/

@@ -4,16 +4,12 @@ import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.apache.commons.collections.CollectionUtils;
 
-import javax.annotation.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/5 下午8:52
  **/
@@ -55,7 +51,7 @@ public class ConsistentHashWithFake {
     private void addNode(HashNode node) {
         int hashCode = node.code;
         for (int i = 0; i < hashNodes.size(); i++) {
-            if (hashNodes.get(i).code > hashCode){
+            if (hashNodes.get(i).code > hashCode) {
                 hashNodes.add(i, node);
                 return;
             }
@@ -66,7 +62,7 @@ public class ConsistentHashWithFake {
     public void removeNode(String oldNode) {
         Iterator<HashNode> iterator = hashNodes.iterator();
         while (iterator.hasNext()) {
-            HashNode next =  iterator.next();
+            HashNode next = iterator.next();
             if (next.code == oldNode.hashCode()) {
                 iterator.remove();
                 break;

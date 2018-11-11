@@ -3,8 +3,6 @@ package local.algorithm;
 import com.google.common.collect.Lists;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.BinaryOperator;
 
 /**
  * @author humanbeingxx@sina.com
@@ -19,7 +17,8 @@ public class PrimeNumSum {
         long sum = 2;
         List<Integer> save = Lists.newArrayList(2);
 
-        outer :for (int i = 3; i <= end; i++) {
+        outer:
+        for (int i = 3; i <= end; i++) {
             for (Integer integer : save) {
                 if (i % integer == 0) {
                     continue outer;

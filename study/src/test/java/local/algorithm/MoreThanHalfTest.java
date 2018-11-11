@@ -2,10 +2,9 @@ package local.algorithm;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/4 下午8:12
  **/

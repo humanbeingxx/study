@@ -28,7 +28,7 @@ public class HashEqualTest {
 
         @Override
         public boolean equals(Object obj) {
-            return obj != null && obj.getClass() == MyTest.class && this.num == ((MyTest)obj).num;
+            return obj != null && obj.getClass() == MyTest.class && this.num == ((MyTest) obj).num;
         }
     }
 

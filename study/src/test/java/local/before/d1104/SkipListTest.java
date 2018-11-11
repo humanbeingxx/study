@@ -3,8 +3,6 @@ package local.before.d1104;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 17:21

@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/25 下午10:06
  **/

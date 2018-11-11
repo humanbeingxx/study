@@ -1,6 +1,5 @@
 package priv.cxs.springboot2.service;
 
-import org.springframework.cache.annotation.Cacheable;
 import priv.cxs.springboot2.model.Job;
 
 import java.util.List;

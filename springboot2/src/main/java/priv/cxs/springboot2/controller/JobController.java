@@ -3,9 +3,7 @@ package priv.cxs.springboot2.controller;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpRequest;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -21,7 +19,6 @@ import priv.cxs.springboot2.service.JobService;
 import priv.cxs.springboot2.support.aop.TimeRecord;
 
 import javax.annotation.Resource;
-import javax.servlet.ServletContextEvent;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;

@@ -4,10 +4,9 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/2 下午4:56
  **/
@@ -40,7 +39,7 @@ public class KMPTest {
 
     @Test
     public void testSearch6() {
-        assertEquals(KMP.search("abcdef","abcdeg, abcdeh, abcdef!这个会匹配2次"), 16);
+        assertEquals(KMP.search("abcdef", "abcdeg, abcdeh, abcdef!这个会匹配2次"), 16);
     }
 
     @Test

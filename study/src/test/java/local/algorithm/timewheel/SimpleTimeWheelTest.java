@@ -7,7 +7,6 @@ import org.testng.collections.Lists;
 import java.util.List;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/25 下午10:16
  **/

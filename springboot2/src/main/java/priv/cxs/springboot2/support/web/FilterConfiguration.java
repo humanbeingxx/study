@@ -1,11 +1,9 @@
-package priv.cxs.springboot2.support;
+package priv.cxs.springboot2.support.web;
 
 import com.google.common.collect.Lists;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import priv.cxs.springboot2.support.web.JobSalaryEncryptFilter;
-import priv.cxs.springboot2.support.web.TestFilter;
 
 import javax.servlet.Filter;
 

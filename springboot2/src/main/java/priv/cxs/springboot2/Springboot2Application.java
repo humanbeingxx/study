@@ -30,6 +30,6 @@ public class Springboot2Application extends SpringBootServletInitializer {
     }
 
     public static void main(String[] args) {
-		SpringApplication.run(Springboot2Application.class, args);
-	}
+        SpringApplication.run(Springboot2Application.class, args);
+    }
 }

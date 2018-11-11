@@ -1,7 +1,6 @@
 package local.sort;
 
 /**
- *
  * @author xiaoshuang.cui
  * @date 2018/9/26 下午4:11
  **/

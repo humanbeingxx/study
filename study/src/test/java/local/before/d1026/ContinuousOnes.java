@@ -44,10 +44,10 @@ public class ContinuousOnes {
         if (j > 0 && matrix[i][j - 1] == 1) {
             findRec(matrix, i, j - 1, result);
         }
-        if (i < matrix.length - 1 && matrix[i+1][j] == 1) {
+        if (i < matrix.length - 1 && matrix[i + 1][j] == 1) {
             findRec(matrix, i + 1, j, result);
         }
-        if (j < matrix[0].length - 1 && matrix[i][j+1] == 1) {
+        if (j < matrix[0].length - 1 && matrix[i][j + 1] == 1) {
             findRec(matrix, i, j + 1, result);
         }
     }
