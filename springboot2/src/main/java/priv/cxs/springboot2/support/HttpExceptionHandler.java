@@ -5,6 +5,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 /**
  * @author humanbeingxx@sina.com
@@ -20,9 +21,15 @@ public class HttpExceptionHandler {
         return "数据重复";
     }
 
+    @ExceptionHandler(value = MaxUploadSizeExceededException.class)
+    @ResponseBody
+    public String processMaxUploadSizeExceededException(Exception e) {
+        return "文件太大";
+    }
+
     @ExceptionHandler(value = Exception.class)
     public String processException(Exception e) {
         log.error("system internal error!!!", e);
-        return "error.html";
+        return "500.html";
     }
 }

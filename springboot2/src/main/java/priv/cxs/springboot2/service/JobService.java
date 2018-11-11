@@ -13,6 +13,8 @@ public interface JobService {
 
     Job insertOne(Job job);
 
+    void insertMulti(List<Job> jobs);
+
     Job getOne(String name);
 
     Job getByCode(int code);

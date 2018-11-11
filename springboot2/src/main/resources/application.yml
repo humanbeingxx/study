@@ -4,9 +4,6 @@ spring:
       username: test
       password: test1234
       url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-  mvc:
-    servlet:
-      path: /test_yml
   profiles:
     active: dev
   redis:
@@ -16,6 +13,10 @@ spring:
   cache:
     type: redis
     cache-names: redisCache
+  servlet:
+    multipart:
+      file-size-threshold: 5MB
+      max-file-size: 10MB
 server:
   port: 8082
 mybatis:

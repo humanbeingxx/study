@@ -1,4 +1,4 @@
-package priv.cxs.springboot2.support;
+package priv.cxs.springboot2.support.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import priv.cxs.springboot2.service.JobServiceImpl;

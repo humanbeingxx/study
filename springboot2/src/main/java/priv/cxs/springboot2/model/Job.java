@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import org.apache.ibatis.type.Alias;
 import priv.cxs.springboot2.dao.config.redis.MultiKeyCacheable;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -20,11 +23,23 @@ import java.io.Serializable;
 @Alias("job")
 public class Job implements MultiKeyCacheable, Serializable {
     private static final long serialVersionUID = 4508600780045372954L;
+
+    @Min(value = 1, message = "编码不能小于1")
     private int code;
+
+    @NotEmpty
     private String name;
+
+    @Min(value = 1, message = "薪酬不能小于1")
     private int salary;
+
+    @NotEmpty
     private String address;
+
+    @Min(value = 1, message = "级别不能小于1")
     private int level;
+
+    @NotNull
     private JobType jobType;
 
     @Override

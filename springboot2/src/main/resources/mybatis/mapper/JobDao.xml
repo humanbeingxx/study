@@ -8,6 +8,14 @@
         values
         (#{code}, #{name}, #{salary}, #{level}, #{address}, #{jobType}, now())
     </insert>
+    <insert id="insertMulti">
+        insert into tb_job
+        (code, name, salary, level, address, job_type, create_time)
+        values
+        <foreach collection="jobs" item="job" separator=",">
+            (#{job.code}, #{job.name}, #{job.salary}, #{job.level}, #{job.address}, #{job.jobType}, now())
+        </foreach>
+    </insert>
 
     <select id="selectByName" resultType="priv.cxs.springboot2.model.Job">
         select

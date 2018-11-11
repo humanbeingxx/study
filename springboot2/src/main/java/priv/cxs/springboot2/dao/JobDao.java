@@ -26,4 +26,6 @@ public interface JobDao {
     void updateByCode(Job job);
 
     void flushAll();
+
+    void insertMulti(@Param("jobs") List<Job> jobs);
 }

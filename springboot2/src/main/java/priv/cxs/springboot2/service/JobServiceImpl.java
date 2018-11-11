@@ -40,6 +40,11 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    public void insertMulti(List<Job> jobs) {
+        jobDao.insertMulti(jobs);
+    }
+
+    @Override
     @Cacheable(value = "shortNullCache", key = "'job_@@600@@' + #name", cacheManager = "myRedisCacheManager")
     public Job getOne(String name) {
         return jobDao.selectByName(name);
