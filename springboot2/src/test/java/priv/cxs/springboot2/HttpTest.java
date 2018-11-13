@@ -30,7 +30,6 @@ public class HttpTest {
 
     static CloseableHttpClient client;
 
-
     @BeforeClass
     public static void init() {
         PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
