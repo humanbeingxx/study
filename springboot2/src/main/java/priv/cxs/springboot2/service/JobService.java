@@ -20,6 +20,8 @@ public interface JobService {
 
     List<Job> getAll();
 
+    void delete(int code);
+
     void deleteTwiceWithNewTransaction(String name);
 
     void deleteTwiceWithNestedTransaction(String name);

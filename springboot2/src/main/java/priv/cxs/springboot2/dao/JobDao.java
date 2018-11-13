@@ -28,4 +28,6 @@ public interface JobDao {
     void flushAll();
 
     void insertMulti(@Param("jobs") List<Job> jobs);
+
+    void deleteByCode(@Param("code") int code);
 }

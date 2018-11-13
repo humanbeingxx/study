@@ -42,6 +42,9 @@
     <delete id="flushAll">
         delete from tb_job
     </delete>
+    <delete id="deleteByCode">
+        delete from tb_job where code = #{code}
+    </delete>
 
     <update id="updateByCode">
         update tb_job

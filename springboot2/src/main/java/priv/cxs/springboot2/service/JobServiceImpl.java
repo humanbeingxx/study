@@ -64,6 +64,11 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    public void delete(int code) {
+        jobDao.deleteByCode(code);
+    }
+
+    @Override
     @Transactional(rollbackFor = RuntimeException.class)
     public void deleteTwiceWithNewTransaction(String name) {
         jobDao.deleteByName(name);
