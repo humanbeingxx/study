@@ -7,11 +7,9 @@ import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-import priv.cxs.springboot2.controller.view.AddressValidator;
 import priv.cxs.springboot2.controller.view.JobPdfView;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.model.JobType;
@@ -34,11 +32,6 @@ import java.util.stream.Collectors;
 @RequestMapping("job")
 @Slf4j
 public class JobController {
-
-    @InitBinder(value = {"job", "jobs"})
-    public void bind(WebDataBinder binder) {
-        binder.addValidators(new AddressValidator());
-    }
 
     @Resource
     private JobService jobService;

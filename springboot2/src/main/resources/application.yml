@@ -17,6 +17,10 @@ spring:
     multipart:
       file-size-threshold: 5MB
       max-file-size: 10MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
 server:
   port: 8082
 mybatis:
