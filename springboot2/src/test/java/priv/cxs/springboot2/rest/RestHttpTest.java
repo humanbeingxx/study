@@ -47,7 +47,7 @@ public class RestHttpTest {
         log.info("{}", result);
     }
 
-    @Test(dependsOnMethods = "testPut")
+    @Test(dependsOnMethods = "testPost")
     public void testGet() throws IOException {
         HttpGet httpGet = new HttpGet("http://127.0.0.1:8080/springboot2/rest/job/9");
         CloseableHttpResponse response = client.execute(httpGet);
