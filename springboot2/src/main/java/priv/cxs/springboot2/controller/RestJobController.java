@@ -2,7 +2,6 @@ package priv.cxs.springboot2.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import priv.cxs.springboot2.controller.view.WebRet;
 import priv.cxs.springboot2.model.Job;

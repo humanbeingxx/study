@@ -1,20 +1,18 @@
 package priv.cxs.springboot2;
 
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import priv.cxs.springboot2.support.TestConfig;
 
 import java.util.Map;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class Springboot2ApplicationTests {
+public class Springboot2ApplicationTests extends AbstractTestNGSpringContextTests {
 
     @Test
     public void contextLoads() {

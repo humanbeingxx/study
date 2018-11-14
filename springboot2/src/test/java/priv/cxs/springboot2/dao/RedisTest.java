@@ -1,8 +1,5 @@
 package priv.cxs.springboot2.dao;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.dao.DataAccessException;
@@ -11,6 +8,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 import priv.cxs.springboot2.dao.config.redis.RedisConfiguration;
 
 import java.util.List;
@@ -19,10 +19,9 @@ import java.util.List;
  * @author humanbeingxx@sina.com
  * @date 2018/11/7 16:34
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @SuppressWarnings("unchecked")
-public class RedisTest {
+public class RedisTest extends AbstractTestNGSpringContextTests {
 
     private static AnnotationConfigApplicationContext context = null;
     private static RedisTemplate<String, String> template = null;

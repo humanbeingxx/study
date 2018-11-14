@@ -1,10 +1,10 @@
 package priv.cxs.springboot2.service;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 import priv.cxs.springboot2.model.Job;
+import priv.cxs.springboot2.model.JobType;
 
 import javax.annotation.Resource;
 
@@ -12,16 +12,16 @@ import javax.annotation.Resource;
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 1:40
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class JobServiceImplTest {
+public class JobServiceImplTest extends AbstractTestNGSpringContextTests {
 
     @Resource
     private JobServiceImpl jobService;
 
     @Test
     public void insertOne() {
-        jobService.insertOne(Job.builder().name("java 后端").level(6).address("朝阳区").salary(30000).build());
+        jobService.insertOne(Job.builder().name("java 后端").level(6)
+                .address("朝阳区").salary(30000).jobType(JobType.JAVA).build());
     }
 
     @Test

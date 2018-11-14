@@ -1,12 +1,11 @@
 package priv.cxs.springboot2.support;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 import java.util.Map;
@@ -16,9 +15,8 @@ import java.util.Set;
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 22:02
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestConfigAutowireTest {
+public class TestConfigAutowireTest extends AbstractTestNGSpringContextTests {
 
 
     @Autowired

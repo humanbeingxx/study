@@ -1,9 +1,8 @@
 package priv.cxs.springboot2.support;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,9 +11,8 @@ import java.util.List;
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 22:02
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class TestConfigResourceTest {
+public class TestConfigResourceTest extends AbstractTestNGSpringContextTests {
 
 //    @Resource(name = "config1")
 //    private Map<String, String> config2_1;

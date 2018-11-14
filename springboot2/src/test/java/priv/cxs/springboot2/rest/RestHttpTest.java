@@ -47,9 +47,9 @@ public class RestHttpTest {
         log.info("{}", result);
     }
 
-    @Test
+    @Test(dependsOnMethods = "testPut")
     public void testGet() throws IOException {
-        HttpGet httpGet = new HttpGet("http://127.0.0.1:8080/springboot2/rest/job/1");
+        HttpGet httpGet = new HttpGet("http://127.0.0.1:8080/springboot2/rest/job/9");
         CloseableHttpResponse response = client.execute(httpGet);
         String result = EntityUtils.toString(response.getEntity(), Charsets.UTF_8);
         WebRet<Job> jobWebRet = JSON.parseObject(result, typeReference);
@@ -58,7 +58,7 @@ public class RestHttpTest {
         Assert.assertTrue(jobWebRet.isSuccess());
         Assert.assertNotNull(jobWebRet.getData());
         Job job = jobWebRet.getData();
-        Assert.assertEquals(job.getName(), "java1");
+        Assert.assertEquals(job.getName(), "java9");
 
         log.info("{}", result);
     }

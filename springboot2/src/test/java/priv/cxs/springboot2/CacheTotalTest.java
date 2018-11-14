@@ -1,12 +1,11 @@
 package priv.cxs.springboot2;
 
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 import priv.cxs.springboot2.dao.JobDao;
 import priv.cxs.springboot2.dao.config.redis.RedisNullValue;
 import priv.cxs.springboot2.model.Job;
@@ -21,9 +20,8 @@ import java.util.concurrent.TimeUnit;
  * @author xiaoshuang.cui
  * @date 2018/11/9 下午5:59
  **/
-@RunWith(SpringRunner.class)
 @SpringBootTest
-public class CacheTotalTest {
+public class CacheTotalTest extends AbstractTestNGSpringContextTests {
 
     @Resource
     private JobService jobService;
@@ -34,7 +32,7 @@ public class CacheTotalTest {
     @Resource
     private JobDao jobDao;
 
-    @After
+    @AfterMethod
     public void reset() {
         jobDao.flushAll();
         Set keys = redisTemplate.keys("*");
