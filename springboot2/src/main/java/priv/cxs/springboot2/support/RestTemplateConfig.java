@@ -1,6 +1,7 @@
 package priv.cxs.springboot2.support;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.google.common.collect.Lists;
 import org.apache.commons.codec.Charsets;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -29,15 +30,23 @@ public class RestTemplateConfig {
     public RestTemplate pooledRestTemplate() {
         RestTemplate template = new RestTemplate();
         template.setRequestFactory(pooledFactory());
-        extendMessageConverters(template.getMessageConverters());
+        template.setMessageConverters(extendMessageConverters(template.getMessageConverters()));
         return template;
     }
 
-    private void extendMessageConverters(List<HttpMessageConverter<?>> origin) {
-        origin.removeIf(converter -> converter instanceof StringHttpMessageConverter
-                || converter instanceof GsonHttpMessageConverter
-                || converter instanceof JsonbHttpMessageConverter);
-        origin.add(new StringHttpMessageConverter(Charsets.UTF_8));
+    private List<HttpMessageConverter<?>> extendMessageConverters(List<HttpMessageConverter<?>> origin) {
+        List<HttpMessageConverter<?>> extend = Lists.newArrayList();
+        for (HttpMessageConverter<?> converter : origin) {
+            if (converter instanceof StringHttpMessageConverter) {
+                extend.add(new StringHttpMessageConverter(Charsets.UTF_8));
+            } else if (converter instanceof GsonHttpMessageConverter
+                    || converter instanceof JsonbHttpMessageConverter) {
+                continue;
+            } else {
+                extend.add(converter);
+            }
+        }
+        return extend;
     }
 
     private ClientHttpRequestFactory pooledFactory() {
