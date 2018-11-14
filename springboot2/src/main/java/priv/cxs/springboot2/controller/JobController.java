@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -51,6 +52,7 @@ public class JobController {
 
     @RequestMapping("addPlain")
     @ResponseBody
+    @ResponseStatus(HttpStatus.CREATED)
     public String add(@Valid Job job, Errors errors) {
         if (errors.getAllErrors().size() > 0) {
             return errors.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining(";"));

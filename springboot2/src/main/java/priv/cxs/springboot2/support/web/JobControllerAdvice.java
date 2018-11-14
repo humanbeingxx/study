@@ -35,6 +35,7 @@ public class JobControllerAdvice {
 
     @ExceptionHandler(value = DuplicateKeyException.class)
     @ResponseBody
+    @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
     public String processDuplicationException(DuplicateKeyException e) {
         return "数据重复";
     }

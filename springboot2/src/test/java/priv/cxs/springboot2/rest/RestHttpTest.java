@@ -1,11 +1,10 @@
 package priv.cxs.springboot2.rest;
-import org.apache.http.client.methods.*;
-import priv.cxs.springboot2.model.JobType;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.google.common.base.Charsets;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -17,6 +16,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import priv.cxs.springboot2.controller.view.WebRet;
 import priv.cxs.springboot2.model.Job;
+import priv.cxs.springboot2.model.JobType;
 
 import java.io.IOException;
 
@@ -29,7 +29,8 @@ public class RestHttpTest {
 
     static CloseableHttpClient client;
 
-    static TypeReference<WebRet<Job>> typeReference = new TypeReference<WebRet<Job>>() {};
+    static TypeReference<WebRet<Job>> typeReference = new TypeReference<WebRet<Job>>() {
+    };
 
     @BeforeClass
     public static void init() {
@@ -65,13 +66,17 @@ public class RestHttpTest {
     @Test
     public void testPost() throws IOException {
         HttpPost post = new HttpPost("http://127.0.0.1:8080/springboot2/rest/job");
-        post.setEntity(new StringEntity(getData(),  ContentType.create("application/json", Charsets.UTF_8)));
+        post.setEntity(new StringEntity(getData(), ContentType.create("application/json", Charsets.UTF_8)));
         CloseableHttpResponse response = client.execute(post);
 
+        log.info("http status {}", response.getStatusLine().getStatusCode());
         String result = EntityUtils.toString(response.getEntity(), Charsets.UTF_8);
-        WebRet jobWebRet = JSON.parseObject(result, WebRet.class);
-
-        log.info("{}", jobWebRet);
+        if (response.getStatusLine().getStatusCode() == 200) {
+            WebRet jobWebRet = JSON.parseObject(result, WebRet.class);
+            log.info("{}", jobWebRet);
+        } else {
+            log.info("{}", result);
+        }
     }
 
     @Test

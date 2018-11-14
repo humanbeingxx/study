@@ -1,7 +1,8 @@
 package priv.cxs.springboot2.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import priv.cxs.springboot2.controller.view.WebRet;
 import priv.cxs.springboot2.model.Job;
@@ -33,10 +34,14 @@ public class RestJobController {
     }
 
     @PostMapping("")
+//    @ResponseStatus(code = HttpStatus.CREATED)
     public WebRet add(@RequestBody Job job) {
         try {
             jobService.insertOne(job);
             return WebRet.success();
+        } catch (DuplicateKeyException e) {
+            log.error("插入重复", e);
+            throw e;
         } catch (Exception e) {
             log.error("插入异常", e);
             return WebRet.fail("插入异常", 500);
