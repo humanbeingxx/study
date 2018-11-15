@@ -1,8 +1,8 @@
 package priv.cxs.springboot2.support.aop;
 
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
+import priv.cxs.springboot2.SpringBaseTest;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.service.JobEnhance;
 import priv.cxs.springboot2.service.JobServiceImpl;
@@ -14,8 +14,8 @@ import java.util.List;
  * @author xiaoshuang.cui
  * @date 2018/11/6 下午3:43
  **/
-@SpringBootTest
-public class JobEnhanceAspectTest extends AbstractTestNGSpringContextTests {
+@Slf4j
+public class JobEnhanceAspectTest extends SpringBaseTest {
 
     @Resource
     private JobServiceImpl jobService;
@@ -23,7 +23,7 @@ public class JobEnhanceAspectTest extends AbstractTestNGSpringContextTests {
     @Test
     public void test() {
         List<Job> all = jobService.getAll();
-        System.out.println(all);
+        log.info("{}", all);
         ((JobEnhance) jobService).enhanceTest();
     }
 }

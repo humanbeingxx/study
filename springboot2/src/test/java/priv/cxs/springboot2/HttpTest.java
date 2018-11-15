@@ -3,6 +3,7 @@ package priv.cxs.springboot2;
 import com.alibaba.fastjson.JSON;
 import com.google.common.base.Charsets;
 import com.google.common.collect.Lists;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -26,22 +27,23 @@ import java.util.List;
  * @author humanbeingxx@sina.com
  * @date 2018/11/10 17:40
  */
-public class HttpTest {
+@Slf4j
+public class HttpTest extends SpringBaseTest {
 
     static CloseableHttpClient client;
 
     @BeforeClass
-    public static void init() {
+    public void init() {
         PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
         manager.setMaxTotal(10);
         client = HttpClientBuilder.create().setConnectionManager(manager).build();
+        super.init();
     }
-
 
     @Test
     public void test() throws IOException {
         HttpPost request = new HttpPost();
-        request.setURI(URI.create("http://127.0.0.1:8080/springboot2/test_yml/job/multiAdd"));
+        request.setURI(URI.create("http://127.0.0.1:8080/springboot2/job/multiAdd"));
         HttpEntity entity = new StringEntity(getData(), ContentType.create("application/json", Charsets.UTF_8));
         request.setEntity(entity);
 
@@ -50,7 +52,7 @@ public class HttpTest {
                 Assert.fail(response.getStatusLine().getStatusCode() + "not 200");
             }
             String result = EntityUtils.toString(response.getEntity());
-            System.out.println(result);
+            Assert.assertEquals(result, "必须是北京市地址;必须是北京市地址");
         }
     }
 

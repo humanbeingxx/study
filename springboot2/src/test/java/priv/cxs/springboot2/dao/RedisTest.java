@@ -1,17 +1,12 @@
 package priv.cxs.springboot2.dao;
 
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.core.RedisOperations;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SessionCallback;
 import org.springframework.data.redis.core.ValueOperations;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import priv.cxs.springboot2.dao.config.redis.RedisConfiguration;
+import priv.cxs.springboot2.SpringBaseTest;
 
 import java.util.List;
 
@@ -19,24 +14,15 @@ import java.util.List;
  * @author humanbeingxx@sina.com
  * @date 2018/11/7 16:34
  */
-@SpringBootTest
 @SuppressWarnings("unchecked")
-public class RedisTest extends AbstractTestNGSpringContextTests {
-
-    private static AnnotationConfigApplicationContext context = null;
-    private static RedisTemplate<String, String> template = null;
-
-    @BeforeClass
-    public static void init() {
-        context = new AnnotationConfigApplicationContext(RedisConfiguration.class);
-        template = (RedisTemplate<String, String>) context.getBean(RedisTemplate.class);
-    }
+@Slf4j
+public class RedisTest extends SpringBaseTest {
 
     @Test
     public void testRedis() {
         ValueOperations<String, String> operations = template.opsForValue();
         Object value1 = operations.get("test_key1");
-        System.out.println(value1);
+        log.info("value1 = {}", value1);
 
         operations.set("test_key2", "test_value2");
     }
@@ -60,7 +46,8 @@ public class RedisTest extends AbstractTestNGSpringContextTests {
                 return operations.exec();
             }
         });
-        System.out.println(result);
+
+        log.info("result = {}", result);
     }
 
     @Test
@@ -75,7 +62,7 @@ public class RedisTest extends AbstractTestNGSpringContextTests {
                 return null;
             }
         });
-        System.out.println("pipeline cost " + (System.currentTimeMillis() - begin));
+        log.info("pipeline cost  {}", System.currentTimeMillis() - begin);
 
         begin = System.currentTimeMillis();
         template.execute(new SessionCallback<Object>() {
@@ -88,6 +75,6 @@ public class RedisTest extends AbstractTestNGSpringContextTests {
             }
         });
 
-        System.out.println("non-pipeline cost " + (System.currentTimeMillis() - begin));
+        log.info("non-pipeline cost {}", System.currentTimeMillis() - begin);
     }
 }

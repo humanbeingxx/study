@@ -1,7 +1,8 @@
 package priv.cxs.springboot2.support;
 
-import org.springframework.boot.test.context.SpringBootTest;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
+import priv.cxs.springboot2.SpringBaseTest;
 
 import javax.annotation.Resource;
 
@@ -9,14 +10,14 @@ import javax.annotation.Resource;
  * @author humanbeingxx@sina.com
  * @date 2018/11/5 0:42
  */
-@SpringBootTest
-public class PropertiesDrivenConfigTest {
+@Slf4j
+public class PropertiesDrivenConfigTest extends SpringBaseTest {
 
     @Resource
     private PropertiesDrivenConfig config;
 
     @Test
     public void test() {
-        System.out.println(config);
+        log.info("{}", config);
     }
 }

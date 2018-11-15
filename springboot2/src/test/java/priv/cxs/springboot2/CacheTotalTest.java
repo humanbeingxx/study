@@ -1,8 +1,7 @@
 package priv.cxs.springboot2;
 
-import org.springframework.boot.test.context.SpringBootTest;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,8 +20,8 @@ import java.util.concurrent.TimeUnit;
  * @author xiaoshuang.cui
  * @date 2018/11/9 下午5:59
  **/
-@SpringBootTest
-public class CacheTotalTest extends AbstractTestNGSpringContextTests {
+@Slf4j
+public class CacheTotalTest extends SpringBaseTest {
 
     @Resource
     private JobService jobService;

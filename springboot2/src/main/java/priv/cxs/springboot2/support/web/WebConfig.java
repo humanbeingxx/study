@@ -3,7 +3,6 @@ package priv.cxs.springboot2.support.web;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.web.servlet.HandlerExceptionResolver;
 import priv.cxs.springboot2.controller.view.JobMessageConverter;
 import priv.cxs.springboot2.model.Job;
 

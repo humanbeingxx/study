@@ -13,7 +13,7 @@ public class GenericTest {
 
     @Test
     public void test() {
-        List<String> stringList = null;
+        List<String> stringList;
         List integerList = Lists.newArrayList(1, 2, 3);
         stringList = integerList;
         Object data = stringList.get(0);

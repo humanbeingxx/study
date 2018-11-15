@@ -1,8 +1,7 @@
 package priv.cxs.springboot2.support;
 
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
+import priv.cxs.springboot2.SpringBaseTest;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -11,8 +10,7 @@ import java.util.List;
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 22:02
  */
-@SpringBootTest
-public class TestConfigResourceTest extends AbstractTestNGSpringContextTests {
+public class TestConfigResourceTest extends SpringBaseTest {
 
 //    @Resource(name = "config1")
 //    private Map<String, String> config2_1;

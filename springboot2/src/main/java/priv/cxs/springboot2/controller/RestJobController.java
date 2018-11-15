@@ -1,14 +1,19 @@
 package priv.cxs.springboot2.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import priv.cxs.springboot2.controller.view.WebRet;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.service.JobService;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author xiaoshuang.cui
@@ -35,9 +40,13 @@ public class RestJobController {
 
     @PostMapping("")
     @ResponseStatus(code = HttpStatus.CREATED)
-    public WebRet add(@RequestBody Job job) {
+    public WebRet addMulti(@Valid @RequestBody List<Job> jobs, Errors errors) {
+        WebRet valid = valid(errors);
+        if (valid != null) {
+            return valid;
+        }
         try {
-            jobService.insertOne(job);
+            jobService.insertMulti(jobs);
             return WebRet.success();
         } catch (DuplicateKeyException e) {
             log.error("插入重复", e);
@@ -47,6 +56,7 @@ public class RestJobController {
             return WebRet.fail("插入异常", 500);
         }
     }
+
 
     @PutMapping("{code}")
     public WebRet modify(@PathVariable int code, @RequestBody Job job) {
@@ -69,5 +79,14 @@ public class RestJobController {
             log.error("删除异常", e);
             return WebRet.fail("删除异常", 500);
         }
+    }
+
+    private WebRet valid(Errors errors) {
+        if (errors.getAllErrors().size() > 0) {
+            String errMsg = errors.getAllErrors().stream()
+                    .map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining(";"));
+            return WebRet.fail(errMsg, 400);
+        }
+        return null;
     }
 }

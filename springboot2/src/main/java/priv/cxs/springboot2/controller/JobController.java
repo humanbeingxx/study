@@ -121,7 +121,10 @@ public class JobController {
     @RequestMapping("multiAdd")
     @ResponseBody
     @TimeRecord
-    public String multiInsert(@RequestBody List<Job> jobs) {
+    public String multiInsert(@Valid @RequestBody List<Job> jobs, Errors errors) {
+        if (errors.getAllErrors().size() > 0) {
+            return errors.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.joining(";"));
+        }
         log.info("{}", jobs);
         return "操作成功";
     }

@@ -1,8 +1,12 @@
 package priv.cxs.springboot2.service;
 
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import priv.cxs.springboot2.SpringBaseTest;
+import priv.cxs.springboot2.dao.JobDao;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.model.JobType;
 
@@ -12,36 +16,54 @@ import javax.annotation.Resource;
  * @author humanbeingxx@sina.com
  * @date 2018/11/4 1:40
  */
-@SpringBootTest
-public class JobServiceImplTest extends AbstractTestNGSpringContextTests {
+@Slf4j
+public class JobServiceImplTest extends SpringBaseTest {
 
     @Resource
     private JobServiceImpl jobService;
 
+    @Resource
+    private JobDao jobDao;
+
+    @Resource
+    private RedisTemplate<String, String> template;
+
+    @BeforeClass
+    public void init() {
+        jobDao.flushAll();
+        template.delete(template.keys("*"));
+    }
+
+    @AfterClass
+    public void reset() {
+        jobDao.flushAll();
+        template.delete(template.keys("*"));
+    }
+
     @Test
     public void insertOne() {
-        jobService.insertOne(Job.builder().name("java 后端").level(6)
+        jobService.insertOne(Job.builder().code(1).name("java1").level(1)
                 .address("朝阳区").salary(30000).jobType(JobType.JAVA).build());
     }
 
-    @Test
+    @Test(dependsOnMethods = "insertOne")
     public void selectAll() {
-        System.out.println(jobService.getAll());
+        log.info("all = {}", jobService.getAll());
     }
 
-    @Test
+    @Test(dependsOnMethods = "insertOne")
     public void testNew() {
         jobService.deleteTwiceWithNewTransaction("java");
     }
 
-    @Test
+    @Test(dependsOnMethods = "insertOne")
     public void testNested() {
         jobService.deleteTwiceWithNestedTransaction("java");
     }
 
-    @Test
+    @Test(dependsOnMethods = "insertOne")
     public void testQueryOne() {
-        Job job = jobService.getOne("java3");
-        System.out.println(job);
+        Job job = jobService.getOne("java1");
+        log.info("{}", job);
     }
 }
