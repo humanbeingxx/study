@@ -8,6 +8,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @MapperScan(basePackages = {"priv.cxs.springboot2.dao"})
 @PropertySource(value = {"classpath:config.properties"})
 @EnableCaching
+@EnableAsync
+@EnableScheduling
 public class Springboot2Application extends SpringBootServletInitializer {
 
     @RequestMapping("/")

@@ -19,13 +19,6 @@ import java.util.Set;
 @Configuration
 public class TestConfig {
 
-    private ApplicationContext context;
-
-    @Bean
-    public ApplicationContext getContext() {
-        return context;
-    }
-
     @Bean(name = "config1")
     public Map<String, String> getConfig1() {
         HashMap<String, String> map = Maps.newHashMap();
