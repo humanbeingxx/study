@@ -1,11 +1,15 @@
 package priv.cxs.springboot2.service;
 
 import com.google.common.collect.Lists;
+import org.springframework.stereotype.Service;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import priv.cxs.springboot2.SpringBaseTest;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.model.JobType;
+import priv.cxs.springboot2.schedule.ScheduleService;
+
+import javax.annotation.Resource;
 
 import static org.testng.Assert.*;
 
@@ -14,6 +18,9 @@ import static org.testng.Assert.*;
  * @date 2018/11/15 下午3:08
  **/
 public class JobScheduleServiceTest extends SpringBaseTest {
+
+    @Resource
+    private ScheduleService scheduleService;
 
     @BeforeClass
     @Override
@@ -28,6 +35,7 @@ public class JobScheduleServiceTest extends SpringBaseTest {
 
     @Test
     public void testStatistics() throws InterruptedException {
+        scheduleService.schedule();
         Thread.sleep(10000);
     }
 }
