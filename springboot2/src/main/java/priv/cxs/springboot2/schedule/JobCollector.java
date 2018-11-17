@@ -3,6 +3,8 @@ package priv.cxs.springboot2.schedule;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.quartz.JobKey;
+import org.quartz.TriggerKey;
 import org.springframework.context.ApplicationContext;
 import priv.cxs.springboot2.schedule.jobs.AbstractCronJob;
 
@@ -60,5 +62,13 @@ public class JobCollector {
             e.printStackTrace();
             throw new JobInitializeException(e);
         }
+    }
+
+    public static TriggerKey generateTriggerKey(String identity) {
+        return TriggerKey.triggerKey("trigger::" + identity);
+    }
+
+    public static JobKey generateJobKey(String identity) {
+        return JobKey.jobKey("job::" + identity);
     }
 }

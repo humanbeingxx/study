@@ -59,6 +59,9 @@ public class CacheTotalTest extends SpringBaseTest {
 
         prepareStep4();
         checkStep4();
+
+        prepareStep5();
+        checkStep5();
     }
 
     // step1 insert
@@ -148,13 +151,42 @@ public class CacheTotalTest extends SpringBaseTest {
 
     // step4 query not exist data
     private void prepareStep4() {
-        jobService.getOne("not_exist");
+        Job job = jobService.getOneAllowNil("java99");
+        Assert.assertNull(job);
     }
 
     private void checkStep4() {
-        Object jobNotExist = redisTemplate.opsForValue().get("job_not_exist");
-
+        Object jobNotExist = redisTemplate.opsForValue().get("job_java99");
         Assert.assertNotNull(jobNotExist);
         Assert.assertTrue(jobNotExist instanceof RedisNullValue);
     }
+
+    private void prepareStep5() {
+        Job job99 = new Job();
+        job99.setCode(99);
+        job99.setName("java99");
+        job99.setSalary(2000);
+        job99.setAddress("东升科技园");
+        job99.setLevel(2);
+        job99.setJobType(JobType.JAVA);
+
+        jobService.insertOne(job99);
+    }
+
+    private void checkStep5() {
+        Job job = jobService.getOneAllowNil("java99");
+        Assert.assertNull(job);
+
+        Object jobNotExist = redisTemplate.opsForValue().get("job_java99");
+        Assert.assertNotNull(jobNotExist);
+        Assert.assertTrue(jobNotExist instanceof RedisNullValue);
+
+        Job jobByCode = jobService.getByCodeAllowNil(99);
+        Assert.assertNotNull(jobByCode);
+
+        Object jobExist = redisTemplate.opsForValue().get("job_99");
+        Assert.assertNotNull(jobExist);
+        Assert.assertTrue(jobExist instanceof Job);
+    }
+
 }

@@ -96,7 +96,7 @@ public class RestHttpTest extends SpringBaseTest {
 
     @Test
     public void testDel() throws IOException {
-        HttpDelete delete = new HttpDelete("http://127.0.0.1:8080/springboot2/rest/job/9");
+        HttpDelete delete = new HttpDelete("http://127.0.0.1:8080/springboot2/rest/job/4");
         CloseableHttpResponse response = client.execute(delete);
 
         String result = EntityUtils.toString(response.getEntity(), Charsets.UTF_8);

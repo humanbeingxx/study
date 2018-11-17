@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface JobDao {
 
-    void insertOne(Job job);
+    int insertOne(Job job);
 
     Job selectByName(@Param("name") String name);
 
@@ -27,7 +27,7 @@ public interface JobDao {
 
     void flushAll();
 
-    void insertMulti(@Param("jobs") List<Job> jobs);
+    int insertMulti(@Param("jobs") List<Job> jobs);
 
     void deleteByCode(@Param("code") int code);
 }

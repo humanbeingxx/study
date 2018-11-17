@@ -12,15 +12,19 @@ public interface JobService {
 
     Job insertOne(Job job);
 
-    void insertMulti(List<Job> jobs);
+    boolean insertMulti(List<Job> jobs);
 
     Job getOne(String name);
 
+    Job getOneAllowNil(String name);
+
     Job getByCode(int code);
+
+    Job getByCodeAllowNil(int code);
 
     List<Job> getAll();
 
-    void delete(int code);
+    void delete(Job code);
 
     void deleteTwiceWithNewTransaction(String name);
 

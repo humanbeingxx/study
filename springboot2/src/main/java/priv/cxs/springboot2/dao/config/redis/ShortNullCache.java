@@ -22,8 +22,9 @@ import java.util.regex.Pattern;
 @Slf4j
 public class ShortNullCache implements Cache {
 
-    private final static Pattern KEY_PATTERN = Pattern.compile("(.*?)(@@.*@@)(.*)");
+    public final static String ALLOW_NIL_PREFIX = "allowNil_";
 
+    private final static Pattern KEY_PATTERN = Pattern.compile("(.*?)(@@.*@@)(.*)");
 
     private final RedisTemplate template;
 
@@ -70,7 +71,11 @@ public class ShortNullCache implements Cache {
 
     @Override
     public void put(Object key, Object value) {
+        boolean allowNil = checkAllowNil(String.valueOf(key));
         ExpireKey expireKey = makeKey(key);
+        if (value == null && !allowNil) {
+            return;
+        }
         if (value == null) {
             template.opsForValue().set(expireKey.key, RedisNullValue.getInstance(), EXPIRE_FOR_NULL, TimeUnit.SECONDS);
         } else {
@@ -80,6 +85,10 @@ public class ShortNullCache implements Cache {
                 template.opsForValue().set(expireKey.key, value);
             }
         }
+    }
+
+    private boolean checkAllowNil(String key) {
+        return key.startsWith(ALLOW_NIL_PREFIX);
     }
 
     @Override
@@ -101,7 +110,7 @@ public class ShortNullCache implements Cache {
     }
 
     private String extractKey(Object key) {
-        Matcher matcher = KEY_PATTERN.matcher(String.valueOf(key));
+        Matcher matcher = KEY_PATTERN.matcher(String.valueOf(key).replaceFirst(ALLOW_NIL_PREFIX, ""));
         if (!matcher.find()) {
             return String.valueOf(key);
         }
@@ -113,7 +122,7 @@ public class ShortNullCache implements Cache {
     }
 
     private ExpireKey makeKey(Object key) {
-        Matcher matcher = KEY_PATTERN.matcher(String.valueOf(key));
+        Matcher matcher = KEY_PATTERN.matcher(String.valueOf(key).replaceFirst(ALLOW_NIL_PREFIX, ""));
         if (!matcher.find()) {
             return new ExpireKey(String.valueOf(key));
         }

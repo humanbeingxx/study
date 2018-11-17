@@ -34,14 +34,19 @@ public class JobServiceImpl implements JobService {
     @Override
     @TimeRecord
     @CachePut(value = "shortNullCache", key = "'job_@@600@@' + #job.code", cacheManager = "myRedisCacheManager")
+    @CacheEvict(value = "shortNullCache", key = "'job_all'", condition = "#result == true", cacheManager = "myRedisCacheManager")
     public Job insertOne(Job job) {
         jobDao.insertOne(job);
         return job;
     }
 
+    /**
+     * todo 这里还是需要想办法解决下多条插入的缓存put问题
+     */
     @Override
-    public void insertMulti(List<Job> jobs) {
-        jobDao.insertMulti(jobs);
+    @CacheEvict(value = "shortNullCache", key = "'job_all'", condition = "#result == true", cacheManager = "myRedisCacheManager")
+    public boolean insertMulti(List<Job> jobs) {
+        return jobDao.insertMulti(jobs) == jobs.size();
     }
 
     @Override
@@ -51,8 +56,20 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
+    @Cacheable(value = "shortNullCache", key = "'allowNil_job_@@600@@' + #name", cacheManager = "myRedisCacheManager")
+    public Job getOneAllowNil(String name) {
+        return jobDao.selectByName(name);
+    }
+
+    @Override
     @Cacheable(value = "shortNullCache", key = "'job_@@600@@' + #code", cacheManager = "myRedisCacheManager")
     public Job getByCode(int code) {
+        return jobDao.selectByCode(code);
+    }
+
+    @Override
+    @Cacheable(value = "shortNullCache", key = "'allowNil_job_@@600@@' + #code", cacheManager = "myRedisCacheManager")
+    public Job getByCodeAllowNil(int code) {
         return jobDao.selectByCode(code);
     }
 
@@ -64,8 +81,9 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public void delete(int code) {
-        jobDao.deleteByCode(code);
+    @CacheEvict(value = "shortNullCache", key = "#job.generateKey() + '&&&job_all'", cacheManager = "myRedisCacheManager")
+    public void delete(Job job) {
+        jobDao.deleteByCode(job.getCode());
     }
 
     @Override
@@ -89,7 +107,7 @@ public class JobServiceImpl implements JobService {
 
     @Override
     @CacheEvict(value = "shortNullCache", cacheManager = "myRedisCacheManager",
-            key = "#job.generateKey()")
+            key = "#job.generateKey() + '&&&job_all'")
     public void updateByCode(Job job) {
         jobDao.updateByCode(job);
     }

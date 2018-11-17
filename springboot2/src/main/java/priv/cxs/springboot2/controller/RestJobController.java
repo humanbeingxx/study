@@ -73,7 +73,10 @@ public class RestJobController {
     @DeleteMapping("{code}")
     public WebRet delete(@PathVariable int code) {
         try {
-            jobService.delete(code);
+            Job existedJob = jobService.getByCode(code);
+            if (existedJob != null) {
+                jobService.delete(existedJob);
+            }
             return WebRet.success();
         } catch (Exception e) {
             log.error("删除异常", e);
