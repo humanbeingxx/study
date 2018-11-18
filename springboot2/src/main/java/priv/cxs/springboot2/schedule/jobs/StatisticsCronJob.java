@@ -34,11 +34,6 @@ public class StatisticsCronJob extends AbstractCronJob {
     }
 
     @Override
-    public String identity() {
-        return "StatisticsCronJob";
-    }
-
-    @Override
     public String getCron() {
         return "0/3 * * * * ?";
     }

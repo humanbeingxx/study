@@ -27,12 +27,6 @@ public class PublishCronJob extends AbstractCronJob {
         Preconditions.checkNotNull(jobService);
     }
 
-
-    @Override
-    public String identity() {
-        return "PublishCronJob";
-    }
-
     @Override
     public String getCron() {
         return "0/2 * * * * ?";

@@ -1,5 +1,6 @@
 package priv.cxs.springboot2.schedule.jobs;
 
+import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 
 /**
@@ -8,7 +9,9 @@ import org.springframework.scheduling.quartz.QuartzJobBean;
  */
 public abstract class AbstractCronJob extends QuartzJobBean {
 
-    public abstract String identity();
+    public String identity() {
+        return this.getClass().getSimpleName();
+    }
 
     public abstract String getCron();
 }

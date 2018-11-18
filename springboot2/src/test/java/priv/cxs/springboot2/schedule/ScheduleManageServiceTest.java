@@ -2,16 +2,24 @@ package priv.cxs.springboot2.schedule;
 
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import priv.cxs.springboot2.SpringBaseTest;
+import priv.cxs.springboot2.controller.view.ScheduleJobView;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.model.JobType;
 import priv.cxs.springboot2.service.JobService;
 
 import javax.annotation.Resource;
+
+import java.util.List;
+import java.util.function.Predicate;
 
 import static org.testng.Assert.*;
 
@@ -24,6 +32,9 @@ public class ScheduleManageServiceTest extends SpringBaseTest {
 
     @Autowired
     private ScheduleManageService manageService;
+
+    @Autowired
+    private Scheduler scheduler;
 
     @Resource
     private JobService jobService;
@@ -39,17 +50,61 @@ public class ScheduleManageServiceTest extends SpringBaseTest {
         ));
     }
 
+    @AfterClass
+    public void reset() {
+        try {
+            scheduler.shutdown();
+        } catch (SchedulerException e) {
+            log.error("shutdown failed", e);
+        }
+    }
+
     @Test
     public void test() throws InterruptedException, SchedulerException {
-        manageService.enable("StatisticsCronJob");
-        manageService.enable("PublishCronJob");
+        manageService.resume("StatisticsCronJob");
+        manageService.resume("PublishCronJob");
         Thread.sleep(7000);
         log.info("********************enable test finished, start disable********************");
 
-        manageService.disable("StatisticsCronJob");
+        manageService.pause("StatisticsCronJob");
         log.info("********************disable StatisticsCronJob finished********************");
-        manageService.disable("PublishCronJob");
+        manageService.pause("PublishCronJob");
         log.info("********************disable PublishCronJob finished********************");
         Thread.sleep(1000);
+    }
+
+    @Test
+    public void testConcurrent() throws SchedulerException, InterruptedException {
+        manageService.resume("LongTimeCronJob");
+        Thread.sleep(100000);
+    }
+
+    @Test
+    public void testAllJobs() throws SchedulerException, InterruptedException {
+        List<ScheduleJobView> views = manageService.allJobs();
+        Assert.assertEquals(views.size(), 3);
+
+        manageService.resume("StatisticsCronJob");
+        manageService.resume("PublishCronJob");
+        manageService.resume("LongTimeCronJob");
+
+        views = manageService.allJobs();
+
+        Assert.assertTrue(views.stream()
+                .allMatch(scheduleJobView -> StringUtils.isNotBlank(scheduleJobView.getTriggerCron())
+                && StringUtils.isNotBlank(scheduleJobView.getTriggerState())));
+
+        Thread.sleep(3000);
+    }
+
+
+    @Test
+    public void testReschedule() throws SchedulerException, InterruptedException {
+        manageService.resume("StatisticsCronJob");
+        Thread.sleep(4000);
+
+        log.info("trying to reschedule StatisticsCronJob......");
+        manageService.reschedule("StatisticsCronJob", "0/1 * * * * ?");
+        Thread.sleep(6000);
     }
 }

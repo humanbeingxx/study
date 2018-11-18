@@ -22,27 +22,27 @@ public class Log2Aspect {
 
     @Before("pointCut()")
     public void before() {
-        log.info("before 2 execution......");
+        log.debug("before 2 execution......");
     }
 
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("around 2 before......");
+        log.debug("around 2 before......");
         try {
             return joinPoint.proceed();
         } finally {
-            log.info("around 2 after......");
+            log.debug("around 2 after......");
         }
     }
 
     @After("pointCut()")
     public void after() {
-        log.info("after 2 execution......");
+        log.debug("after 2 execution......");
     }
 
     @AfterReturning(value = "pointCut()", returning = "ret")
     public void afterReturning(JoinPoint joinPoint, Object ret) {
-        log.info("after 2 returning execution......result {}", ret);
+        log.debug("after 2 returning execution......result {}", ret);
     }
 
 

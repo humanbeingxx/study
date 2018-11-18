@@ -23,6 +23,12 @@ spring:
     add-mappings: false
   quartz:
     job-store-type: jdbc
+    properties:
+      org.quartz.scheduler.instanceName: clusteredScheduler
+      org.quartz.scheduler.instanceId: AUTO
+      org.quartz.scheduler.autoId: true
+      org.quartz.jobStore.class: org.quartz.impl.jdbcjobstore.JobStoreTX
+      org.quartz.jobStore.isClustered: true
 server:
   port: 8082
 mybatis:
