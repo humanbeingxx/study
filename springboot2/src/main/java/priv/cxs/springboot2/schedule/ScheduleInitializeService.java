@@ -20,9 +20,6 @@ import java.util.List;
 public class ScheduleInitializeService implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
-    private ApplicationContext applicationContext;
-
-    @Autowired
     private Scheduler scheduler;
 
     @Override
@@ -32,16 +29,18 @@ public class ScheduleInitializeService implements ApplicationListener<ContextRef
     }
 
     public void initJobs() {
-        List<AbstractCronJob> jobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
         for (AbstractCronJob job : jobs) {
             JobKey jobKey = JobCollector.generateJobKey(job.identity());
 
-            JobDetail jobDetail = JobBuilder.newJob(job.getClass())
-                    .withIdentity(jobKey)
-                    .storeDurably(true)
-                    .build();
-
             try {
+                JobDetail existDetail = scheduler.getJobDetail(jobKey);
+
+                JobDetail jobDetail = JobBuilder.newJob(job.getClass())
+                        .withIdentity(jobKey)
+                        .storeDurably(true)
+                        .usingJobData(existDetail == null ? null : existDetail.getJobDataMap())
+                        .build();
                 scheduler.addJob(jobDetail, true);
             } catch (SchedulerException e) {
                 log.error("schedule {} failed", job.identity(), e);

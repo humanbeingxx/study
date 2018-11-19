@@ -23,7 +23,7 @@ public class JobCollector {
 
     public static final String PATH = JobCollector.class.getPackage().getName() + ".jobs";
 
-    public static List<AbstractCronJob> collectJobClasses(ApplicationContext applicationContext) throws JobInitializeException {
+    public static List<AbstractCronJob> collectJobClasses() throws JobInitializeException {
         List<Class<AbstractCronJob>> jobClasses = Lists.newArrayList();
 
         try {
@@ -53,8 +53,8 @@ public class JobCollector {
         try {
             List<AbstractCronJob> jobs = Lists.newArrayList();
             for (Class<AbstractCronJob> jobClass : jobClasses) {
-                Constructor<AbstractCronJob> constructor = jobClass.getConstructor(ApplicationContext.class);
-                AbstractCronJob cronJob = constructor.newInstance(applicationContext);
+                Constructor<AbstractCronJob> constructor = jobClass.getConstructor();
+                AbstractCronJob cronJob = constructor.newInstance();
                 jobs.add(cronJob);
             }
             return jobs;

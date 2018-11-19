@@ -9,8 +9,6 @@ import priv.cxs.springboot2.controller.view.ScheduleJobView;
 import priv.cxs.springboot2.schedule.jobs.AbstractCronJob;
 
 import java.util.List;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static priv.cxs.springboot2.schedule.JobCollector.generateTriggerKey;
@@ -30,7 +28,7 @@ public class ScheduleManageService {
     private Scheduler scheduler;
 
     public void resume(String name) throws SchedulerException {
-        List<AbstractCronJob> jobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
 
         for (AbstractCronJob job : jobs) {
             if (job.identity().equals(name)) {
@@ -75,7 +73,7 @@ public class ScheduleManageService {
     }
 
     public void pause(String name) throws SchedulerException {
-        List<AbstractCronJob> jobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
         for (AbstractCronJob job : jobs) {
             if (job.identity().equals(name)) {
                 doPause(job);
@@ -98,7 +96,7 @@ public class ScheduleManageService {
     }
 
     public void reschedule(String jobName, String cron) throws SchedulerException {
-        List<AbstractCronJob> jobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
         for (AbstractCronJob job : jobs) {
             if (job.identity().equals(jobName)) {
                 doReschedule(job, cron);
@@ -128,7 +126,7 @@ public class ScheduleManageService {
     }
 
     public List<ScheduleJobView> allJobs() {
-        List<AbstractCronJob> jobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
 
         List<AbstractCronJob> registeredJobs = jobs.stream().filter(abstractCronJob -> {
             try {
@@ -162,5 +160,9 @@ public class ScheduleManageService {
             log.error("query job error {}", job.identity(), e);
             throw new RuntimeException(e);
         }
+    }
+
+    public void stop() throws SchedulerException {
+        scheduler.shutdown();
     }
 }

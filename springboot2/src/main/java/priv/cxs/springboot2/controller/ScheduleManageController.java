@@ -63,4 +63,11 @@ public class ScheduleManageController {
         List<ScheduleJobView> views = manageService.allJobs();
         return WebRet.successWithData(views);
     }
+
+    @RequestMapping("stop")
+    public WebRet<List<ScheduleJobView>> stop() throws SchedulerException {
+        manageService.stop();
+        return WebRet.success();
+    }
+
 }

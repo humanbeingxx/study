@@ -22,7 +22,7 @@ public class JobCollectorTest extends SpringBaseTest {
 
     @Test
     public void testCollectJobClasses() {
-        List<AbstractCronJob> cronJobs = JobCollector.collectJobClasses(applicationContext);
+        List<AbstractCronJob> cronJobs = JobCollector.collectJobClasses();
 
         Assert.assertTrue(
                 cronJobs.stream()

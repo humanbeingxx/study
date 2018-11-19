@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.quartz.Scheduler;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -17,11 +18,7 @@ import priv.cxs.springboot2.model.JobType;
 import priv.cxs.springboot2.service.JobService;
 
 import javax.annotation.Resource;
-
 import java.util.List;
-import java.util.function.Predicate;
-
-import static org.testng.Assert.*;
 
 /**
  * @author humanbeingxx@sina.com
@@ -76,7 +73,8 @@ public class ScheduleManageServiceTest extends SpringBaseTest {
     @Test
     public void testConcurrent() throws SchedulerException, InterruptedException {
         manageService.resume("LongTimeCronJob");
-        Thread.sleep(100000);
+        Thread.sleep(10000);
+        manageService.pause("LongTimeCronJob");
     }
 
     @Test
@@ -106,5 +104,12 @@ public class ScheduleManageServiceTest extends SpringBaseTest {
         log.info("trying to reschedule StatisticsCronJob......");
         manageService.reschedule("StatisticsCronJob", "0/1 * * * * ?");
         Thread.sleep(6000);
+    }
+
+    @Test
+    public void testContext() throws SchedulerException {
+        Object context = scheduler.getContext().get("applicationContext");
+        Assert.assertNotNull(context);
+        Assert.assertTrue(context instanceof ApplicationContext);
     }
 }

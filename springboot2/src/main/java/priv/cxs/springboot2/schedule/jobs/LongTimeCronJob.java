@@ -14,16 +14,13 @@ import org.springframework.context.ApplicationContext;
 @DisallowConcurrentExecution
 public class LongTimeCronJob extends AbstractCronJob {
 
-    public LongTimeCronJob(ApplicationContext applicationContext) {
-    }
-
     @Override
     public String getCron() {
         return "0/2 * * * * ?";
     }
 
     @Override
-    protected void executeInternal(JobExecutionContext context) throws JobExecutionException {
+    protected void executeInternal(JobExecutionContext context) {
         log.info("start executing LongTimeCronJob ...... ");
         try {
             Thread.sleep(3000);
