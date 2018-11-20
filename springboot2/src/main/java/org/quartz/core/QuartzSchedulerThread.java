@@ -182,7 +182,7 @@ public class QuartzSchedulerThread extends Thread {
                     try {
                         join();
                         break;
-                    } catch (InterruptedException _) {
+                    } catch (InterruptedException e) {
                         interrupted = true;
                     }
                 }
@@ -288,7 +288,7 @@ public class QuartzSchedulerThread extends Thread {
                         triggers = qsRsrcs.getJobStore().acquireNextTriggers(
                                 now + idleWaitTime, Math.min(availThreadCount, qsRsrcs.getMaxBatchSize()), qsRsrcs.getBatchTimeWindow());
                         if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                            log.info("发生了一次acquireNextTriggers");
+                            log.debug("发生了一次acquireNextTriggers");
                         }
                         acquiresFailed = 0;
                         if (log.isDebugEnabled())
@@ -312,7 +312,7 @@ public class QuartzSchedulerThread extends Thread {
                         continue;
                     }
 
-                    log.info("11111111111111111111111111111111");
+                    log.debug("11111111111111111111111111111111");
                     if (triggers != null && !triggers.isEmpty()) {
 
                         now = System.currentTimeMillis();
@@ -320,11 +320,11 @@ public class QuartzSchedulerThread extends Thread {
                         long timeUntilTrigger = triggerTime - now;
                         if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
 
-                            log.info("@321 {}, {}, {}", triggerTime, now, timeUntilTrigger);
+                            log.debug("@321 {}, {}, {}", triggerTime, now, timeUntilTrigger);
                         }
                         while(timeUntilTrigger > 2) {
                             if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                log.info("@323");
+                                log.debug("@323");
                             }
                             synchronized (sigLock) {
                                 if (halted.get()) {
@@ -362,7 +362,7 @@ public class QuartzSchedulerThread extends Thread {
                         }
 
                         if(goAhead) {
-                            log.info("333333333333333333333333333333333333");
+                            log.debug("333333333333333333333333333333333333");
 
                             try {
                                 List<TriggerFiredResult> res = qsRsrcs.getJobStore().triggersFired(triggers);
@@ -379,7 +379,7 @@ public class QuartzSchedulerThread extends Thread {
                                     qsRsrcs.getJobStore().releaseAcquiredTrigger(triggers.get(i));
                                 }
                                 if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                    log.info("发生了一次contine @370");
+                                    log.debug("发生了一次contine @370");
                                 }
                                 continue;
                             }
@@ -395,7 +395,7 @@ public class QuartzSchedulerThread extends Thread {
                                 getLog().error("RuntimeException while firing trigger " + triggers.get(i), exception);
                                 qsRsrcs.getJobStore().releaseAcquiredTrigger(triggers.get(i));
                                 if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                    log.info("发生了一次contine @386");
+                                    log.debug("发生了一次contine @386");
                                 }
                                 continue;
                             }
@@ -406,7 +406,7 @@ public class QuartzSchedulerThread extends Thread {
                             if (bndle == null) {
                                 qsRsrcs.getJobStore().releaseAcquiredTrigger(triggers.get(i));
                                 if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                    log.info("发生了一次contine @397");
+                                    log.debug("发生了一次contine @397");
                                 }
                                 continue;
                             }
@@ -418,13 +418,13 @@ public class QuartzSchedulerThread extends Thread {
                             } catch (SchedulerException se) {
                                 qsRsrcs.getJobStore().triggeredJobComplete(triggers.get(i), bndle.getJobDetail(), CompletedExecutionInstruction.SET_ALL_JOB_TRIGGERS_ERROR);
                                 if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                    log.info("发生了一次contine @409");
+                                    log.debug("发生了一次continue @409");
                                 }
                                 continue;
                             }
 
                             if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
-                                log.info("发生了一次runShell");
+                                log.debug("发生了一次runShell");
                             }
 
                             if (qsRsrcs.getThreadPool().runInThread(shell) == false) {
@@ -499,7 +499,7 @@ public class QuartzSchedulerThread extends Thread {
     private boolean releaseIfScheduleChangedSignificantly(
             List<OperableTrigger> triggers, long triggerTime) {
         if (isCandidateNewTimeEarlierWithinReason(triggerTime, true)) {
-            log.info("trigger 被清除了！！！");
+            log.debug("trigger 被清除了！！！");
 
             // above call does a clearSignaledSchedulingChange()
             for (OperableTrigger trigger : triggers) {
@@ -534,7 +534,7 @@ public class QuartzSchedulerThread extends Thread {
         synchronized(sigLock) {
 
             if (!isScheduleChanged()){
-                log.info("插装0");
+                log.debug("插装0");
                 return false;
 
             }
@@ -543,17 +543,17 @@ public class QuartzSchedulerThread extends Thread {
 
             if(getSignaledNextFireTime() == 0) {
                 earlier = true;
-                log.info("插装1");
+                log.debug("插装1");
             }
             else if(getSignaledNextFireTime() < oldTime )
             {
                 earlier = true;
-                log.info("插装2");
+                log.debug("插装2");
             }
-            log.info("插装3");
+            log.debug("插装3");
 
             if(earlier) {
-                log.info("进来了 {}, {}", oldTime, System.currentTimeMillis());
+                log.debug("进来了 {}, {}", oldTime, System.currentTimeMillis());
                 // so the new time is considered earlier, but is it enough earlier?
                 long diff = oldTime - System.currentTimeMillis();
                 if(diff < (qsRsrcs.getJobStore().supportsPersistence() ? 70L : 7L))

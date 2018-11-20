@@ -1,6 +1,7 @@
 package priv.cxs.springboot2.service;
 
 import com.google.common.collect.Lists;
+import org.quartz.SchedulerException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -21,7 +22,7 @@ public class JobScheduleInitializeServiceTest extends SpringBaseTest {
     private ScheduleInitializeService scheduleInitializeService;
 
     @Test
-    public void testStatistics() throws InterruptedException {
+    public void testStatistics() throws InterruptedException, SchedulerException {
         scheduleInitializeService.initJobs();
         Thread.sleep(100);
     }

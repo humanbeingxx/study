@@ -2,8 +2,9 @@ package priv.cxs.springboot2.schedule;
 
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
+import org.quartz.listeners.JobListenerSupport;
+import org.quartz.listeners.TriggerListenerSupport;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
@@ -25,26 +26,77 @@ public class ScheduleInitializeService implements ApplicationListener<ContextRef
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         log.info("ContextRefreshedEvent listened, starting init schedule!!!");
-        initJobs();
+        try {
+            initJobs();
+        } catch (SchedulerException e) {
+            log.error("initialize quartz error", e);
+        }
     }
 
-    public void initJobs() {
+    public void initJobs() throws SchedulerException {
         List<AbstractCronJob> jobs = JobCollector.collectJobClasses();
         for (AbstractCronJob job : jobs) {
             JobKey jobKey = JobCollector.generateJobKey(job.identity());
 
-            try {
-                JobDetail existDetail = scheduler.getJobDetail(jobKey);
 
-                JobDetail jobDetail = JobBuilder.newJob(job.getClass())
-                        .withIdentity(jobKey)
-                        .storeDurably(true)
-                        .usingJobData(existDetail == null ? null : existDetail.getJobDataMap())
-                        .build();
-                scheduler.addJob(jobDetail, true);
-            } catch (SchedulerException e) {
-                log.error("schedule {} failed", job.identity(), e);
-            }
+            JobDetail existDetail = scheduler.getJobDetail(jobKey);
+
+            JobDetail jobDetail = JobBuilder.newJob(job.getClass())
+                    .withIdentity(jobKey)
+                    .storeDurably(true)
+                    .usingJobData(existDetail == null ? null : existDetail.getJobDataMap())
+                    .build();
+            scheduler.addJob(jobDetail, true);
         }
+        addListeners();
+    }
+
+    private void addListeners() throws SchedulerException {
+        ListenerManager listenerManager = scheduler.getListenerManager();
+
+        listenerManager.addJobListener(new JobListenerSupport() {
+            @Override
+            public String getName() {
+                return "GeneralJobListener";
+            }
+
+            @Override
+            public void jobToBeExecuted(JobExecutionContext context) {
+                JobKey key = context.getJobDetail().getKey();
+                log.info("------------------- job {}:{} to be executed -------------------", key.getGroup(), key.getName());
+            }
+
+            @Override
+            public void jobWasExecuted(JobExecutionContext context, JobExecutionException jobException) {
+                JobKey key = context.getJobDetail().getKey();
+                log.info("------------------- job {}:{} was executed -------------------", key.getGroup(), key.getName());
+            }
+        });
+
+        listenerManager.addTriggerListener(new TriggerListenerSupport() {
+            @Override
+            public String getName() {
+                return "GeneralTriggerListener";
+            }
+
+            @Override
+            public void triggerFired(Trigger trigger, JobExecutionContext context) {
+                TriggerKey key = context.getTrigger().getKey();
+                log.info("------------------- trigger {}:{} was fired -------------------", key.getGroup(), key.getName());
+            }
+
+            @Override
+            public void triggerMisfired(Trigger trigger) {
+                TriggerKey key = trigger.getKey();
+                log.info("------------------- trigger {}:{} misfired with policy {}-------------------",
+                        key.getGroup(), key.getName(), trigger.getMisfireInstruction());
+            }
+
+            @Override
+            public void triggerComplete(Trigger trigger, JobExecutionContext context, Trigger.CompletedExecutionInstruction triggerInstructionCode) {
+                TriggerKey key = context.getTrigger().getKey();
+                log.info("------------------- trigger {}:{} was completed -------------------", key.getGroup(), key.getName());
+            }
+        });
     }
 }
