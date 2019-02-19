@@ -18,7 +18,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author xiaoshuangB.cui
+ * @author xiaoshuang.cui
  * @date 2018/11/15 下午4:23
  **/
 @Slf4j
