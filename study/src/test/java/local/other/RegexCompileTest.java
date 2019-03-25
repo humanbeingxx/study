@@ -32,4 +32,15 @@ public class RegexCompileTest {
         }
         System.out.println(System.currentTimeMillis() - startTime);
     }
+
+    @Test
+    public void testExTime() {
+//        String value = "=xx===========================================================================";
+//        Pattern pattern = Pattern.compile("x(.+)+x");
+//        pattern.matcher(value).find();
+
+        String value = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        Pattern pattern = Pattern.compile("(x+)+y");
+        pattern.matcher(value).find();
+    }
 }
