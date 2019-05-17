@@ -12,7 +12,6 @@ import java.util.List;
 import static com.querydsl.collections.CollQueryFactory.from;
 
 /**
- * @author : cuixiaoshuang@ktzh.lvwan.com
  * @date : 2019-02-21
  **/
 public class QSpaceInfoTest {

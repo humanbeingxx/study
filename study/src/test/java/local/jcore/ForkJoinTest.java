@@ -11,7 +11,6 @@ import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-04-17
  **/
 public class ForkJoinTest {

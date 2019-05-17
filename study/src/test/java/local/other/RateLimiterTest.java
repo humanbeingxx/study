@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-05-07
  **/
 public class RateLimiterTest {

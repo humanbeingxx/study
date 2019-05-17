@@ -9,7 +9,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author : cuixiaoshuang@ktzh.lvwan.com
  * @date : 2019-02-15
  **/
 public class TimeAdjustTest {

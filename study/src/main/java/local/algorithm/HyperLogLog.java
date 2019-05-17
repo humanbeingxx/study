@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-05-07
  **/
 public class HyperLogLog {

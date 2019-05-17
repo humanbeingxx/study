@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-05-07
  **/
 public class HyperLogLogTest {

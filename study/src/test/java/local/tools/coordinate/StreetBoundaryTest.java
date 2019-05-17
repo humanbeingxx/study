@@ -8,7 +8,6 @@ import java.util.List;
 import static org.testng.Assert.*;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-05-14
  **/
 public class StreetBoundaryTest {

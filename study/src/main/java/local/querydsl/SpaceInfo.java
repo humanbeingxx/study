@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * @author : cuixiaoshuang@ktzh.lvwan.com
  * @date : 2019-02-21
  **/
 @Entity

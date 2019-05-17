@@ -3,7 +3,6 @@ package local.other;
 import org.testng.annotations.Test;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-05-06
  **/
 public class TooManyThreadTest {

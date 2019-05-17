@@ -12,7 +12,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * @author : cuixiaoshuang@ktzh.lvwan.com
  * @date : 2019-02-18
  **/
 public class MultiThreadWorker<R> {

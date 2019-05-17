@@ -3,7 +3,6 @@ package local.algorithm;
 import org.testng.annotations.Test;
 
 /**
- * @author cuixiaoshuang@ktzh.lvwan.com
  * @date 2019-04-24
  **/
 public class CoordinateTest {
