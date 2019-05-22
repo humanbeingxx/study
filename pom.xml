@@ -12,6 +12,7 @@
         <module>study</module>
         <module>study_resource</module>
         <module>springboot2</module>
+        <module>agent</module>
     </modules>
 
 
