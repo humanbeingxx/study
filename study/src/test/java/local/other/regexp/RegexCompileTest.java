@@ -1,4 +1,4 @@
-package local.other;
+package local.other.regexp;
 
 import org.testng.annotations.Test;
 

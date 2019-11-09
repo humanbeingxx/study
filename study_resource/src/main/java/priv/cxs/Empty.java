@@ -5,4 +5,7 @@ package priv.cxs;
  * @date 2018/3/23 下午8:32
  **/
 public class Empty {
+    public static void main(String[] args) {
+
+    }
 }

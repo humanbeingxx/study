@@ -1,9 +1,15 @@
 package local.jcore;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.collections.Maps;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Map;
 
 /**
  * @author xiaoshuang.cui
@@ -39,5 +45,30 @@ public class ClassLoaderTest {
     public void testClassFile() throws ClassNotFoundException {
         Class<?> aClass = Class.forName("rx.Observer");
         System.out.println(aClass);
+    }
+
+    @Test
+    public void testForNameTime() throws ClassNotFoundException {
+        Map<String, Class> cache = Maps.newHashMap();
+        long startTime = System.currentTimeMillis();
+        for (int i = 0; i < 10000000; i++) {
+            if (!cache.containsKey("local.jcore.ClassLoaderTest")) {
+                cache.put("local.jcore.ClassLoaderTest", Class.forName("local.jcore.ClassLoaderTest"));
+            }
+        }
+        System.out.println(System.currentTimeMillis() - startTime);
+    }
+
+    @Test
+    public void testUrlLoaderFromDifferentPos() throws MalformedURLException, ClassNotFoundException {
+        URLClassLoader loader1 = new URLClassLoader(new URL[]{
+                new URL("file:" + ClassLoaderTest.class.getProtectionDomain().getCodeSource().getLocation())
+        });
+
+        Class<?> classIn = loader1.loadClass("local.jcore.AutoBoxTest");
+        Assert.assertNotNull(classIn);
+
+        Class<?> classOut = loader1.loadClass("local.other.MyObject");
+        Assert.assertNotNull(classOut);
     }
 }
