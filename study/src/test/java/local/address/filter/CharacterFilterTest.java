@@ -2,8 +2,6 @@ package local.address.filter;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author cuixiaoshuang
  * @date 2019-11-19
