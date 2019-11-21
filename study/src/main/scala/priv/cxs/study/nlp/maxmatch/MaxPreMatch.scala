@@ -37,4 +37,4 @@ object MaxPreMatch {
     }
     (slice.substring(0, 1), 1)
   }
-}`
+}
