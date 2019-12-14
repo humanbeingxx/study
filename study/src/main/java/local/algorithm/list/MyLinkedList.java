@@ -4,11 +4,11 @@ package local.algorithm.list;
  * @author xiaoshuang.cui
  * @date 2018/8/30 下午5:02
  **/
-public class LinkedList {
+public class MyLinkedList {
 
     public static class Node {
-        private int data;
-        private Node next;
+        int data;
+        Node next;
 
         public Node(int data) {
             this.data = data;
@@ -20,11 +20,11 @@ public class LinkedList {
         }
     }
 
-    private Node head;
+    Node head;
 
     private Node tail;
 
-    public LinkedList() {
+    public MyLinkedList() {
         head = new Node(0);
         tail = head;
     }
