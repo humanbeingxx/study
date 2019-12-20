@@ -1,11 +1,26 @@
 package local.algorithm.leetcode;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 233. 数字 1 的个数
+ *
  * @author cuixiaoshuang
  * @date 2019-12-20
  **/
 public class CountDigitOne {
+
+    Map<Integer, Integer> oneCount = new HashMap<>();
+
+    {
+        oneCount.put(1, 1);
+        int i = 10;
+        for (; i < Integer.MAX_VALUE / 10; i *= 10) {
+            oneCount.put(i, oneCount.get(i / 10) * 10 + i);
+        }
+        oneCount.put(i, oneCount.get(i / 10) * 10 + i);
+    }
 
     public int countDigitOne(int n) {
         return 0;
