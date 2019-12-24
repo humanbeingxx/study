@@ -14,4 +14,3 @@ public class RepeatedSubstringPattern {
         return doubleS.substring(1, doubleS.length() - 1).contains(s);
     }
 }
-`
