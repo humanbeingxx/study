@@ -10,25 +10,26 @@ public class IntersectionSizeTwo {
 
     public int intersectionSizeTwo(int[][] intervals) {
         Arrays.sort(intervals, (o1, o2) -> {
-            if (o1[0] == o2[0]) {
-                return o1[1] - o2[1];
-            } else {
-                return o1[0] - o2[0];
+            if(o1[1]==o2[1]){
+                return o2[0]-o1[0];
             }
+            return o1[1]-o2[1];
         });
 
-        int left = intervals[0][0];
-        int right = left + 1;
-        for (int i = 1; i < intervals.length; i++) {
-            int[] val = intervals[i];
-            if (val[0] == right) {
-                right++;
-            } else if (val[0] > right) {
-                right = val[0] + 1;
-            } else {
-                left = val[0];
+        int[] rec = {-1,-1};
+        int res=0;
+        for(int[] is : intervals){
+            if(is[0]<=rec[0]){
+                continue;
+            }else if(is[0] <= rec[1]){
+                res++;
+                rec[0] = rec[1];
+            }else{
+                rec[0] = is[1]-1;
+                res+=2;
             }
+            rec[1] = is[1];
         }
-        return right - left + 1;
+        return res;
     }
 }
