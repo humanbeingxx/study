@@ -10,7 +10,7 @@ import java.util.Stack;
  **/
 public class NTreePreOrder {
 
-    static class Node {
+    public static class Node {
         public int val;
         public List<Node> children;
 
