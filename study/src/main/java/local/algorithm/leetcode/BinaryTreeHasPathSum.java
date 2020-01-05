@@ -16,6 +16,10 @@ public class BinaryTreeHasPathSum {
             this.left = left;
             this.right = right;
         }
+
+        public TreeNode(int val) {
+            this.val = val;
+        }
     }
 
     public boolean hasPathSum(TreeNode root, int sum) {
