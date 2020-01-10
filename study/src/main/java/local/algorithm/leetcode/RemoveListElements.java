@@ -13,6 +13,17 @@ public class RemoveListElements {
             val = x;
             this.next = next;
         }
+        ListNode(int x) { val = x; }
+
+        public String show() {
+            ListNode node = this;
+            StringBuilder sb = new StringBuilder();
+            while (node != null) {
+                sb.append(node.val);
+                node = node.next;
+            }
+            return sb.toString();
+        }
     }
 
     public ListNode removeElements(ListNode head, int val) {
