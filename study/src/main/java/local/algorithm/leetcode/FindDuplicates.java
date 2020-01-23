@@ -21,4 +21,22 @@ public class FindDuplicates {
         }
         return result;
     }
+
+    public int findDuplicate(int[] nums) {
+        int back = nums[0];
+        int front = nums[nums[0]];
+        while (back != front) {
+            back = nums[back];
+            front = nums[nums[front]];
+        }
+
+        int p1 = nums[0];
+        int p2 = back;
+        while (p1 != p2) {
+            p1 = nums[p1];
+            p2 = nums[p2];
+        }
+
+        return p1;
+    }
 }
