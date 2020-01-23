@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class LongestWord {
 
-    static class Node {
+    public static class Node {
         Character c;
         int count = 0;
         boolean isEnd = false;
