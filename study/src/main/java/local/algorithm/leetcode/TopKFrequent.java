@@ -1,6 +1,7 @@
 package local.algorithm.leetcode;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author cuixiaoshuang
@@ -30,5 +31,24 @@ public class TopKFrequent {
             result.add(list.get(i).getKey());
         }
         return result;
+    }
+
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> counts = new HashMap<>();
+        for (int num : nums) {
+            if (counts.containsKey(num)) {
+                counts.put(num, counts.get(num) + 1);
+            } else {
+                counts.put(num, 1);
+            }
+        }
+        PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<>((o1, o2) -> o1.getValue() - o2.getValue());
+        for (Map.Entry<Integer, Integer> entry : counts.entrySet()) {
+            queue.add(entry);
+            if (queue.size() > k) {
+                queue.poll();
+            }
+        }
+        return queue.stream().map(Map.Entry::getKey).collect(Collectors.toList());
     }
 }
