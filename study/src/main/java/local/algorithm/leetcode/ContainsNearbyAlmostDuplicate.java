@@ -18,4 +18,9 @@ public class ContainsNearbyAlmostDuplicate {
         }
         return false;
     }
+
+    //TODO
+    public boolean containsNearbyAlmostDuplicateBetter(int[] nums, int k, int t) {
+        return false;
+    }
 }
