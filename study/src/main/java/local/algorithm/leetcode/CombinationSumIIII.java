@@ -4,7 +4,7 @@ package local.algorithm.leetcode;
  * @author cuixiaoshuang
  * @date 2020-01-28
  **/
-public class CombinationSum4 {
+public class CombinationSumIIII {
 
     public int combinationSum4(int[] nums, int target) {
         int[] summed = new int[target + 1];
