@@ -17,59 +17,14 @@ public class JumpGame {
         return true;
     }
 
-    //不超时，但是也慢
-//    public boolean canJump(int[] nums) {
-//        Set<Integer> needReach = new HashSet<>();
-//        Set<Integer> canReach = new HashSet<>();
-//        needReach.add(nums.length - 1);
-//        while (!needReach.isEmpty()) {
-//            for (Integer reachIndex : needReach) {
-//                if (reachIndex == 0) {
-//                    return true;
-//                }
-//                for (int i = 1; i <= reachIndex; i++) {
-//                    int val = nums[reachIndex - i];
-//                    if (val >= i) {
-//                        if (reachIndex - i == 0) {
-//                            return true;
-//                        } else {
-//                            canReach.add(reachIndex - i);
-//                        }
-//                    }
-//                }
-//            }
-//            needReach.clear();
-//            needReach.addAll(canReach);
-//            canReach.clear();
-//        }
-//        return false;
-//    }
+    public boolean canJump2(int[] nums) {
+        int close = nums.length - 1;
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (nums[i] + i >= close) {
+                close = i;
+            }
+        }
+        return close == 0;
+    }
 
-    //超时
-//    public boolean canJump(int[] nums) {
-//        List<Integer> needReach = new ArrayList<>();
-//        List<Integer> canReach = new ArrayList<>();
-//        needReach.add(nums.length - 1);
-//        while (!needReach.isEmpty()) {
-//            for (Integer reachIndex : needReach) {
-//                if (reachIndex == 0) {
-//                    return true;
-//                }
-//                for (int i = 1; i <= reachIndex; i++) {
-//                    int val = nums[reachIndex - i];
-//                    if (val >= i) {
-//                        if (reachIndex - i == 0) {
-//                            return true;
-//                        } else {
-//                            canReach.add(reachIndex - i);
-//                        }
-//                    }
-//                }
-//            }
-//            needReach.clear();
-//            needReach.addAll(canReach);
-//            canReach.clear();
-//        }
-//        return false;
-//    }
 }
