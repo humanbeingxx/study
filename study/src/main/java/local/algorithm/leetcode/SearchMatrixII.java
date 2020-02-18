@@ -4,7 +4,7 @@ package local.algorithm.leetcode;
  * @author cuixiaoshuang
  * @date 2020-02-16
  **/
-public class SearchMatrix {
+public class SearchMatrixII {
 
     public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
