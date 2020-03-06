@@ -3,6 +3,7 @@ package local.jcore;
 import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
@@ -50,6 +51,16 @@ public class ManyPoolTest {
     }
 
     @Test
+    public void testThreadPoolSize() throws InterruptedException {
+        List<ExecutorService> threadList = new ArrayList<>();
+        for (int i = 0; i < 2000000; i++) {
+            threadList.add(Executors.newSingleThreadExecutor());
+        }
+        System.out.println("finished");
+        Thread.sleep(10000000);
+    }
+
+    @Test
     public void testKeepAlive() throws InterruptedException {
         ThreadPoolExecutor executor = new ThreadPoolExecutor(3, 10, 10, TimeUnit.MILLISECONDS, new LinkedBlockingDeque<>(10));
         for (int i = 0; i < 20; i++) {
@@ -85,5 +96,29 @@ public class ManyPoolTest {
         Thread.sleep(300);
 
         System.out.println(executor);
+    }
+
+    @Test
+    public void testThreadRef() throws InterruptedException {
+        Thread thread = new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                Thread.sleep(100);
+            }
+        });
+        thread.start();
+        System.out.println(Thread.getAllStackTraces().keySet().size());
+        WeakReference<Thread> ref = new WeakReference<>(thread);
+        System.out.println(ref.get());
+        thread = null;
+        System.gc();
+        System.out.println(Thread.getAllStackTraces().keySet().size());
+        System.out.println(ref.get());
+        Thread.sleep(200);
+        System.out.println(Thread.getAllStackTraces().keySet().size());
+        System.gc();
+        System.out.println(ref.get());
+        Thread.sleep(100000);
     }
 }
