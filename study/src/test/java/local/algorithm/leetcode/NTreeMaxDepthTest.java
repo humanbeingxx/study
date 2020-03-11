@@ -3,7 +3,7 @@ package local.algorithm.leetcode;
 import com.google.common.collect.Lists;
 import org.testng.annotations.Test;
 
-import static local.algorithm.leetcode.NTreePreOrder.*;
+import static local.algorithm.leetcode.NTreePreOrder.Node;
 import static org.testng.Assert.*;
 
 /**
