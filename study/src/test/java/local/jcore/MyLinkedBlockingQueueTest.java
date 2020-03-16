@@ -6,7 +6,8 @@ import org.junit.Test;
  * @author cuixiaoshuang
  * @date 2020-01-15
  **/
-public class MyLinkedBlockingQueueTest {
+public class
+MyLinkedBlockingQueueTest {
 
     @Test
     public void test() throws InterruptedException {
