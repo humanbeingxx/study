@@ -39,4 +39,27 @@ public class ReturnFinallyTest {
             map.put("key2", "value2");
         }
     }
+
+    @Test
+    public void testMultiFinally () {
+        int i = 0;
+//        if (i == 0) {
+//            return;
+//        }
+        try {
+            if (i == 0) {
+                System.exit(0);
+            }
+        } finally {
+            System.out.println("f1");
+        }
+
+        try {
+            if (i == 0) {
+                System.exit(0);
+            }
+        } finally {
+            System.out.println("f2");
+        }
+    }
 }
