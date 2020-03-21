@@ -41,12 +41,13 @@ public class ScheduleInitializeService implements ApplicationListener<ContextRef
 
             JobDetail existDetail = scheduler.getJobDetail(jobKey);
 
-            JobDetail jobDetail = JobBuilder.newJob(job.getClass())
+            JobBuilder jobBuilder = JobBuilder.newJob(job.getClass())
                     .withIdentity(jobKey)
-                    .storeDurably(true)
-                    .usingJobData(existDetail == null ? null : existDetail.getJobDataMap())
-                    .build();
-            scheduler.addJob(jobDetail, true);
+                    .storeDurably(true);
+            if (existDetail != null) {
+                jobBuilder.usingJobData(existDetail.getJobDataMap());
+            }
+            scheduler.addJob(jobBuilder.build(), true);
         }
         addListeners();
     }

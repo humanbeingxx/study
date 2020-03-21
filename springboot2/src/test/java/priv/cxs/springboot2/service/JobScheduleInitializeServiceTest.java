@@ -1,13 +1,8 @@
 package priv.cxs.springboot2.service;
 
-import com.google.common.collect.Lists;
 import org.quartz.SchedulerException;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import priv.cxs.springboot2.SpringBaseTest;
-import priv.cxs.springboot2.model.Job;
-import priv.cxs.springboot2.model.JobType;
 import priv.cxs.springboot2.schedule.ScheduleInitializeService;
 
 import javax.annotation.Resource;
