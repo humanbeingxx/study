@@ -1,10 +1,13 @@
 package local.jcore;
 
 
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.TimeUnit;
 
@@ -62,5 +65,84 @@ public class SynchronousQueueTest {
 
         Thread.sleep(400);
         System.out.println(result);
+    }
+
+    @Test
+    public void viewCode() throws InterruptedException {
+        SynchronousQueue<Object> queue = new SynchronousQueue<>(true);
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+        queue.take();
+    }
+
+    @Test
+    public void testOffer() throws InterruptedException {
+        ExecutorService poll = Executors.newCachedThreadPool();
+
+        poll.submit(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+
+            }
+        });
+        poll.submit(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+
+            }
+        });
+        poll.submit(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+
+            }
+        });
+        poll.submit(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+
+            }
+        });
+
+        Thread.sleep(10);
+
+        poll.submit(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                Thread.sleep(100000);
+            }
+        });
     }
 }
