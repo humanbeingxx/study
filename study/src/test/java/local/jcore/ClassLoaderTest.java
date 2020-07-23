@@ -35,7 +35,7 @@ public class ClassLoaderTest {
     }
 
     @Test
-    public void testMyClass() throws ClassNotFoundException {
+    public void testMyClass() throws Exception {
         MyLoader myLoader = new MyLoader();
         Class<?> myClass = myLoader.loadClass("MyClass");
         System.out.println(myClass.getName());

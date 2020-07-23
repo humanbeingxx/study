@@ -9,6 +9,24 @@ public class ConcatHelloWorld {
     private static char[] target = "helloworld".toCharArray();
 
     public boolean canConcat(String[] words) {
+        boolean[] used = new boolean[words.length];
+        return tryConcat(words, used, 0);
+    }
+
+    private boolean tryConcat(String[] words, boolean[] used, int startIndex) {
+        if (startIndex == target.length) {
+            return true;
+        }
+        for (int i = 0; i < words.length; i++) {
+            if (!used[i] && startWith(words[i], startIndex)) {
+                used[i] = true;
+                boolean next = tryConcat(words, used, startIndex + words[i].length());
+                if (next) {
+                    return true;
+                }
+                used[i] = false;
+            }
+        }
         return false;
     }
 
