@@ -167,6 +167,13 @@
                 <artifactId>jsch</artifactId>
                 <version>0.1.55</version>
             </dependency>
+
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>2.2.2</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -370,6 +377,12 @@
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
