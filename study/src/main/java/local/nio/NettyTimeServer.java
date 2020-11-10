@@ -21,7 +21,7 @@ import static io.netty.channel.ChannelFutureListener.CLOSE;
 public class NettyTimeServer {
 
     public void bind(int port) throws Exception {
-        NioEventLoopGroup bossGroup = new NioEventLoopGroup();
+        NioEventLoopGroup bossGroup = new NioEventLoopGroup(4);
         NioEventLoopGroup workGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
@@ -31,10 +31,10 @@ public class NettyTimeServer {
                     .childHandler(new ChildChannelHandler());
             ChannelFuture bind = serverBootstrap.bind("127.0.0.1", port);
             ChannelFuture future = bind.sync();
-            for (int i = 0; i < 1000; i++) {
-                Thread.sleep(1000);
-                System.out.println("do sth else");
-            }
+//            for (int i = 0; i < 1000; i++) {
+//                Thread.sleep(1000);
+//                System.out.println("do sth else");
+//            }
             future.channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
@@ -57,6 +57,7 @@ public class NettyTimeServer {
         public void channelRead(ChannelHandlerContext ctx, Object msg) {
             String request = String.valueOf(msg);
             System.out.println("server received: " + request);
+            System.out.println("current thread: " + Thread.currentThread().toString());
             String response = request.replace("before ", "").equalsIgnoreCase("query time order") ? new Date().toString() : "BAD REQUEST";
             response += System.getProperty("line.separator");
             ByteBuf writeBuffer = Unpooled.copiedBuffer(response.getBytes());

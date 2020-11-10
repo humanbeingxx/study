@@ -1,5 +1,6 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,17 +12,17 @@ public class BinaryTreeHasPathSumTest {
 
     @Test
     public void testHasPathSum() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(5,
-                new BinaryTreeHasPathSum.TreeNode(4,
-                        new BinaryTreeHasPathSum.TreeNode(11,
-                                new BinaryTreeHasPathSum.TreeNode(7, null, null),
-                                new BinaryTreeHasPathSum.TreeNode(2, null, null))
+        TreeNode root = new TreeNode(5,
+                new TreeNode(4,
+                        new TreeNode(11,
+                                new TreeNode(7, null, null),
+                                new TreeNode(2, null, null))
                         , null),
-                new BinaryTreeHasPathSum.TreeNode(8,
-                        new BinaryTreeHasPathSum.TreeNode(13, null, null),
-                        new BinaryTreeHasPathSum.TreeNode(4,
+                new TreeNode(8,
+                        new TreeNode(13, null, null),
+                        new TreeNode(4,
                                 null,
-                                new BinaryTreeHasPathSum.TreeNode(1, null, null))));
+                                new TreeNode(1, null, null))));
 
         boolean have = new BinaryTreeHasPathSum().hasPathSum(root, 22);
         Assert.assertTrue(have);
@@ -35,7 +36,7 @@ public class BinaryTreeHasPathSumTest {
 
     @Test
     public void testHasPathSum2() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(5, null, null);
+        TreeNode root = new TreeNode(5, null, null);
 
         boolean have = new BinaryTreeHasPathSum().hasPathSum(root, 22);
         Assert.assertFalse(have);
@@ -52,7 +53,7 @@ public class BinaryTreeHasPathSumTest {
 
     @Test
     public void testHasPathSum3() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(-2, null, new BinaryTreeHasPathSum.TreeNode(-3, null, null));
+        TreeNode root = new TreeNode(-2, null, new TreeNode(-3, null, null));
 
         boolean have = new BinaryTreeHasPathSum().hasPathSum(root, -5);
         Assert.assertTrue(have);

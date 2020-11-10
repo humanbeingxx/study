@@ -1,5 +1,7 @@
 package local.algorithm.leetcode.lcof;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 /**
  * @author humanbeingxx@sina.com
  * @date 2020/6/13 16:33

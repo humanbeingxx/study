@@ -1,9 +1,9 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
-
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.*;
 
 public class DeepestLeavesSum {
 

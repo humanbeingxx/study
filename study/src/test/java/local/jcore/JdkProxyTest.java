@@ -23,7 +23,7 @@ public class JdkProxyTest {
 
 
     public interface Test3 {
-        void test1();
+        void test3();
     }
 
     public static class TestProxyTarget implements Test1, Test2, Test3 {
@@ -37,12 +37,17 @@ public class JdkProxyTest {
         public void test2() {
 
         }
+
+        @Override
+        public void test3() {
+
+        }
     }
 
     @Test
     public void test() {
         TestProxyTarget target = new TestProxyTarget();
-        Object proxy = Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{Test1.class, Test2.class, Test3.class}, new InvocationHandler() {
+        Object proxy = Proxy.newProxyInstance(this.getClass().getClassLoader(), new Class[]{Test1.class, Test2.class}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println("before");
@@ -52,5 +57,7 @@ public class JdkProxyTest {
             }
         });
         ((Test1) proxy).test1();
+        ((Test2) proxy).test2();
+//        ((Test3) proxy).test3();
     }
 }

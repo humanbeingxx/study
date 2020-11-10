@@ -1,6 +1,6 @@
 package local.algorithm.leetcode;
 
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.*;
+import local.algorithm.leetcode.common.TreeNode;
 
 public class FindLowestCommonAncestor {
 

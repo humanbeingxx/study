@@ -1,5 +1,7 @@
 package local.algorithm.leetcode.lcof;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 import java.util.*;
 
 /**

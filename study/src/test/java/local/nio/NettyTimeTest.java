@@ -16,6 +16,14 @@ public class NettyTimeTest {
     }
 
     @Test
+    public void testPort() throws Exception {
+        for (int i = 0; i < 10; i++) {
+            new NettyTimeClient().connect(9999);
+            Thread.sleep(50);
+        }
+    }
+
+    @Test
     public void testObject() throws Exception {
         new NettyObjectTimeClient().connect(9998);
     }

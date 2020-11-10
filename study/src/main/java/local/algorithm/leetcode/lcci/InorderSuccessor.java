@@ -1,5 +1,7 @@
 package local.algorithm.leetcode.lcci;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 /**
  * @author humanbeingxx@sina.com
  * @date 2020/6/22 19:46

@@ -1,6 +1,6 @@
 package local.algorithm.leetcode;
 
-import local.algorithm.leetcode.BinaryTreeHasPathSum.TreeNode;
+import local.algorithm.leetcode.common.TreeNode;
 
 public class IsBalancedTree {
 

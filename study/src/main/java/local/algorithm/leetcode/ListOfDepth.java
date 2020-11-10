@@ -1,13 +1,12 @@
 package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.RemoveListElements.ListNode;
+import local.algorithm.leetcode.common.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.*;
 
 /**
  * @author humanbeingxx@sina.com

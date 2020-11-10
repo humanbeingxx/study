@@ -1,5 +1,6 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,17 +12,17 @@ public class MinTreeDepthTest {
 
     @Test
     public void testMinDepth1() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(5,
-                new BinaryTreeHasPathSum.TreeNode(4,
-                        new BinaryTreeHasPathSum.TreeNode(11,
-                                new BinaryTreeHasPathSum.TreeNode(7, null, null),
-                                new BinaryTreeHasPathSum.TreeNode(2, null, null))
+        TreeNode root = new TreeNode(5,
+                new TreeNode(4,
+                        new TreeNode(11,
+                                new TreeNode(7, null, null),
+                                new TreeNode(2, null, null))
                         , null),
-                new BinaryTreeHasPathSum.TreeNode(8,
-                        new BinaryTreeHasPathSum.TreeNode(13, null, null),
-                        new BinaryTreeHasPathSum.TreeNode(4,
+                new TreeNode(8,
+                        new TreeNode(13, null, null),
+                        new TreeNode(4,
                                 null,
-                                new BinaryTreeHasPathSum.TreeNode(1, null, null))));
+                                new TreeNode(1, null, null))));
 
         int result = new MinTreeDepth().minDepth(root);
         Assert.assertEquals(result, 3);
@@ -29,7 +30,7 @@ public class MinTreeDepthTest {
 
     @Test
     public void testMinDepth2() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(5, null, null);
+        TreeNode root = new TreeNode(5, null, null);
 
         int result = new MinTreeDepth().minDepth(root);
         Assert.assertEquals(result, 1);
@@ -37,11 +38,11 @@ public class MinTreeDepthTest {
 
     @Test
     public void testMinDepth3() {
-        BinaryTreeHasPathSum.TreeNode root = new BinaryTreeHasPathSum.TreeNode(5,
-                new BinaryTreeHasPathSum.TreeNode(9, null, null),
-                new BinaryTreeHasPathSum.TreeNode(20,
-                        new BinaryTreeHasPathSum.TreeNode(15, null, null),
-                        new BinaryTreeHasPathSum.TreeNode(7, null, null)));
+        TreeNode root = new TreeNode(5,
+                new TreeNode(9, null, null),
+                new TreeNode(20,
+                        new TreeNode(15, null, null),
+                        new TreeNode(7, null, null)));
 
         int result = new MinTreeDepth().minDepth(root);
         Assert.assertEquals(result, 2);

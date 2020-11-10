@@ -1,9 +1,9 @@
 package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.RemoveListElements.ListNode;
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.*;
 import static org.testng.Assert.*;
 
 public class IsSubPathInTreeTest {

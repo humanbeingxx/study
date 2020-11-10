@@ -1,7 +1,7 @@
 package local.algorithm.leetcode;
 
 import com.google.common.collect.Lists;
-import local.algorithm.leetcode.BinaryTreeHasPathSum.TreeNode;
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
 import java.util.List;

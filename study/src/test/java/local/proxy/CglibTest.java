@@ -1,5 +1,6 @@
 package local.proxy;
 
+import net.sf.cglib.core.DebuggingClassWriter;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -13,13 +14,13 @@ import java.lang.reflect.Method;
  */
 public class CglibTest {
 
-    public static class NeedProxy {
-        public void action() {
+    public interface NeedProxy {
+        default void action() {
             System.out.println("this is original action");
             action2();
         }
 
-        public void action2() {
+        default void action2() {
             System.out.println("this is original action2");
         }
     }
@@ -29,7 +30,7 @@ public class CglibTest {
         @Override
         public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
             System.out.println("my callback1 start");
-            methodProxy.invokeSuper(o, objects);
+//            methodProxy.invokeSuper(o, objects);
             System.out.println("my callback1 end");
             return null;
         }
@@ -54,14 +55,22 @@ public class CglibTest {
 
     @Test
     public void test() {
+        System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "proxy");
+
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(NeedProxy.class);
         enhancer.setCallback(new MyCallBack1());
         NeedProxy proxy1 = (NeedProxy) enhancer.create();
         proxy1.action();
 
+
         System.out.println("*************test2************");
-        NeedProxy proxy2 = (NeedProxy) Enhancer.create(NeedProxy.class, new MyCallBack2(new NeedProxy()));
+        NeedProxy proxy2 = (NeedProxy) Enhancer.create(NeedProxy.class, new MyCallBack2(new NeedProxy() {
+            @Override
+            public void action2() {
+                System.out.println("this is modified action2");
+            }
+        }));
         proxy2.action();
     }
 }

@@ -6,10 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author cuixiaoshuang
@@ -104,45 +101,20 @@ public class SynchronousQueueTest {
 
     @Test
     public void testOffer() throws InterruptedException {
-        ExecutorService poll = Executors.newCachedThreadPool();
-
-        poll.submit(new Runnable() {
-            @SneakyThrows
-            @Override
-            public void run() {
-
-            }
-        });
-        poll.submit(new Runnable() {
-            @SneakyThrows
-            @Override
-            public void run() {
-
-            }
-        });
-        poll.submit(new Runnable() {
-            @SneakyThrows
-            @Override
-            public void run() {
-
-            }
-        });
-        poll.submit(new Runnable() {
-            @SneakyThrows
-            @Override
-            public void run() {
-
-            }
-        });
-
-        Thread.sleep(10);
-
-        poll.submit(new Runnable() {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 1, TimeUnit.DAYS, new SynchronousQueue<>());
+        executor.execute(new Runnable() {
             @SneakyThrows
             @Override
             public void run() {
                 Thread.sleep(100000);
             }
         });
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("running");
+            }
+        });
+        Thread.sleep(1000);
     }
 }

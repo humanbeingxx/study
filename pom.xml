@@ -13,7 +13,19 @@
         <module>study_resource</module>
         <module>springboot2</module>
         <module>agent</module>
+        <module>web</module>
+        <module>dubbo</module>
     </modules>
 
-
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

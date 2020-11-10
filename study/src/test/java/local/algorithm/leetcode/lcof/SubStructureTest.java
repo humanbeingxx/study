@@ -1,5 +1,6 @@
 package local.algorithm.leetcode.lcof;
 
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
