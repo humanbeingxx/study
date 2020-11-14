@@ -1,6 +1,7 @@
 package priv.cxs.dubbo;
 
 import org.apache.dubbo.config.annotation.DubboReference;
+import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
 import org.testng.annotations.Test;
@@ -13,6 +14,7 @@ public class DubboConsumerApplicationTest extends AbstractTestNGSpringContextTes
 
     @Test
     public void testConsume() {
+        RpcContext.getContext().setAttachment("attKey", "attVal");
         String response = useTestService2.nothing();
         System.out.println(response);
     }
