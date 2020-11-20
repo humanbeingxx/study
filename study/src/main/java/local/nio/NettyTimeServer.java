@@ -9,8 +9,12 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
+import io.netty.util.concurrent.ExecutorServiceFactory;
 
 import java.util.Date;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 import static io.netty.channel.ChannelFutureListener.CLOSE;
 
@@ -21,8 +25,18 @@ import static io.netty.channel.ChannelFutureListener.CLOSE;
 public class NettyTimeServer {
 
     public void bind(int port) throws Exception {
-        NioEventLoopGroup bossGroup = new NioEventLoopGroup(4);
-        NioEventLoopGroup workGroup = new NioEventLoopGroup();
+        NioEventLoopGroup bossGroup = new NioEventLoopGroup(1, new ExecutorServiceFactory() {
+            @Override
+            public ExecutorService newExecutorService(int parallelism) {
+                return Executors.newFixedThreadPool(parallelism, new ThreadFactory() {
+                    @Override
+                    public Thread newThread(Runnable r) {
+                        return new Thread(r, "boss");
+                    }
+                });
+            }
+        });
+        NioEventLoopGroup workGroup = new NioEventLoopGroup(2);
         try {
             ServerBootstrap serverBootstrap = new ServerBootstrap();
             serverBootstrap.group(bossGroup, workGroup)
