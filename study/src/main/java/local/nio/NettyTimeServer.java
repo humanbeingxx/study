@@ -12,6 +12,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.util.concurrent.ExecutorServiceFactory;
 
 import java.util.Date;
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -25,13 +26,13 @@ import static io.netty.channel.ChannelFutureListener.CLOSE;
 public class NettyTimeServer {
 
     public void bind(int port) throws Exception {
-        NioEventLoopGroup bossGroup = new NioEventLoopGroup(1, new ExecutorServiceFactory() {
+        NioEventLoopGroup bossGroup = new NioEventLoopGroup(2, new ExecutorServiceFactory() {
             @Override
             public ExecutorService newExecutorService(int parallelism) {
                 return Executors.newFixedThreadPool(parallelism, new ThreadFactory() {
                     @Override
                     public Thread newThread(Runnable r) {
-                        return new Thread(r, "boss");
+                        return new Thread(r, "boss" + new Random().nextInt(100));
                     }
                 });
             }
