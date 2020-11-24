@@ -1,6 +1,9 @@
 package priv.cxs.test.web.controller;
 
 import lombok.Getter;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @RequestMapping("mav")
 @Controller
-public class ModelAndViewTestController {
+public class ModelAndViewTestController implements ApplicationContextAware {
 
     @RequestMapping()
     public String query(Model model) {
@@ -16,7 +19,12 @@ public class ModelAndViewTestController {
         return "mav.html";
     }
 
-//    @Getter
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        System.out.println(applicationContext);
+    }
+
+    //    @Getter
     public static class Ret<T> {
         private boolean success;
         private T val;

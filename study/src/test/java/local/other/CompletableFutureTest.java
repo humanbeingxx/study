@@ -25,7 +25,7 @@ public class CompletableFutureTest {
                 return String.format("after sleep %s", String.join(",", values.values()));
             }
         });
-        Thread.sleep(10000);
+//        Thread.sleep(4000);
         completableFuture.whenComplete((s, throwable) -> {
             System.out.println(String.format("result received %s, current Thread %s", s, Thread.currentThread().getName()));
         });
