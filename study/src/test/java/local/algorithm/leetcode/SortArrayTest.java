@@ -1,5 +1,7 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.sort.SortArray;
+import local.algorithm.leetcode.sort.SortArrayHeapSort;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 

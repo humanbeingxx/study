@@ -55,7 +55,7 @@ public class StringInternlTest {
     }
 
     @Test
-    public void testConstantPool() {
+    public void testConstantPool1() {
         //TODO 这段代码放在main和放在test下结果不同
         String s3 = new String("1") + new String("1");
         String s5 = s3.intern();
@@ -65,9 +65,28 @@ public class StringInternlTest {
         System.out.println(s3 == s4);
     }
 
+    public static void main(String[] args) {
+        String s3 = new String("1") + new String("1");
+        String s5 = s3.intern();
+        String s4 = "11";
+        System.out.println(s5 == s3);
+        System.out.println(s5 == s4);
+        System.out.println(s3 == s4);
+    }
+
+    @Test
+    public void testConstantPool2() {
+        String s3 = new String("111") + new String("222");
+        String s5 = s3.intern();
+        String s4 = "111222";
+        System.out.println(s5 == s3);
+        System.out.println(s5 == s4);
+        System.out.println(s3 == s4);
+    }
+
     @Test
     public void testOrder() {
-//        String before = "abc";
+        String before = "abc";
         String order1 = new String("a") + new String("b") + new String("c");
         System.out.println(order1.intern() == order1);
 //        String after = "abc";
