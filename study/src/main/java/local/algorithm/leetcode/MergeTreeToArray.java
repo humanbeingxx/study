@@ -1,9 +1,9 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.*;
 
 /**
  * @author humanbeingxx@sina.com

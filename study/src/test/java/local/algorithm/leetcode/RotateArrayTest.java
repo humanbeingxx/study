@@ -37,4 +37,11 @@ public class RotateArrayTest {
         new RotateArray().rotate(data, 3);
         assertEquals(data, new int[]{6, 7, 8, 1, 2, 3, 4, 5});
     }
+
+    @Test
+    public void testRotate4() {
+        int[] data = {1, 2, 3, 4, 5, 6};
+        new RotateArray().rotate(data, 4);
+        assertEquals(data, new int[]{3, 4, 5, 6, 1, 2});
+    }
 }

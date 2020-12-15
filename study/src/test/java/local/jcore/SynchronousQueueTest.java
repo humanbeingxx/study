@@ -1,12 +1,12 @@
 package local.jcore;
 
 
+import lombok.SneakyThrows;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.SynchronousQueue;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * @author cuixiaoshuang
@@ -62,5 +62,59 @@ public class SynchronousQueueTest {
 
         Thread.sleep(400);
         System.out.println(result);
+    }
+
+    @Test
+    public void viewCode() throws InterruptedException {
+        SynchronousQueue<Object> queue = new SynchronousQueue<>(true);
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+
+        new Thread(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                queue.put(new Object());
+            }
+        }).start();
+
+        Thread.sleep(100);
+        queue.take();
+    }
+
+    @Test
+    public void testOffer() throws InterruptedException {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(1, 1, 1, TimeUnit.DAYS, new SynchronousQueue<>());
+        executor.execute(new Runnable() {
+            @SneakyThrows
+            @Override
+            public void run() {
+                Thread.sleep(100000);
+            }
+        });
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("running");
+            }
+        });
+        Thread.sleep(1000);
     }
 }

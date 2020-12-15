@@ -3,7 +3,7 @@ package local.algorithm.leetcode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static local.algorithm.leetcode.BinaryTreeHasPathSum.TreeNode;
+import local.algorithm.leetcode.common.TreeNode;
 
 /**
  * @author cuixiaoshuang
@@ -13,8 +13,8 @@ public class SameTreeTest {
 
     @Test
     public void testIsSameTree1() {
-        TreeNode p = new BinaryTreeHasPathSum.TreeNode(5, null, null);
-        TreeNode q = new BinaryTreeHasPathSum.TreeNode(5, null, null);
+        TreeNode p = new TreeNode(5, null, null);
+        TreeNode q = new TreeNode(5, null, null);
 
         boolean sameTree = new SameTree().isSameTree(p, q);
         Assert.assertTrue(sameTree);
@@ -22,8 +22,8 @@ public class SameTreeTest {
 
     @Test
     public void testIsSameTree2() {
-        TreeNode p = new BinaryTreeHasPathSum.TreeNode(5, null, null);
-        TreeNode q = new BinaryTreeHasPathSum.TreeNode(3, null, null);
+        TreeNode p = new TreeNode(5, null, null);
+        TreeNode q = new TreeNode(3, null, null);
 
         boolean sameTree = new SameTree().isSameTree(p, q);
         Assert.assertFalse(sameTree);

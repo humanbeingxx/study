@@ -38,10 +38,9 @@ public class NettyTimeClient {
                     });
             ChannelFuture future = bootstrap.connect(new InetSocketAddress("127.0.0.1", port)).sync();
             request(future.channel());
-//            request(future.channel());
-//            request(future.channel());
             while (requestCount.get() != 0) {
             }
+            System.out.println(String.format("port is %s", future.channel().localAddress()));
             future.channel().close();
         } finally {
             group.shutdownGracefully();
@@ -57,23 +56,27 @@ public class NettyTimeClient {
               4. server received: query time order
               5. server received: query time order
           因为使用decoder并不能保证报文段并发发送的问题。
+          如果客户端在channel上加上同步，server会不会有问题？本地测试没问题，但是如果考虑到网络传输延迟，
+          会不会后发的数据先到？tcp的保证顺序有没有用？
           */
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 100; i++) {
             new Thread(() -> {
                 requestCount.incrementAndGet();
                 ByteBuf preBuf = Unpooled.buffer(7);
                 preBuf.writeBytes("before ".getBytes());
-                channel.writeAndFlush(preBuf);
-
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                synchronized (channel) {
+                    channel.writeAndFlush(preBuf);
+//                    try {
+//                        Thread.sleep(500);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+                    ByteBuf requestBuf = Unpooled.buffer(request.length);
+                    requestBuf.writeBytes(request);
+                    channel.writeAndFlush(requestBuf);
                 }
-                ByteBuf requestBuf = Unpooled.buffer(request.length);
-                requestBuf.writeBytes(request);
-                channel.writeAndFlush(requestBuf);
+
             }).start();
         }
     }

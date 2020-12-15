@@ -16,5 +16,6 @@ public class FindUnsortedSubarrayTest {
         System.out.println(new FindUnsortedSubarray().findUnsortedSubarray(new int[]{1, 2}));
         System.out.println(new FindUnsortedSubarray().findUnsortedSubarray(new int[]{1}));
         System.out.println(new FindUnsortedSubarray().findUnsortedSubarray(new int[]{}));
+        System.out.println(new FindUnsortedSubarray().findUnsortedSubarray(new int[]{1, 3, 2, 2, 2, 2}));
     }
 }

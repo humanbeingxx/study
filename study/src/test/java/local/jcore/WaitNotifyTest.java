@@ -79,4 +79,28 @@ public class WaitNotifyTest {
             }
         }
     }
+
+    @Test
+    public void testWaitTooLong() throws InterruptedException {
+        new Thread(() -> {
+            synchronized (this) {
+                try {
+                    wait(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        new Thread(() -> {
+            synchronized (this) {
+                try {
+                    Thread.sleep(200);
+                    notifyAll();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        Thread.sleep(2500);
+    }
 }

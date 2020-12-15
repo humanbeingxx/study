@@ -1,19 +1,21 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
+
 /**
  * @author cuixiaoshuang
  * @date 2019-12-17
  **/
 public class MinTreeDepth {
 
-    public int minDepth(BinaryTreeHasPathSum.TreeNode root) {
+    public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
         return rec(root, 0);
     }
 
-    private int rec(BinaryTreeHasPathSum.TreeNode node, int length) {
+    private int rec(TreeNode node, int length) {
         if (node.left == null && node.right == null) {
             return length + 1;
         }

@@ -1,0 +1,2 @@
+test=priv.cxs.dubbo.extensions.TestExtension
+priv.cxs.dubbo.extensions.RandomExtension

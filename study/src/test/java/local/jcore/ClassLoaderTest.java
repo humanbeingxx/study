@@ -1,14 +1,17 @@
 package local.jcore;
 
+import com.sun.java.accessibility.util.EventID;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.collections.Maps;
 
+import java.lang.reflect.AnnotatedType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -33,7 +36,7 @@ public class ClassLoaderTest {
     }
 
     @Test
-    public void testMyClass() throws ClassNotFoundException {
+    public void testMyClass() throws Exception {
         MyLoader myLoader = new MyLoader();
         Class<?> myClass = myLoader.loadClass("MyClass");
         System.out.println(myClass.getName());
@@ -68,5 +71,12 @@ public class ClassLoaderTest {
 
         Class<?> classOut = loader1.loadClass("local.other.MyObject");
         Assert.assertNotNull(classOut);
+    }
+
+    @Test
+    public void temp() {
+        ClassLoader classLoader = EventID.class.getClassLoader();
+        System.out.println(classLoader);
+        System.out.println(Thread.currentThread().getContextClassLoader());
     }
 }
