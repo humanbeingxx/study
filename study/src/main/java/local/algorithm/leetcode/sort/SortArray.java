@@ -1,4 +1,4 @@
-package local.algorithm.leetcode;
+package local.algorithm.leetcode.sort;
 
 public interface SortArray {
 

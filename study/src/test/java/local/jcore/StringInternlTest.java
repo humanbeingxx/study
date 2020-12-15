@@ -10,6 +10,12 @@ import java.lang.reflect.Field;
  **/
 public class StringInternlTest {
 
+    private static final String SFS = "static final";
+    private static final String fs = "final";
+    private String s = "string";
+
+    private int i = 1;
+
     @Test
     public void test() {
         String str = new StringBuilder("ja").append("va").toString();
@@ -46,5 +52,24 @@ public class StringInternlTest {
         value[1] = 'b';
         value[2] = 'a';
         System.out.println("abc");
+    }
+
+    @Test
+    public void testConstantPool() {
+        //TODO 这段代码放在main和放在test下结果不同
+        String s3 = new String("1") + new String("1");
+        String s5 = s3.intern();
+        String s4 = "11";
+        System.out.println(s5 == s3);
+        System.out.println(s5 == s4);
+        System.out.println(s3 == s4);
+    }
+
+    @Test
+    public void testOrder() {
+//        String before = "abc";
+        String order1 = new String("a") + new String("b") + new String("c");
+        System.out.println(order1.intern() == order1);
+//        String after = "abc";
     }
 }

@@ -1,16 +1,16 @@
-package local.algorithm.leetcode;
+package local.algorithm.leetcode.sort;
 
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
-public class SortArrayHeapSortTest {
+public abstract class SortArrayTest {
 
     @Test
-    public void testSortArrayRandom() {
+    public void testSortRandom() {
         for (int time = 0; time < 100; time++) {
             Random random = new Random();
             int[] data1 = new int[100];
@@ -20,17 +20,11 @@ public class SortArrayHeapSortTest {
                 data1[i] = val;
                 data2[i] = val;
             }
-            new SortArrayHeapSort().sortArray(data1);
+            sort(data1);
             Arrays.sort(data2);
-            assertEquals(data1,data2);
+            assertEquals(data1, data2);
         }
     }
 
-    @Test
-    public void testBoundary() {
-        int[] data = new int[]{};
-        new SortArrayHeapSort().sortArray(data);
-        data = new int[]{3,2,1};
-        new SortArrayHeapSort().sortArray(data);
-    }
+    abstract protected void sort(int[] data);
 }

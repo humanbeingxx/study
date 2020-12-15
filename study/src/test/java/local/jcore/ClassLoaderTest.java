@@ -22,7 +22,7 @@ public class ClassLoaderTest {
         @Override
         protected Class<?> findClass(String name) {
             try {
-                byte[] bytes = Files.readAllBytes(Paths.get("MyClass.class"));
+                byte[] bytes = Files.readAllBytes(Paths.get("E:\\MyClass.class"));
                 Class<?> myClass = defineClass(null, bytes, 0, bytes.length);
                 return myClass;
             } catch (Throwable e) {
@@ -30,8 +30,6 @@ public class ClassLoaderTest {
                 throw new Error();
             }
         }
-
-        ;
     }
 
     @Test

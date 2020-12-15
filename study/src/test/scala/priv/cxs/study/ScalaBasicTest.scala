@@ -249,23 +249,6 @@ class ScalaBasicTest extends org.scalatest.FunSuite {
     println((Nil.::("B")).+:("A"))
   }
 
-  test("test >:") {
-    class MyClass(val name: String) {
-
-      def +(b: MyClass): MyClass = {
-        new MyClass(this.name + ":" + b.name)
-      }
-
-      def +:(b: MyClass): MyClass = {
-        new MyClass(this.name + ":" + b.name)
-      }
-    }
-
-    println((new MyClass("a") + new MyClass("b")).name)
-    println((new MyClass("a") +: new MyClass("b")).name)
-  }
-
-
   test("test indexOf") {
     def until(condition: => Boolean)(block: => Unit): Unit = {
       if (!condition) {
