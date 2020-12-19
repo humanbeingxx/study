@@ -1,6 +1,7 @@
 package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
+import local.algorithm.leetcode.MergeInBetweenLinkedLists.ListNode;
 
 import static org.testng.Assert.*;
 

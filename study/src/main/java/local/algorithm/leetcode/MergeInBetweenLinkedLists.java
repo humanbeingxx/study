@@ -1,33 +1,32 @@
 package local.algorithm.leetcode;
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode() {
-    }
-
-    ListNode(int val) {
-        this.val = val;
-    }
-
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
-
-    public String print() {
-        StringBuilder stringBuilder = new StringBuilder();
-        ListNode node = this;
-        while (node != null) {
-            stringBuilder.append(node.val).append("->");
-            node = node.next;
-        }
-        return stringBuilder.toString();
-    }
-}
-
 public class MergeInBetweenLinkedLists {
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+
+        public String print() {
+            StringBuilder stringBuilder = new StringBuilder();
+            ListNode node = this;
+            while (node != null) {
+                stringBuilder.append(node.val).append("->");
+                node = node.next;
+            }
+            return stringBuilder.toString();
+        }
+    }
 
     public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
         ListNode node = list1;
