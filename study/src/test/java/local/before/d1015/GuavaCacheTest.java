@@ -22,6 +22,7 @@ public class GuavaCacheTest {
 
                         @Override
                         public String load(String key) throws Exception {
+                            System.out.println("try loading");
                             Thread.sleep(1000);
                             return "test" + random.nextInt(10);
                         }
@@ -34,6 +35,7 @@ public class GuavaCacheTest {
 
                 @Override
                 public String load(String key) throws Exception {
+                    System.out.println("try loading");
                     Thread.sleep(1000);
                     return "test" + random.nextInt(10);
                 }
@@ -43,55 +45,15 @@ public class GuavaCacheTest {
     @Test
     public void test() throws InterruptedException, ExecutionException {
         System.out.println(cache.get("key"));
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
-        new Thread(() -> {
-            try {
-                System.out.println(cache.get("key"));
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-        }).start();
+        for (int i = 0; i < 5; i++) {
+            new Thread(() -> {
+                try {
+                    System.out.println(cache.get("key"));
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+        }
 
         Thread.sleep(5000);
     }
