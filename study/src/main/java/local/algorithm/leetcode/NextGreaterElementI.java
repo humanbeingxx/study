@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author cuixiaoshuang
  * @date 2019-12-30
  **/
-public class NextGreaterElement1 {
+public class NextGreaterElementI {
 
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         if (nums1.length == 0 || nums2.length == 0) {

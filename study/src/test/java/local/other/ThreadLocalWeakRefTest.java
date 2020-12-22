@@ -17,6 +17,11 @@ public class ThreadLocalWeakRefTest {
         val.set(null);
     }
 
+    @Test
+    public void testThreadExit() {
+        new Thread().start();
+    }
+
     static ThreadLocal<int[]> huge = new ThreadLocal<>();
 
     @Test
