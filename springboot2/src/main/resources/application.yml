@@ -2,8 +2,8 @@ spring:
   datasource:
     druid:
       username: test
-      password: test1234
-      url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      password: test123
+      url: jdbc:mysql://127.0.0.1:3306/local?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
   profiles:
     active: dev
   redis:
