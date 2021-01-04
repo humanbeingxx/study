@@ -2,6 +2,7 @@ package local.other;
 
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Field;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -15,6 +16,16 @@ public class ThreadLocalWeakRefTest {
         val.set(Thread.currentThread().getName());
         System.gc();
         val.set(null);
+    }
+
+    @Test
+    public void testValue() throws Exception {
+        val.set(Thread.currentThread().getName());
+        System.gc();
+        Field field = Thread.class.getDeclaredField("threadLocals");
+        field.setAccessible(true);
+        Object o = field.get(Thread.currentThread());
+        System.out.println(o);
     }
 
     @Test
