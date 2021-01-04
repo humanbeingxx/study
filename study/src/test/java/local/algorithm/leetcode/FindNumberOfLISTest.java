@@ -24,7 +24,7 @@ public class FindNumberOfLISTest {
 
     @Test
     public void testFindNumberOfLIS2() {
-        int result = new FindNumberOfLIS().findNumberOfLIS(new int[]{1, 2, 4, 3, 5, 4, 7, 2});
+        int result = new FindNumberOfLIS().findNumberOfLIS(new int[]{1, 2, 4, 3, 5, 4, 7});
         assertEquals(result, 3);
     }
 
