@@ -3,6 +3,11 @@ package local.jcore;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.lang.reflect.TypeVariable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -61,5 +66,42 @@ public class GenericTest {
     private String beforeFinally() {
         System.out.println("before finally");
         return "by finally";
+    }
+
+    private <T extends CharSequence> void getRealTypeInMethod(List<T> list) {
+        for (TypeVariable<? extends Class<? extends List>> typeParameter : list.getClass().getTypeParameters()) {
+            System.out.println(typeParameter.getName());
+        }
+        ParameterizedType type = (ParameterizedType)list.getClass().getGenericSuperclass();
+        System.out.println(type.getRawType().getTypeName());
+        for (Type actualTypeArgument : type.getActualTypeArguments()) {
+            System.out.println(actualTypeArgument.getTypeName());
+        }
+    }
+
+    private void getFieldType(Field field) {
+        ParameterizedType genericType = (ParameterizedType)field.getGenericType();
+        System.out.println(genericType.getActualTypeArguments()[0].getTypeName());
+        System.out.println(field.getType().getTypeName());
+    }
+
+    private List<String> listAsField = new ArrayList<>();
+
+    @Test
+    public void testRealType() throws NoSuchFieldException {
+        List<String> list = Lists.newArrayList();
+        list.add("test");
+
+        System.out.println("*********** get in other method ***********");
+        getRealTypeInMethod(list);
+
+        System.out.println("*********** get here ***********");
+        ParameterizedType genericSuperclass = (ParameterizedType)list.getClass().getGenericSuperclass();
+        for (Type actualTypeArgument : genericSuperclass.getActualTypeArguments()) {
+            System.out.println(actualTypeArgument.getTypeName());
+        }
+
+        Field field = GenericTest.class.getDeclaredField("listAsField");
+        getFieldType(field);
     }
 }

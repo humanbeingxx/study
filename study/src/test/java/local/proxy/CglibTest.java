@@ -1,10 +1,7 @@
 package local.proxy;
 
 import net.sf.cglib.core.DebuggingClassWriter;
-import net.sf.cglib.proxy.CallbackFilter;
-import net.sf.cglib.proxy.Enhancer;
-import net.sf.cglib.proxy.MethodInterceptor;
-import net.sf.cglib.proxy.MethodProxy;
+import net.sf.cglib.proxy.*;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;
@@ -73,5 +70,26 @@ public class CglibTest {
             }
         }));
         proxy2.action();
+    }
+
+    public interface INeedProxy {
+        void action();
+    }
+
+    @Test
+    public void testInvalidSuper() {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setInterfaces(new Class[]{INeedProxy.class});
+        enhancer.setCallback(new MethodInterceptor() {
+
+            @Override
+            public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
+                System.out.println(obj.getClass().getSuperclass().getName());
+                System.out.println(super.getClass().getName());
+                return null;
+            }
+        });
+        INeedProxy proxy = (INeedProxy) enhancer.create();
+        proxy.action();
     }
 }
