@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com
@@ -20,6 +20,6 @@ public class NTreePostOrderTest {
         root.children = Lists.newArrayList(child1, new NTreePreOrder.Node(2), new NTreePreOrder.Node(4));
 
         List<Integer> result = new NTreePostOrder().postorder(root);
-        assertEquals(result, Lists.newArrayList(5,6,3,2,4,1));
+        assertEquals(result, Lists.newArrayList(5, 6, 3, 2, 4, 1));
     }
 }

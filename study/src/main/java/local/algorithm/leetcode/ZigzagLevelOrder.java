@@ -2,7 +2,9 @@ package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.common.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * @author cuixiaoshuang
@@ -27,17 +29,17 @@ public class ZigzagLevelOrder {
                 TreeNode node = stack.pop();
                 temp.add(node.val);
                 if (leftToRight) {
-                    if (node.right!= null) {
+                    if (node.right != null) {
                         nextStack.push(node.right);
                     }
-                    if (node.left!= null) {
+                    if (node.left != null) {
                         nextStack.push(node.left);
                     }
                 } else {
-                    if (node.left!= null) {
+                    if (node.left != null) {
                         nextStack.push(node.left);
                     }
-                    if (node.right!= null) {
+                    if (node.right != null) {
                         nextStack.push(node.right);
                     }
                 }

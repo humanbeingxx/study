@@ -1,8 +1,7 @@
 package local.algorithm.leetcode;
 
-import org.testng.annotations.Test;
-
 import local.algorithm.leetcode.common.TreeNode;
+import org.testng.annotations.Test;
 
 /**
  * @author humanbeingxx@sina.com

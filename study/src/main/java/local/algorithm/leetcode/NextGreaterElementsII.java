@@ -15,7 +15,7 @@ public class NextGreaterElementsII {
             dupNums[i + nums.length] = nums[i];
         }
 
-        Stack<Integer> stack =  new Stack<>();
+        Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < dupNums.length; i++) {
             int num = dupNums[i];

@@ -11,7 +11,7 @@ public class ConcurrentMapViewTest {
     @Test
     public void test() throws InterruptedException {
         ConcurrentHashMap<Integer, Integer> map = new ConcurrentHashMap<>();
-        new Thread(()->{
+        new Thread(() -> {
             for (int i = 0; i < 10000; i++) {
                 map.put(i, i);
             }

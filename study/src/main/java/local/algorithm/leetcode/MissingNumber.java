@@ -12,7 +12,7 @@ public class MissingNumber {
             sum += i;
         }
         for (int num : nums) {
-            sum -=num;
+            sum -= num;
         }
         return sum;
     }

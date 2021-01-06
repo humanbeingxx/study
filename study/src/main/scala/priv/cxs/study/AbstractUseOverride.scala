@@ -1,9 +1,9 @@
 package priv.cxs.study
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-12
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-12
+ **/
 abstract class AbstractUseOverride() {
 
   val valValue = 1

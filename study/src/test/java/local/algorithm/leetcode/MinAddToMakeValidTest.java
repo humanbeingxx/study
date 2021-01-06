@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 public class MinAddToMakeValidTest {
 
     @Test

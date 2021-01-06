@@ -29,12 +29,12 @@ public class TestApplication {
         }
 
         @Bean
-        public A beanA1(){
+        public A beanA1() {
             return new A();
         }
 
         @Bean
-        public A beanA2(){
+        public A beanA2() {
             return new A();
         }
 
@@ -53,9 +53,11 @@ public class TestApplication {
         private B beanB2;
     }
 
-    static class A {}
-    static class B {}
+    static class A {
+    }
 
+    static class B {
+    }
 
 
     public static void main(String[] args) {

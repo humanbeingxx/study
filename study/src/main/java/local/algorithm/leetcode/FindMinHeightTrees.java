@@ -1,6 +1,9 @@
 package local.algorithm.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class FindMinHeightTrees {
 
@@ -26,7 +29,7 @@ public class FindMinHeightTrees {
             for (Integer i : needRemove) {
                 inDegrees.remove(i);
                 for (Integer next : edgeMap.get(i)) {
-                    if (inDegrees.containsKey(next)){
+                    if (inDegrees.containsKey(next)) {
                         inDegrees.put(next, inDegrees.get(next) - 1);
                     }
                 }

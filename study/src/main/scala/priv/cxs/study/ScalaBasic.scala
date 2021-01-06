@@ -1,11 +1,11 @@
 package priv.cxs.study
 
-import math._
+import scala.math._
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-09
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-09
+ **/
 object ScalaBasic {
 
   def main(args: Array[String]): Unit = {
@@ -34,7 +34,7 @@ object ScalaBasic {
 
   def countDown(n: Int): Unit = {
     var i = n
-    while (i >=0 ) {
+    while (i >= 0) {
       println(i)
       i -= 1
     }

@@ -22,7 +22,7 @@ public class RotateListRight {
         if (k == 0) {
             return head;
         }
-        ListNode newHead,last = node;
+        ListNode newHead, last = node;
         last.next = head;
         last = head;
         for (int i = 0; i < len - k - 1; i++) {

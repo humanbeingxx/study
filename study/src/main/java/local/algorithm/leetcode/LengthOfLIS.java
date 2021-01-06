@@ -16,7 +16,7 @@ public class LengthOfLIS {
             int max = 0, curr;
             for (int j = i + 1; j < nums.length; j++) {
                 curr = nums[j] > nums[i] ? maxLens[j] + 1 : 1;
-                if (curr > max){
+                if (curr > max) {
                     max = curr;
                 }
             }

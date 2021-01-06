@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class FindBestValueTest {
 
@@ -29,7 +29,7 @@ public class FindBestValueTest {
 
     @Test
     public void testFindBestValue5() {
-        int result = new FindBestValue().findBestValue(new int[]{1547,83230,57084,93444,70879}, 71237);
+        int result = new FindBestValue().findBestValue(new int[]{1547, 83230, 57084, 93444, 70879}, 71237);
         assertEquals(result, 17422);
     }
 

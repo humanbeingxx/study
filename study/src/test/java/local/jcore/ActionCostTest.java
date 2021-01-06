@@ -4,7 +4,6 @@ import com.google.common.base.Splitter;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

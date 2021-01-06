@@ -2,7 +2,7 @@ package local.interview_internal_reference.alibaba;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com

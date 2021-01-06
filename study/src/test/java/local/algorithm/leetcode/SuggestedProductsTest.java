@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 public class SuggestedProductsTest {
 
     @Test
@@ -22,13 +20,13 @@ public class SuggestedProductsTest {
 
     @Test
     public void testSuggestedProducts3() {
-        List<List<String>> result = new SuggestedProducts().suggestedProducts(new String[]{"bags","baggage","banner","box","cloths"}, "bags");
+        List<List<String>> result = new SuggestedProducts().suggestedProducts(new String[]{"bags", "baggage", "banner", "box", "cloths"}, "bags");
         result.forEach(System.out::println);
     }
 
     @Test
     public void testSuggestedProducts4() {
-        List<List<String>> result = new SuggestedProducts().suggestedProducts(new String[]{"bags","baggage","banner","box","cloths"}, "xxbag");
+        List<List<String>> result = new SuggestedProducts().suggestedProducts(new String[]{"bags", "baggage", "banner", "box", "cloths"}, "xxbag");
         result.forEach(System.out::println);
     }
 }

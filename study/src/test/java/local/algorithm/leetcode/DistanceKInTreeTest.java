@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-import static org.testng.Assert.*;
-
 public class DistanceKInTreeTest {
 
     TreeNode target = new TreeNode(5,
@@ -20,7 +18,8 @@ public class DistanceKInTreeTest {
             target,
             new TreeNode(1,
                     new TreeNode(0),
-                    new TreeNode(8)));;
+                    new TreeNode(8)));
+    ;
 
     @Test
     public void testDistanceK() {

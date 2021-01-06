@@ -25,11 +25,16 @@ public class EvalRPN {
 
     private int calc(int val1, int val2, String op) {
         switch (op) {
-            case "+": return val1 + val2;
-            case "-":return val1- val2;
-            case "*":return val1*val2;
-            case "/":return val1/val2;
-            default:throw new UnsupportedOperationException();
+            case "+":
+                return val1 + val2;
+            case "-":
+                return val1 - val2;
+            case "*":
+                return val1 * val2;
+            case "/":
+                return val1 / val2;
+            default:
+                throw new UnsupportedOperationException();
         }
     }
 }

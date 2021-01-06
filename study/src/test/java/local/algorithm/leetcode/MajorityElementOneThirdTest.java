@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 public class MajorityElementOneThirdTest {
 
     @Test
@@ -37,6 +35,7 @@ public class MajorityElementOneThirdTest {
         List<Integer> result = new MajorityElementOneThird().majorityElement(new int[]{1});
         System.out.println(result);
     }
+
     @Test
     public void testMajorityElement6() {
         List<Integer> result = new MajorityElementOneThird().majorityElement(new int[]{2, 1, 1});

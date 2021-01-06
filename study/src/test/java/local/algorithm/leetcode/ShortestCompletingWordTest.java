@@ -18,10 +18,10 @@ public class ShortestCompletingWordTest {
         result = new ShortestCompletingWord().shortestCompletingWord("1s3 456", new String[]{"looks", "pest", "stew", "show"});
         assertEquals(result, "pest");
 
-        result = new ShortestCompletingWord().shortestCompletingWord("iMSlpe4", new String[]{"claim","consumer","student","camera","public","never","wonder","simple","thought","use"});
+        result = new ShortestCompletingWord().shortestCompletingWord("iMSlpe4", new String[]{"claim", "consumer", "student", "camera", "public", "never", "wonder", "simple", "thought", "use"});
         assertEquals(result, "simple");
 
-        result = new ShortestCompletingWord().shortestCompletingWord("p", new String[]{"defense","second","point","property","thought","tell","stop","enjoy","seek","make"});
+        result = new ShortestCompletingWord().shortestCompletingWord("p", new String[]{"defense", "second", "point", "property", "thought", "tell", "stop", "enjoy", "seek", "make"});
         assertEquals(result, "stop");
     }
 }

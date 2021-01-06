@@ -19,7 +19,7 @@ public class MinSubArrayLenTest {
 
     @Test
     public void testMinSubArrayLen2() {
-        int result = new MinSubArrayLen().minSubArrayLen(7, new int[]{1,2,3,4,5,6,7,8});
+        int result = new MinSubArrayLen().minSubArrayLen(7, new int[]{1, 2, 3, 4, 5, 6, 7, 8});
         assertEquals(result, 1);
     }
 }

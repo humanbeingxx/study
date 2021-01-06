@@ -20,6 +20,6 @@ public class SingleNumbersII {
                 b ^= num;
             }
         }
-        return new int[]{a,b};
+        return new int[]{a, b};
     }
 }

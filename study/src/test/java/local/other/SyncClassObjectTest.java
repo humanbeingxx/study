@@ -14,6 +14,7 @@ public class SyncClassObjectTest {
                 Thread.sleep(1000);
             }
         }
+
         @SneakyThrows
         private void byObject(String text) {
             synchronized (this) {

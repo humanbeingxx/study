@@ -18,7 +18,7 @@ public class SubarrayBitwiseORsTest {
         result = new SubarrayBitwiseORs().subarrayBitwiseORs(new int[]{1, 1, 2});
         assertEquals(result, 3);
 
-        result = new SubarrayBitwiseORs().subarrayBitwiseORs(new int[]{1, 2,4});
+        result = new SubarrayBitwiseORs().subarrayBitwiseORs(new int[]{1, 2, 4});
         assertEquals(result, 6);
     }
 }

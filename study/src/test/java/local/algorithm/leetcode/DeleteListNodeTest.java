@@ -3,7 +3,7 @@ package local.algorithm.leetcode;
 import local.algorithm.leetcode.RemoveListElements.ListNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author cuixiaoshuang

@@ -9,9 +9,9 @@ public class CountNumberOfTeams {
         int total = 0;
         for (int i = 1; i < rating.length - 1; i++) {
             total += findBigger(rating[i], rating, 0, i - 1)
-                    * findSmaller(rating[i], rating, i+1, rating.length - 1);
+                    * findSmaller(rating[i], rating, i + 1, rating.length - 1);
             total += findSmaller(rating[i], rating, 0, i - 1)
-                    * findBigger(rating[i], rating, i+1, rating.length - 1);
+                    * findBigger(rating[i], rating, i + 1, rating.length - 1);
         }
         return total;
     }

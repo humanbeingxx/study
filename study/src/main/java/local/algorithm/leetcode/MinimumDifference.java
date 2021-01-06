@@ -23,7 +23,7 @@ public class MinimumDifference {
         }
         rec(node.left);
         if (pre != null) {
-            min = Math.min(Math.abs(pre.val - node.val),min);
+            min = Math.min(Math.abs(pre.val - node.val), min);
         }
         pre = node;
         rec(node.right);

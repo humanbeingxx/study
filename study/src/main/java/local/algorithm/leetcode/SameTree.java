@@ -1,6 +1,7 @@
 package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.common.TreeNode;
+
 /**
  * @author cuixiaoshuang
  * @date 2019-12-17

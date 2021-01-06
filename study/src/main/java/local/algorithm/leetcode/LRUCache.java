@@ -24,6 +24,6 @@ public class LRUCache {
         if (cache.containsKey(key)) {
             return;
         }
-        cache.put(key,value);
+        cache.put(key, value);
     }
 }

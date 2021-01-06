@@ -2,8 +2,6 @@ package local.nio;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author cuixiaoshuang
  * @date 2019-07-16

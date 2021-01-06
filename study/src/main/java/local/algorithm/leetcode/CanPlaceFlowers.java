@@ -19,7 +19,7 @@ public class CanPlaceFlowers {
             if (i - 1 >= 0 && flowerbed[i - 1] != 0) {
                 left = false;
             }
-            if (i + 1 < flowerbed.length && flowerbed[i+1] != 0) {
+            if (i + 1 < flowerbed.length && flowerbed[i + 1] != 0) {
                 right = false;
             }
             if (left && right) {

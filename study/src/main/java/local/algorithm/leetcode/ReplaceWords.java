@@ -17,10 +17,10 @@ public class ReplaceWords {
             Node node = this;
             for (int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
-                if (node.children[c-'a'] == null) {
-                    node.children[c-'a'] = new Node(c);
+                if (node.children[c - 'a'] == null) {
+                    node.children[c - 'a'] = new Node(c);
                 }
-                node = node.children[c-'a'];
+                node = node.children[c - 'a'];
                 if (node.isWord) {
                     return;
                 }
@@ -32,7 +32,7 @@ public class ReplaceWords {
             Node node = this;
             for (int i = 0; i < word.length(); i++) {
                 char c = word.charAt(i);
-                node = node.children[c-'a'];
+                node = node.children[c - 'a'];
                 if (node != null && node.isWord) {
                     return word.substring(0, i + 1);
                 } else if (node == null) {

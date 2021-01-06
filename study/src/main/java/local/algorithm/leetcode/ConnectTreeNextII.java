@@ -7,7 +7,8 @@ public class ConnectTreeNextII {
         public Node right;
         public Node next;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int val) {
             this.val = val;
@@ -42,7 +43,7 @@ public class ConnectTreeNextII {
             }
             if (currLevel.right != null) {
                 if (preNode != null) {
-                    preNode.next  = currLevel.right;
+                    preNode.next = currLevel.right;
                 }
                 preNode = currLevel.right;
             }

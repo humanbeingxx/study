@@ -13,12 +13,16 @@ public class ShuffleAnArray {
         random = new Random();
     }
 
-    /** Resets the array to its original configuration and return it. */
+    /**
+     * Resets the array to its original configuration and return it.
+     */
     public int[] reset() {
         return nums;
     }
 
-    /** Returns a random shuffling of the array. */
+    /**
+     * Returns a random shuffling of the array.
+     */
     public int[] shuffle() {
         int[] copy = Arrays.copyOf(nums, nums.length);
         for (int i = 1; i < copy.length - 2; i++) {

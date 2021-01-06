@@ -37,19 +37,19 @@ public class AlienSortedTest {
 
     @Test
     public void testIsAlienSorted1() {
-        boolean result = new AlienSorted().isAlienSorted(new String[]{"hello","leetcode"}, "hlabcdefgijkmnopqrstuvwxyz");
+        boolean result = new AlienSorted().isAlienSorted(new String[]{"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz");
         assertTrue(result);
     }
 
     @Test
     public void testIsAlienSorted2() {
-        boolean result = new AlienSorted().isAlienSorted(new String[]{"word","world","row"}, "worldabcefghijkmnpqstuvxyz");
+        boolean result = new AlienSorted().isAlienSorted(new String[]{"word", "world", "row"}, "worldabcefghijkmnpqstuvxyz");
         assertFalse(result);
     }
 
     @Test
     public void testIsAlienSorted3() {
-        boolean result = new AlienSorted().isAlienSorted(new String[]{"apple","app"}, "abcdefghijklmnopqrstuvwxyz");
+        boolean result = new AlienSorted().isAlienSorted(new String[]{"apple", "app"}, "abcdefghijklmnopqrstuvwxyz");
         assertFalse(result);
     }
 }

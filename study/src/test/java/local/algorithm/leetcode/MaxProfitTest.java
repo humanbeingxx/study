@@ -14,7 +14,7 @@ public class MaxProfitTest {
         int result = new MaxProfit().maxProfit(new int[]{7, 1, 5, 3, 6, 4});
         Assert.assertEquals(result, 5);
 
-        result = new MaxProfit().maxProfit(new int[]{7,6,4,3,1});
+        result = new MaxProfit().maxProfit(new int[]{7, 6, 4, 3, 1});
         Assert.assertEquals(result, 0);
 
         result = new MaxProfit().maxProfit(new int[]{7});

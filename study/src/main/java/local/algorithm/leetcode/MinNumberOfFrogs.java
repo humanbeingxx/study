@@ -1,7 +1,5 @@
 package local.algorithm.leetcode;
 
-import java.util.*;
-
 public class MinNumberOfFrogs {
 
     public int minNumberOfFrogs(String croakOfFrogs) {

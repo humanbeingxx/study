@@ -6,9 +6,9 @@ import scala.collection.mutable
 import scala.io.Source
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-30
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-30
+ **/
 class ScalaExerciseTest extends org.scalatest.FunSuite {
 
   test("exercise 1, Hello multiplication") {

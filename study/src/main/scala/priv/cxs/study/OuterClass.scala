@@ -3,9 +3,9 @@ package priv.cxs.study
 import scala.collection.mutable.ArrayBuffer
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-10
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-10
+ **/
 class OuterClass {
 
   class InnerClass

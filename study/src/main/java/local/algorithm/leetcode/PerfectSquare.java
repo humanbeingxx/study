@@ -8,7 +8,7 @@ public class PerfectSquare {
 
     public boolean isPerfectSquare(int num) {
         for (int i = 1; i < Integer.MAX_VALUE; i++) {
-            if (Integer.MAX_VALUE /i < i) {
+            if (Integer.MAX_VALUE / i < i) {
                 break;
             }
             int left = num / i;

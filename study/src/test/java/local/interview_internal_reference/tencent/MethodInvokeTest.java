@@ -2,10 +2,7 @@ package local.interview_internal_reference.tencent;
 
 import org.testng.annotations.Test;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
-import static org.testng.Assert.*;
 
 /**
  * @author humanbeingxx@sina.com
@@ -14,7 +11,8 @@ import static org.testng.Assert.*;
 public class MethodInvokeTest {
 
     class Temp {
-        public void show(){}
+        public void show() {
+        }
     }
 
     @Test
@@ -29,7 +27,7 @@ public class MethodInvokeTest {
         }
     }
 
-    class TempExtend extends TempSuper{
+    class TempExtend extends TempSuper {
         @Override
         public void act() {
             System.out.println("this is extend");

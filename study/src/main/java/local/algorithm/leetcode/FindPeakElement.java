@@ -44,13 +44,13 @@ public class FindPeakElement {
                 return -1;
             }
         }
-        if (nums[index] > nums[index+1] && nums[index] > nums[index-1]) {
+        if (nums[index] > nums[index + 1] && nums[index] > nums[index - 1]) {
             return 0;
-        } else if (nums[index] < nums[index+1] && nums[index] > nums[index-1]) {
+        } else if (nums[index] < nums[index + 1] && nums[index] > nums[index - 1]) {
             return 1;
-        } else if (nums[index] > nums[index+1] && nums[index] < nums[index-1]) {
+        } else if (nums[index] > nums[index + 1] && nums[index] < nums[index - 1]) {
             return -1;
-        } else if (nums[index] < nums[index+1] && nums[index] < nums[index-1]) {
+        } else if (nums[index] < nums[index + 1] && nums[index] < nums[index - 1]) {
             return -1;
         }
 

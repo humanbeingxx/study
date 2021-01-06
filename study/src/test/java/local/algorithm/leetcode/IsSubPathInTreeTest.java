@@ -4,7 +4,8 @@ import local.algorithm.leetcode.RemoveListElements.ListNode;
 import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class IsSubPathInTreeTest {
 

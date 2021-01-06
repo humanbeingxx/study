@@ -10,11 +10,11 @@ public class Fib {
         if (N <= 1) {
             return N;
         }
-        int[] ints = new int[N+1];
+        int[] ints = new int[N + 1];
         ints[0] = 0;
         ints[1] = 1;
         for (int i = 2; i <= N; i++) {
-            ints[i] = ints[i-1] + ints[i-2];
+            ints[i] = ints[i - 1] + ints[i - 2];
         }
         return ints[N];
     }

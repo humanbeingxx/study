@@ -13,7 +13,7 @@ public class FindBottomLeftValue {
         TreeNode left = null;
         while (!queue.isEmpty()) {
             left = null;
-            int size  = queue.size();
+            int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 if (left == null) {

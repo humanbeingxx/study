@@ -90,7 +90,7 @@ public class ScheduleManageServiceTest extends SpringBaseTest {
 
         Assert.assertTrue(views.stream()
                 .allMatch(scheduleJobView -> StringUtils.isNotBlank(scheduleJobView.getTriggerCron())
-                && StringUtils.isNotBlank(scheduleJobView.getTriggerState())));
+                        && StringUtils.isNotBlank(scheduleJobView.getTriggerState())));
 
         Thread.sleep(3000);
     }

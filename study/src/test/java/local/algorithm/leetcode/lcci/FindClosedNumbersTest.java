@@ -1,12 +1,8 @@
 package local.algorithm.leetcode.lcci;
 
 import org.testng.annotations.Test;
-import scala.Int;
 
-import java.util.Arrays;
 import java.util.Random;
-
-import static org.testng.Assert.*;
 
 public class FindClosedNumbersTest {
 

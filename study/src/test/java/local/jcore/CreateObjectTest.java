@@ -19,7 +19,7 @@ public class CreateObjectTest {
     @Test
     public void test() throws CloneNotSupportedException {
         MyObject origin = new MyObject();
-        MyObject clone = (MyObject)origin.clone();
+        MyObject clone = (MyObject) origin.clone();
     }
 
     static class Parent {

@@ -23,14 +23,18 @@ public class BSTIterator {
         }
     }
 
-    /** @return the next smallest number */
+    /**
+     * @return the next smallest number
+     */
     public int next() {
         TreeNode ret = stack.pop();
         putLeft(ret.right);
         return ret.val;
     }
 
-    /** @return whether we have a next smallest number */
+    /**
+     * @return whether we have a next smallest number
+     */
     public boolean hasNext() {
         return !stack.isEmpty();
     }

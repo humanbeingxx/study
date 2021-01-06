@@ -30,7 +30,7 @@ public class MaxProductTest {
 
     @Test
     public void testMaxProduct4() {
-        int result = new MaxProduct().maxProduct(new int[]{3,-1,4});
+        int result = new MaxProduct().maxProduct(new int[]{3, -1, 4});
         assertEquals(result, 4);
     }
 }

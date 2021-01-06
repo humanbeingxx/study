@@ -27,9 +27,9 @@ public class FindClosest {
     }
 
     private int minDistance(List<Integer> pos1, List<Integer> pos2) {
-        int min =Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
         int distance;
-        for (int i1 = 0, i2 = 0; i1 < pos1.size() && i2 < pos2.size();) {
+        for (int i1 = 0, i2 = 0; i1 < pos1.size() && i2 < pos2.size(); ) {
             distance = pos1.get(i1) - pos2.get(i2);
             if (distance == 0) {
                 return 0;

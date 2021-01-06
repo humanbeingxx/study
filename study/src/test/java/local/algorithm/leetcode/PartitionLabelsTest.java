@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 public class PartitionLabelsTest {
 
     @Test
@@ -26,7 +24,7 @@ public class PartitionLabelsTest {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 100; i++) {
-            sb.append((char)(random.nextInt(26) + 'a'));
+            sb.append((char) (random.nextInt(26) + 'a'));
         }
         System.out.println(sb);
         List<Integer> result = new PartitionLabels().partitionLabels(sb.toString());

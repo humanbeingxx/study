@@ -14,7 +14,7 @@ public class HIndex {
         }
         Arrays.sort(citations);
         int paperCount = 0;
-        for (int ref = citations[citations.length - 1], index = citations.length - 1; index >= 0 && ref >= 0;) {
+        for (int ref = citations[citations.length - 1], index = citations.length - 1; index >= 0 && ref >= 0; ) {
             if (ref <= paperCount) {
                 return paperCount;
             }

@@ -2,7 +2,7 @@ package local.algorithm;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
 
 public class PredictTheWinnerTest {
 

@@ -7,7 +7,7 @@ package local.algorithm.leetcode.lcci;
 public class Multiply {
 
     public int multiply(int A, int B) {
-        if (A == 0 || B == 0 ){
+        if (A == 0 || B == 0) {
             return 0;
         }
         if (A > 0 && B < 0) {
@@ -32,9 +32,9 @@ public class Multiply {
     }
 
     private int mul(int a, int b) {
-        if (b == 0){
+        if (b == 0) {
             return a;
         }
-        return a + multiply(a, b- 1);
+        return a + multiply(a, b - 1);
     }
 }

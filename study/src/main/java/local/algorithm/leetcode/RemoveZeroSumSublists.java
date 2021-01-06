@@ -18,7 +18,7 @@ public class RemoveZeroSumSublists {
         fake.next = head;
         ListNode pre = fake;
 
-        while (pre !=null) {
+        while (pre != null) {
             int sum = 0;
             ListNode curr = pre.next;
             while (curr != null) {

@@ -2,7 +2,7 @@ package local.algorithm.leetcode.lcof;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com

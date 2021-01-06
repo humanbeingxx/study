@@ -2,9 +2,12 @@ package local.interview_internal_reference.bytecode;
 
 import org.testng.annotations.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class OddEvenArrayTest {
 
@@ -25,7 +28,7 @@ public class OddEvenArrayTest {
             if (random.nextInt(2) == 0 && !evens.isEmpty()) {
                 Integer poll = evens.poll();
                 arr[i] = poll;
-            } else if (!odds.isEmpty()){
+            } else if (!odds.isEmpty()) {
                 Integer poll = odds.poll();
                 arr[i] = poll;
             } else {

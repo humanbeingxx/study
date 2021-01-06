@@ -23,7 +23,7 @@ public class MaxLengthOfConcatWithUniqCharsTest {
     @Test
     public void testMaxLength9() {
         int result = new MaxLengthOfConcatWithUniqChars().maxLength(Lists.newArrayList(
-                "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p"));
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"));
         assertEquals(result, 16);
     }
 

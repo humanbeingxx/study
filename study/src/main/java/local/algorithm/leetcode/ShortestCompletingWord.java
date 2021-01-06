@@ -32,7 +32,7 @@ public class ShortestCompletingWord {
         return result;
     }
 
-    private void clear(int[] counter){
+    private void clear(int[] counter) {
         for (int i = 0; i < counter.length; i++) {
             counter[i] = 0;
         }

@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class WiggleMaxLengthTest {
 
@@ -26,7 +26,7 @@ public class WiggleMaxLengthTest {
 
     @Test
     public void testWiggleMaxLength4() {
-        int result = new WiggleMaxLength().wiggleMaxLength(new int[]{1, 1,1});
+        int result = new WiggleMaxLength().wiggleMaxLength(new int[]{1, 1, 1});
         assertEquals(result, 1);
     }
 

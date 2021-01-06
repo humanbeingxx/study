@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class FindHeaterRadiusTest {
 
@@ -26,7 +26,7 @@ public class FindHeaterRadiusTest {
 
     @Test
     public void testFindRadius4() {
-        int result = new FindHeaterRadius().findRadius(new int[]{1}, new int[]{1,2,3,4});
+        int result = new FindHeaterRadius().findRadius(new int[]{1}, new int[]{1, 2, 3, 4});
         assertEquals(result, 0);
     }
 }

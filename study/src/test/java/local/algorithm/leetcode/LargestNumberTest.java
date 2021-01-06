@@ -17,13 +17,13 @@ public class LargestNumberTest {
 
     @Test
     public void testLargestNumber2() {
-        String result = new LargestNumber().largestNumber(new int[]{10,2});
+        String result = new LargestNumber().largestNumber(new int[]{10, 2});
         Assert.assertEquals(result, "210");
     }
 
     @Test
     public void testLargestNumber3() {
-        String result = new LargestNumber().largestNumber(new int[]{0,0,0,0});
+        String result = new LargestNumber().largestNumber(new int[]{0, 0, 0, 0});
         Assert.assertEquals(result, "0");
     }
 }

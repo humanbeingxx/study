@@ -2,8 +2,8 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static local.algorithm.leetcode.RemoveListElements.*;
-import static org.testng.Assert.*;
+import static local.algorithm.leetcode.RemoveListElements.ListNode;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author cuixiaoshuang

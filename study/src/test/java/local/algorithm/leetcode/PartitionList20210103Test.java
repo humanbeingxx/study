@@ -3,8 +3,6 @@ package local.algorithm.leetcode;
 import local.algorithm.leetcode.common.ListNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class PartitionList20210103Test {
 
 

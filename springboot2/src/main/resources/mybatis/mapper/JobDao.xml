@@ -4,9 +4,8 @@
 
     <insert id="insertOne">
         insert into tb_job
-        (code, name, salary, level, address, job_type, create_time)
-        values
-        (#{code}, #{name}, #{salary}, #{level}, #{address}, #{jobType}, now())
+            (code, name, salary, level, address, job_type, create_time)
+        values (#{code}, #{name}, #{salary}, #{level}, #{address}, #{jobType}, now())
     </insert>
     <insert id="insertMulti">
         insert into tb_job
@@ -18,32 +17,46 @@
     </insert>
 
     <select id="selectByName" resultType="priv.cxs.springboot2.model.Job">
-        select
-        code, name, address, salary, level, job_type from tb_job
-        where
-        name = #{name}
+        select code,
+               name,
+               address,
+               salary,
+               level,
+               job_type
+        from tb_job
+        where name = #{name}
     </select>
 
     <select id="selectByCode" resultType="priv.cxs.springboot2.model.Job">
-        select
-        code, name, address, salary, level, job_type
+        select code,
+               name,
+               address,
+               salary,
+               level,
+               job_type
         from tb_job
         where code = #{code}
     </select>
 
     <select id="selectAll" resultType="priv.cxs.springboot2.model.Job">
-        select code, name, address, salary, level, job_type from tb_job
+        select code, name, address, salary, level, job_type
+        from tb_job
     </select>
 
     <delete id="deleteByName">
-        delete from tb_job where name = #{name}
+        delete
+        from tb_job
+        where name = #{name}
     </delete>
 
     <delete id="flushAll">
-        delete from tb_job
+        delete
+        from tb_job
     </delete>
     <delete id="deleteByCode">
-        delete from tb_job where code = #{code}
+        delete
+        from tb_job
+        where code = #{code}
     </delete>
 
     <update id="updateByCode">

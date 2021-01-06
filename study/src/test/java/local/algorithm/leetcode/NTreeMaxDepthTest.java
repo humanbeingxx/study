@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import org.testng.annotations.Test;
 
 import static local.algorithm.leetcode.NTreePreOrder.Node;
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author cuixiaoshuang

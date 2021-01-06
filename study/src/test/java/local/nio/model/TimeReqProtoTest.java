@@ -3,8 +3,6 @@ package local.nio.model;
 import com.google.protobuf.InvalidProtocolBufferException;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author cuixiaoshuang
  * @date 2019-06-18

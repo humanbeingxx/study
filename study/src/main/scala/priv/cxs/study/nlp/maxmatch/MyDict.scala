@@ -3,12 +3,12 @@ package priv.cxs.study.nlp.maxmatch
 import scala.collection.mutable
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-11-21
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-11-21
+ **/
 object MyDict {
 
-  val dict:mutable.Set[String] = new mutable.HashSet[String]()
+  val dict: mutable.Set[String] = new mutable.HashSet[String]()
 
   {
     dict.add("计算机")

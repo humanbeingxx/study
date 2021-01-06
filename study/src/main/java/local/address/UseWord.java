@@ -6,7 +6,6 @@ import org.apdplat.word.segmentation.Word;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.OpenOption;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.List;

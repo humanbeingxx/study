@@ -1,10 +1,10 @@
 package priv.cxs.springboot2.service;
-import priv.cxs.springboot2.model.JobType;
 
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.Test;
 import priv.cxs.springboot2.SpringBaseTest;
 import priv.cxs.springboot2.model.Job;
+import priv.cxs.springboot2.model.JobType;
 
 import javax.annotation.Resource;
 

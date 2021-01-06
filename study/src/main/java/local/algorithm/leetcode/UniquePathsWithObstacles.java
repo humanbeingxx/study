@@ -25,6 +25,6 @@ public class UniquePathsWithObstacles {
                 }
             }
         }
-        return counts[m-1][n-1];
+        return counts[m - 1][n - 1];
     }
 }

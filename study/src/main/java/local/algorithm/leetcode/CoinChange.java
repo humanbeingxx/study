@@ -27,7 +27,7 @@ public class CoinChange {
                     if (changes[coin + i] == 0) {
                         changed = true;
                         changes[coin + i] = changes[i] + 1;
-                    } else if (changes[coin + i] > changes[i] + 1){
+                    } else if (changes[coin + i] > changes[i] + 1) {
                         changed = true;
                         changes[coin + i] = changes[i] + 1;
                     }
@@ -39,6 +39,6 @@ public class CoinChange {
                 changed = false;
             }
         }
-        return changes[amount - 1] > 0 ? changes[amount - 1]: -1;
+        return changes[amount - 1] > 0 ? changes[amount - 1] : -1;
     }
 }

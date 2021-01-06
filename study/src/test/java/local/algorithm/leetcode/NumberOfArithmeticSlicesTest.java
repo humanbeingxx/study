@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class NumberOfArithmeticSlicesTest {
 
@@ -20,7 +20,7 @@ public class NumberOfArithmeticSlicesTest {
 
     @Test
     public void testNumberOfArithmeticSlices3() {
-        int result = new NumberOfArithmeticSlices().numberOfArithmeticSlices(new int[]{1,1,1,1,1,1,1,1,1});
+        int result = new NumberOfArithmeticSlices().numberOfArithmeticSlices(new int[]{1, 1, 1, 1, 1, 1, 1, 1, 1});
         assertEquals(result, 28);
     }
 

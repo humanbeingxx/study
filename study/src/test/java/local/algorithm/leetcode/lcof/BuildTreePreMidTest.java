@@ -1,12 +1,7 @@
 package local.algorithm.leetcode.lcof;
 
-import local.algorithm.leetcode.BuildTreePreIn;
 import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
-
-import java.util.Arrays;
-
-import static org.testng.Assert.*;
 
 public class BuildTreePreMidTest {
 
@@ -19,7 +14,7 @@ public class BuildTreePreMidTest {
 
     @Test
     public void testBuildTree2() {
-        TreeNode root = new BuildTreePreMid().buildTree(new int[]{1,2}, new int[]{2,1});
+        TreeNode root = new BuildTreePreMid().buildTree(new int[]{1, 2}, new int[]{2, 1});
         System.out.println(root);
     }
 }

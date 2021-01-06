@@ -1,6 +1,5 @@
 package local.algorithm;
 
-import com.google.common.collect.TreeMultiset;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
@@ -8,7 +7,6 @@ import org.testng.collections.Lists;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.TreeSet;
 
 /**
  * @author xiaoshuang.cui

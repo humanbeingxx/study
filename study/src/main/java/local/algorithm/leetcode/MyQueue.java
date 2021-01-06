@@ -7,18 +7,24 @@ class MyQueue {
     private Stack<Integer> stackIn;
     private Stack<Integer> stackOut;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public MyQueue() {
         stackIn = new Stack<>();
         stackOut = new Stack<>();
     }
 
-    /** Push element x to the back of queue. */
+    /**
+     * Push element x to the back of queue.
+     */
     public void push(int x) {
         stackIn.push(x);
     }
 
-    /** Removes the element from in front of queue and returns that element. */
+    /**
+     * Removes the element from in front of queue and returns that element.
+     */
     public int pop() {
         if (stackOut.isEmpty()) {
             while (!stackIn.isEmpty()) {
@@ -28,7 +34,9 @@ class MyQueue {
         return stackOut.pop();
     }
 
-    /** Get the front element. */
+    /**
+     * Get the front element.
+     */
     public int peek() {
         if (stackOut.isEmpty()) {
             while (!stackIn.isEmpty()) {
@@ -38,7 +46,9 @@ class MyQueue {
         return stackOut.peek();
     }
 
-    /** Returns whether the queue is empty. */
+    /**
+     * Returns whether the queue is empty.
+     */
     public boolean empty() {
         return stackIn.isEmpty() && stackOut.isEmpty();
     }

@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.testng.Assert.*;
-
 public class Rand10ToRand7Test {
 
     @Test

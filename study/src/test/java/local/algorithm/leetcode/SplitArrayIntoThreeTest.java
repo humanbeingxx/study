@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class SplitArrayIntoThreeTest {
 
@@ -28,7 +28,7 @@ public class SplitArrayIntoThreeTest {
 
     @Test
     public void testWaysToSplit4() {
-        int result = new SplitArrayIntoThree().waysToSplit(new int[]{0,0,0,0,0});
+        int result = new SplitArrayIntoThree().waysToSplit(new int[]{0, 0, 0, 0, 0});
         assertEquals(result, 6);
     }
 

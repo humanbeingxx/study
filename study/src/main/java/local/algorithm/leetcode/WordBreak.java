@@ -2,7 +2,9 @@ package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.LongestWord.Node;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author cuixiaoshuang

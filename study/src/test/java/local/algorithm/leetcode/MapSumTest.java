@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class MapSumTest {
 
@@ -30,9 +30,9 @@ public class MapSumTest {
     @Test
     public void test3() {
         MapSum mapSum = new MapSum();
-        mapSum.insert("aa",3);
-        mapSum.insert("aa",2);
-        mapSum.insert("aaa",3);
+        mapSum.insert("aa", 3);
+        mapSum.insert("aa", 2);
+        mapSum.insert("aaa", 3);
         int result = mapSum.sum("aaa");
         assertEquals(result, 3);
     }

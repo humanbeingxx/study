@@ -12,7 +12,7 @@ public class EraseOverlapIntervals {
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[1]));
         int remainCount = 0, preEnd = -1;
         for (int[] interval : intervals) {
-            if (preEnd == - 1) {
+            if (preEnd == -1) {
                 preEnd = interval[1];
                 remainCount++;
             } else if (interval[0] >= preEnd) {

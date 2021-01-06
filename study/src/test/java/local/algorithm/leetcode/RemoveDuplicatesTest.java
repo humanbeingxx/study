@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com
@@ -12,7 +12,7 @@ public class RemoveDuplicatesTest {
 
     @Test
     public void testRemoveDuplicates() {
-        int result = new RemoveDuplicates().removeDuplicates(new int[]{1,1,2});
+        int result = new RemoveDuplicates().removeDuplicates(new int[]{1, 1, 2});
         assertEquals(result, 2);
     }
 }

@@ -2,8 +2,6 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2019/12/15 20:59

@@ -17,8 +17,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
-import static io.netty.channel.ChannelFutureListener.CLOSE;
-
 /**
  * @author cuixiaoshuang
  * @date 2019-06-14

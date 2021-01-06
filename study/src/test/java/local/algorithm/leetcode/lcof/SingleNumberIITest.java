@@ -2,8 +2,6 @@ package local.algorithm.leetcode.lcof;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class SingleNumberIITest {
 
     @Test

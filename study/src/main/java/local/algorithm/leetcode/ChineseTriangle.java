@@ -47,7 +47,7 @@ public class ChineseTriangle {
         int curr = 1, end = rowIndex % 2 == 0 ? rowIndex / 2 : (rowIndex / 2 + 1);
         for (int i = 0; i < end; i++) {
             row.add(curr);
-            curr = curr  / (i + 1) * (rowIndex - i - 1);
+            curr = curr / (i + 1) * (rowIndex - i - 1);
         }
         for (int i = end; i < rowIndex; i++) {
             row.add(row.get(rowIndex - 1 - i));

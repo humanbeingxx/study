@@ -12,7 +12,7 @@ public class FindClosedNumbers {
                 int move = 1;
                 for (int i = 0; i < count1; i++) {
                     result[0] |= move;
-                    move <<=1;
+                    move <<= 1;
                 }
                 break;
             } else if ((num & base) == base) {

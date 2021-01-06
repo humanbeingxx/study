@@ -9,7 +9,7 @@ public class LongestMountain {
         int maxLen = 0, currLen = 0;
         boolean growing = false, hasTop = false;
         for (int i = 0; i < A.length - 1; i++) {
-            if (A[i] < A[i+1]) {
+            if (A[i] < A[i + 1]) {
                 growing = true;
                 if (hasTop) {
                     currLen++;
@@ -19,7 +19,7 @@ public class LongestMountain {
                 } else {
                     currLen++;
                 }
-            } else if (A[i] > A[i+1]) {
+            } else if (A[i] > A[i + 1]) {
                 if (growing) {
                     hasTop = true;
                     growing = false;
@@ -37,7 +37,7 @@ public class LongestMountain {
                 growing = false;
             }
         }
-        if (A[A.length - 1] < A[A.length-2]) {
+        if (A[A.length - 1] < A[A.length - 2]) {
             if (hasTop) {
                 currLen++;
                 maxLen = Math.max(maxLen, currLen);

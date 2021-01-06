@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
 
 /**
  * @author cuixiaoshuang
@@ -15,6 +15,7 @@ public class CheckValidStringTest {
         boolean result = new CheckValidString().checkValidString("*()(())*()(()()((()(()()*)(*(())((((((((()*)(()(*)");
         assertFalse(result);
     }
+
     @Test
     public void testCheckValidString2() {
         boolean result = new CheckValidString().checkValidString("(())((())()()(*)(*()(())())())()()((()())((()))(*");

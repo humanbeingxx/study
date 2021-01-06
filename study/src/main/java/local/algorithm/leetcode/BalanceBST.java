@@ -10,11 +10,11 @@ public class BalanceBST {
     public TreeNode balanceBST(TreeNode root) {
         List<Integer> inOrder = new ArrayList<>();
         inOrder(root, inOrder);
-        return build(inOrder,0, inOrder.size()-1);
+        return build(inOrder, 0, inOrder.size() - 1);
     }
 
     private void inOrder(TreeNode root, List<Integer> inOrder) {
-        if(root == null) {
+        if (root == null) {
             return;
         }
         inOrder(root.left, inOrder);
@@ -28,8 +28,8 @@ public class BalanceBST {
         }
         int mid = (end + start) / 2;
         TreeNode root = new TreeNode(vals.get(mid));
-        root.left = build(vals, start, mid-1);
-        root.right = build(vals, mid+1, end);
+        root.left = build(vals, start, mid - 1);
+        root.right = build(vals, mid + 1, end);
         return root;
     }
 }

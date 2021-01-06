@@ -3,7 +3,7 @@ package local.algorithm.leetcode.lcci;
 import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com

@@ -11,7 +11,7 @@ public class WiggleMaxLength {
         int len = 1;
         int direction = 0;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] < nums[i-1]) {
+            if (nums[i] < nums[i - 1]) {
                 if (direction == 0) {
                     direction = 1;
                     len++;
@@ -19,7 +19,7 @@ public class WiggleMaxLength {
                     len++;
                     direction = 1;
                 }
-            } else if (nums[i] > nums[i-1]) {
+            } else if (nums[i] > nums[i - 1]) {
                 if (direction == 0) {
                     direction = -1;
                     len++;

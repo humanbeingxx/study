@@ -1,16 +1,16 @@
 package priv.cxs.study
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-12
-  **/
-class UseApply private (var value: String = "", var id:Int = 0) {
+ * @author cuixiaoshuang
+ * @date 2019-08-12
+ **/
+class UseApply private(var value: String = "", var id: Int = 0) {
 
 }
 
 object UseApply {
-  var name:String = ""
-  var age:Int = 0
+  var name: String = ""
+  var age: Int = 0
 
   def apply(value: String): UseApply = {
     new UseApply(value)

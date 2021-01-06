@@ -16,7 +16,7 @@ public class MaxNumberOfBalloons {
         return min(counts['b' - 'a'], counts['a' - 'a'], counts['l' - 'a'] / 2, counts['o' - 'a'] / 2, counts['n' - 'a']);
     }
 
-    private int min(int...counts) {
+    private int min(int... counts) {
         int min = Integer.MAX_VALUE;
         for (int count : counts) {
             if (count < min) {

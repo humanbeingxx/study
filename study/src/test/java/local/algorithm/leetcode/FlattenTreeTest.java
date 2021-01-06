@@ -1,10 +1,9 @@
 package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.common.TreeNode;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author cuixiaoshuang

@@ -34,7 +34,7 @@ public class TweetCounts {
             int end = Math.min(start + interval, endTime);
             Map.Entry<Integer, Integer> startEntry = record.ceilingEntry(start);
             int count = 0;
-            while (startEntry != null && startEntry.getKey() < end){
+            while (startEntry != null && startEntry.getKey() < end) {
                 count += startEntry.getValue();
                 startEntry = record.higherEntry(startEntry.getKey());
             }

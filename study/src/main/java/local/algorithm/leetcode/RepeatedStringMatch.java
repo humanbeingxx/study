@@ -7,7 +7,7 @@ package local.algorithm.leetcode;
 public class RepeatedStringMatch {
 
     public int repeatedStringMatch(String A, String B) {
-        int times = (int)Math.ceil((double)B.length() / A.length()) + 1;
+        int times = (int) Math.ceil((double) B.length() / A.length()) + 1;
         StringBuilder sb = new StringBuilder("");
         for (int i = 0; i < times; i++) {
             sb.append(A);

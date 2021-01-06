@@ -20,7 +20,7 @@ public class MincostTickets {
                 continue;
             }
 
-            int cost1 = (i + 1 > maxDay) ? costs[0] : costs[0] + dp[i+1];
+            int cost1 = (i + 1 > maxDay) ? costs[0] : costs[0] + dp[i + 1];
             int cost7 = (i + 7 > maxDay) ? costs[1] : costs[1] + dp[i + 7];
             int cost30 = (i + 30 > maxDay) ? costs[2] : costs[2] + dp[i + 30];
 

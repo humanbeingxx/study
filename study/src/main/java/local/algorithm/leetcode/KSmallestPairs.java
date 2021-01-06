@@ -23,7 +23,7 @@ public class KSmallestPairs {
     }
 
     public List<List<Integer>> kSmallestPairsBetter1(int[] nums1, int[] nums2, int k) {
-        if (nums1.length == 0|| nums2.length == 0 || k <= 0) {
+        if (nums1.length == 0 || nums2.length == 0 || k <= 0) {
             return new ArrayList<>();
         }
         List<List<Integer>> result = new ArrayList<>(k);

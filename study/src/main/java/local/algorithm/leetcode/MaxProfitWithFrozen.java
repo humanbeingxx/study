@@ -12,10 +12,10 @@ public class MaxProfitWithFrozen {
         buyProfit[0] = -prices[0];
         for (int i = 1; i < prices.length; i++) {
             int price = prices[i];
-            sellProfit[i] = Math.max(buyProfit[i-1] + price, sellProfit[i-1]);
-            buyProfit[i] = Math.max(sellProfit[i-1] - price, buyProfit[i-1]);
-            frozeProfit[i] = Math.max(frozeProfit[i-1], Math.max(sellProfit[i-1], buyProfit[i-1]));
+            sellProfit[i] = Math.max(buyProfit[i - 1] + price, sellProfit[i - 1]);
+            buyProfit[i] = Math.max(sellProfit[i - 1] - price, buyProfit[i - 1]);
+            frozeProfit[i] = Math.max(frozeProfit[i - 1], Math.max(sellProfit[i - 1], buyProfit[i - 1]));
         }
-        return sellProfit[prices.length-1];
+        return sellProfit[prices.length - 1];
     }
 }

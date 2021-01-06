@@ -8,7 +8,8 @@ public class ConnectTreeNext {
         public Node right;
         public Node next;
 
-        public Node() {}
+        public Node() {
+        }
 
         public Node(int val) {
             this.val = val;

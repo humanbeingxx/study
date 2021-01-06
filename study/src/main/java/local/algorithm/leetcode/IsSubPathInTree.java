@@ -1,7 +1,7 @@
 package local.algorithm.leetcode;
 
-import local.algorithm.leetcode.common.TreeNode;
 import local.algorithm.leetcode.RemoveListElements.ListNode;
+import local.algorithm.leetcode.common.TreeNode;
 
 public class IsSubPathInTree {
 

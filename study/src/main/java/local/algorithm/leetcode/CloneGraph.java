@@ -1,6 +1,9 @@
 package local.algorithm.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class CloneGraph {
 
@@ -34,7 +37,7 @@ public class CloneGraph {
         HashMap<Node, Node> visited = new HashMap();
 
         // Put the first node in the queue
-        LinkedList<Node> queue = new LinkedList<Node> ();
+        LinkedList<Node> queue = new LinkedList<Node>();
         queue.add(node);
         // Clone the node and put it in the visited dictionary.
         visited.put(node, new Node(node.val, new ArrayList()));
@@ -44,7 +47,7 @@ public class CloneGraph {
             // Pop a node say "n" from the from the front of the queue.
             Node n = queue.remove();
             // Iterate through all the neighbors of the node "n"
-            for (Node neighbor: n.neighbors) {
+            for (Node neighbor : n.neighbors) {
                 if (!visited.containsKey(neighbor)) {
                     // Clone the neighbor and put in the visited, if not present already
                     visited.put(neighbor, new Node(neighbor.val, new ArrayList()));

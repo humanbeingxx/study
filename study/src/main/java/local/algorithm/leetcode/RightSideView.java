@@ -24,7 +24,7 @@ public class RightSideView {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                if (i == size- 1) {
+                if (i == size - 1) {
                     result.add(node.val);
                 }
                 if (node.left != null) {

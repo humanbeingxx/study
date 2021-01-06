@@ -9,7 +9,8 @@ public class MyRegex {
     public boolean isMatch(String s, String p) {
         if (s.length() == 0 && p.length() == 0) {
             return true;
-        } if (p.length() == 0) {
+        }
+        if (p.length() == 0) {
             return false;
         }
         if (s.length() == 0) {

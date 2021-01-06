@@ -18,12 +18,6 @@
 
 package org.quartz.core;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.atomic.AtomicBoolean;
-
 import org.quartz.JobPersistenceException;
 import org.quartz.SchedulerException;
 import org.quartz.Trigger;
@@ -35,17 +29,21 @@ import org.quartz.spi.TriggerFiredResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 /**
  * <p>
  * The thread responsible for performing the work of firing <code>{@link Trigger}</code>
  * s that are registered with the <code>{@link QuartzScheduler}</code>.
  * </p>
  *
+ * @author James House
  * @see QuartzScheduler
  * @see org.quartz.Job
  * @see Trigger
- *
- * @author James House
  */
 public class QuartzSchedulerThread extends Thread {
     /*
@@ -111,7 +109,7 @@ public class QuartzSchedulerThread extends Thread {
         this.qs = qs;
         this.qsRsrcs = qsRsrcs;
         this.setDaemon(setDaemon);
-        if(qsRsrcs.isThreadsInheritInitializersClassLoadContext()) {
+        if (qsRsrcs.isThreadsInheritInitializersClassLoadContext()) {
             log.info("QuartzSchedulerThread Inheriting ContextClassLoader of thread: " + Thread.currentThread().getName());
             this.setContextClassLoader(Thread.currentThread().getContextClassLoader());
         }
@@ -206,11 +204,11 @@ public class QuartzSchedulerThread extends Thread {
      * </p>
      *
      * @param candidateNewNextFireTime the time (in millis) when the newly scheduled trigger
-     * will fire.  If this method is being called do to some other even (rather
-     * than scheduling a trigger), the caller should pass zero (0).
+     *                                 will fire.  If this method is being called do to some other even (rather
+     *                                 than scheduling a trigger), the caller should pass zero (0).
      */
     public void signalSchedulingChange(long candidateNewNextFireTime) {
-        synchronized(sigLock) {
+        synchronized (sigLock) {
             signaled = true;
             signaledNextFireTime = candidateNewNextFireTime;
             sigLock.notifyAll();
@@ -218,20 +216,20 @@ public class QuartzSchedulerThread extends Thread {
     }
 
     public void clearSignaledSchedulingChange() {
-        synchronized(sigLock) {
+        synchronized (sigLock) {
             signaled = false;
             signaledNextFireTime = 0;
         }
     }
 
     public boolean isScheduleChanged() {
-        synchronized(sigLock) {
+        synchronized (sigLock) {
             return signaled;
         }
     }
 
     public long getSignaledNextFireTime() {
-        synchronized(sigLock) {
+        synchronized (sigLock) {
             return signaledNextFireTime;
         }
     }
@@ -277,7 +275,7 @@ public class QuartzSchedulerThread extends Thread {
                 }
 
                 int availThreadCount = qsRsrcs.getThreadPool().blockForAvailableThreads();
-                if(availThreadCount > 0) { // will always be true, due to semantics of blockForAvailableThreads...
+                if (availThreadCount > 0) { // will always be true, due to semantics of blockForAvailableThreads...
 
                     List<OperableTrigger> triggers;
 
@@ -305,7 +303,7 @@ public class QuartzSchedulerThread extends Thread {
                     } catch (RuntimeException e) {
                         if (acquiresFailed == 0) {
                             getLog().error("quartzSchedulerThreadLoop: RuntimeException "
-                                    +e.getMessage(), e);
+                                    + e.getMessage(), e);
                         }
                         if (acquiresFailed < Integer.MAX_VALUE)
                             acquiresFailed++;
@@ -322,7 +320,7 @@ public class QuartzSchedulerThread extends Thread {
 
                             log.debug("@321 {}, {}, {}", triggerTime, now, timeUntilTrigger);
                         }
-                        while(timeUntilTrigger > 2) {
+                        while (timeUntilTrigger > 2) {
                             if (triggers.size() == 1 && triggers.get(0).getJobKey().getName().contains("Publish")) {
                                 log.debug("@323");
                             }
@@ -336,13 +334,13 @@ public class QuartzSchedulerThread extends Thread {
                                         // on 'synchronize', so we must recompute
                                         now = System.currentTimeMillis();
                                         timeUntilTrigger = triggerTime - now;
-                                        if(timeUntilTrigger >= 1)
+                                        if (timeUntilTrigger >= 1)
                                             sigLock.wait(timeUntilTrigger);
                                     } catch (InterruptedException ignore) {
                                     }
                                 }
                             }
-                            if(releaseIfScheduleChangedSignificantly(triggers, triggerTime)) {
+                            if (releaseIfScheduleChangedSignificantly(triggers, triggerTime)) {
                                 break;
                             }
                             now = System.currentTimeMillis();
@@ -350,23 +348,23 @@ public class QuartzSchedulerThread extends Thread {
                         }
 
                         // this happens if releaseIfScheduleChangedSignificantly decided to release triggers
-                        if(triggers.isEmpty())
+                        if (triggers.isEmpty())
                             continue;
 
                         // set triggers to 'executing'
                         List<TriggerFiredResult> bndles = new ArrayList<TriggerFiredResult>();
 
                         boolean goAhead = true;
-                        synchronized(sigLock) {
+                        synchronized (sigLock) {
                             goAhead = !halted.get();
                         }
 
-                        if(goAhead) {
+                        if (goAhead) {
                             log.debug("333333333333333333333333333333333333");
 
                             try {
                                 List<TriggerFiredResult> res = qsRsrcs.getJobStore().triggersFired(triggers);
-                                if(res != null) {
+                                if (res != null) {
                                     bndles = res;
                                 }
                             } catch (SchedulerException se) {
@@ -387,8 +385,8 @@ public class QuartzSchedulerThread extends Thread {
                         }
 
                         for (int i = 0; i < bndles.size(); i++) {
-                            TriggerFiredResult result =  bndles.get(i);
-                            TriggerFiredBundle bndle =  result.getTriggerFiredBundle();
+                            TriggerFiredResult result = bndles.get(i);
+                            TriggerFiredBundle bndle = result.getTriggerFiredBundle();
                             Exception exception = result.getException();
 
                             if (exception instanceof RuntimeException) {
@@ -448,9 +446,9 @@ public class QuartzSchedulerThread extends Thread {
                 long now = System.currentTimeMillis();
                 long waitTime = now + getRandomizedIdleWaitTime();
                 long timeUntilContinue = waitTime - now;
-                synchronized(sigLock) {
+                synchronized (sigLock) {
                     try {
-                        if(!halted.get()) {
+                        if (!halted.get()) {
                             // QTZ-336 A job might have been completed in the mean time and we might have
                             // missed the scheduled changed signal by not waiting for the notify() yet
                             // Check that before waiting for too long in case this very job needs to be
@@ -463,7 +461,7 @@ public class QuartzSchedulerThread extends Thread {
                     }
                 }
 
-            } catch(RuntimeException re) {
+            } catch (RuntimeException re) {
                 getLog().error("Runtime error occurred in main trigger firing loop.", re);
             }
         } // while (!halted)
@@ -531,9 +529,9 @@ public class QuartzSchedulerThread extends Thread {
         // we have no current facility for having it tell us that, so we make
         // a somewhat educated but arbitrary guess ;-).
 
-        synchronized(sigLock) {
+        synchronized (sigLock) {
 
-            if (!isScheduleChanged()){
+            if (!isScheduleChanged()) {
                 log.debug("插装0");
                 return false;
 
@@ -541,26 +539,24 @@ public class QuartzSchedulerThread extends Thread {
 
             boolean earlier = false;
 
-            if(getSignaledNextFireTime() == 0) {
+            if (getSignaledNextFireTime() == 0) {
                 earlier = true;
                 log.debug("插装1");
-            }
-            else if(getSignaledNextFireTime() < oldTime )
-            {
+            } else if (getSignaledNextFireTime() < oldTime) {
                 earlier = true;
                 log.debug("插装2");
             }
             log.debug("插装3");
 
-            if(earlier) {
+            if (earlier) {
                 log.debug("进来了 {}, {}", oldTime, System.currentTimeMillis());
                 // so the new time is considered earlier, but is it enough earlier?
                 long diff = oldTime - System.currentTimeMillis();
-                if(diff < (qsRsrcs.getJobStore().supportsPersistence() ? 70L : 7L))
+                if (diff < (qsRsrcs.getJobStore().supportsPersistence() ? 70L : 7L))
                     earlier = false;
             }
 
-            if(clearSignal) {
+            if (clearSignal) {
                 clearSignaledSchedulingChange();
             }
 

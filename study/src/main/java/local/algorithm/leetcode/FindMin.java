@@ -8,7 +8,7 @@ public class FindMin {
         }
         int low = 0, high = nums.length, mid = low + (high - low) / 2;
         while (low < high) {
-            if (mid > 0 && nums[mid] < nums[mid-1]) {
+            if (mid > 0 && nums[mid] < nums[mid - 1]) {
                 return nums[mid];
             } else {
                 if (nums[mid] >= nums[0]) {

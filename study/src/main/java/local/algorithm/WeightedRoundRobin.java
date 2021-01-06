@@ -27,7 +27,7 @@ public class WeightedRoundRobin<T> {
     }
 
     public Node<T> next() {
-        int index = - 1;
+        int index = -1;
         int totalWeight = 0;
         for (int i = 0; i < nodes.size(); i++) {
             currWeight[i] += nodes.get(i).weight;

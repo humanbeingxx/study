@@ -11,7 +11,9 @@ public class FlattenLevelNode {
         public Node(int val) {
             this.val = val;
         }
-    };
+    }
+
+    ;
 
     public Node flatten(Node head) {
         rec(head);

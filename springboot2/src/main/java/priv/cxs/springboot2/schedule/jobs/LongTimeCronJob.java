@@ -3,8 +3,6 @@ package priv.cxs.springboot2.schedule.jobs;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
-import org.quartz.JobExecutionException;
-import org.springframework.context.ApplicationContext;
 
 /**
  * @author humanbeingxx@sina.com

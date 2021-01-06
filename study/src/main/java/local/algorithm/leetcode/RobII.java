@@ -18,7 +18,7 @@ public class RobII {
         int max = 0;
         amounts[0] = nums[0];
         amounts[1] = nums[1];
-        max = Math.max(amounts[0],amounts[1]);
+        max = Math.max(amounts[0], amounts[1]);
         for (int i = 2; i < nums.length - 1; i++) {
             amounts[i] = Math.max(nums[i] + amounts[i - 2], amounts[i - 1]);
             if (amounts[i] > max) {
@@ -30,7 +30,7 @@ public class RobII {
         amounts[0] = 0;
         amounts[1] = nums[1];
         amounts[2] = nums[2];
-        max = Math.max(max, Math.max(amounts[1],amounts[2]));
+        max = Math.max(max, Math.max(amounts[1], amounts[2]));
         for (int i = 3; i < nums.length; i++) {
             amounts[i] = Math.max(nums[i] + amounts[i - 2], amounts[i - 1]);
             if (amounts[i] > max) {

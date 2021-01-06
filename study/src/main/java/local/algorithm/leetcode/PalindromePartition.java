@@ -1,6 +1,7 @@
 package local.algorithm.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author cuixiaoshuang
@@ -49,7 +50,7 @@ public class PalindromePartition {
             pStart = start + (end - start) / 2 + 1;
         } else {
             pEnd = start + (end - start) / 2;
-            pStart = start + (end - start) /2 + 1;
+            pStart = start + (end - start) / 2 + 1;
         }
         for (; pEnd >= start; pEnd--, pStart++) {
             if (s.charAt(pEnd) != s.charAt(pStart)) {

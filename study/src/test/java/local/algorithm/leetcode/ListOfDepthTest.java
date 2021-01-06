@@ -1,10 +1,8 @@
 package local.algorithm.leetcode;
 
-import local.algorithm.leetcode.common.TreeNode;
 import local.algorithm.leetcode.RemoveListElements.ListNode;
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * @author humanbeingxx@sina.com

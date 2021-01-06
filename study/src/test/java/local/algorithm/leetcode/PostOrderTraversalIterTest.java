@@ -7,8 +7,6 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 public class PostOrderTraversalIterTest {
 
 
@@ -19,6 +17,7 @@ public class PostOrderTraversalIterTest {
             new TreeNode(3,
                     new TreeNode(6),
                     new TreeNode(7)));
+
     @Test
     public void testPostOrderTraversal() {
         List<Integer> result = new PostOrderTraversalIter().postorderTraversal(root);

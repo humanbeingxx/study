@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com
@@ -15,11 +15,11 @@ public class CommonCharsTest {
 
     @Test
     public void testCommonChars() {
-        List<String> result = new CommonChars().commonChars(new String[]{"bella","label","roller"});
-        assertEquals(result, Lists.newArrayList("e","l","l"));
+        List<String> result = new CommonChars().commonChars(new String[]{"bella", "label", "roller"});
+        assertEquals(result, Lists.newArrayList("e", "l", "l"));
 
-        result = new CommonChars().commonChars(new String[]{"cool","lock","cook"});
-        assertEquals(result, Lists.newArrayList("c","o"));
+        result = new CommonChars().commonChars(new String[]{"cool", "lock", "cook"});
+        assertEquals(result, Lists.newArrayList("c", "o"));
 
     }
 }

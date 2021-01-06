@@ -46,7 +46,7 @@ public class WaitNotifyTest {
         Thread.sleep(2000);
     }
 
-    @Test(expectedExceptions={IllegalStateException.class})
+    @Test(expectedExceptions = {IllegalStateException.class})
     public void testDeadLock() throws Exception {
         MyLock myLock = new MyLock(Thread.currentThread());
         myLock.await();

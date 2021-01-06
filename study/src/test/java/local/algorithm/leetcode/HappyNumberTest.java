@@ -3,8 +3,6 @@ package local.algorithm.leetcode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2019/12/17 22:15

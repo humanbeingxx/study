@@ -33,7 +33,7 @@ public class PrintTree {
     }
 
     private void fill(TreeNode root, List<List<String>> print, int level, int start, int end) {
-        if (root ==null) {
+        if (root == null) {
             return;
         }
         List<String> printLevel = print.get(level - 1);

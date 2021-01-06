@@ -29,8 +29,8 @@ public class ArrayPlusOne {
             added = new int[digits.length];
         }
 
-        int keep = (digits[digits.length -1] + 1) / 10;
-        added[digits.length -1] = (digits[digits.length -1] + 1) % 10;
+        int keep = (digits[digits.length - 1] + 1) / 10;
+        added[digits.length - 1] = (digits[digits.length - 1] + 1) % 10;
         for (int i = digits.length - 2; i >= 0; i--) {
             added[i] = (digits[i] + keep) % 10;
             keep = (digits[i] + keep) / 10;

@@ -5,13 +5,11 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.collections.Maps;
 
-import java.lang.reflect.AnnotatedType;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

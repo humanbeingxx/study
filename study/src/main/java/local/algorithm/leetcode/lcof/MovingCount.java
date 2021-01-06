@@ -4,7 +4,7 @@ public class MovingCount {
 
     public int movingCount(int m, int n, int k) {
         boolean[][] counted = new boolean[m][n];
-        return rec(0,0,m,n,k,counted);
+        return rec(0, 0, m, n, k, counted);
     }
 
     private int rec(int i, int j, int m, int n, int k, boolean[][] counted) {

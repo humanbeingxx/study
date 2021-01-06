@@ -4,10 +4,9 @@ import com.google.common.collect.Lists;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class WeightedRoundRobinTest {
 

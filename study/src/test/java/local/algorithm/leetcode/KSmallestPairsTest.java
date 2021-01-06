@@ -3,10 +3,12 @@ package local.algorithm.leetcode;
 import com.google.common.collect.Lists;
 import org.testng.annotations.Test;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class KSmallestPairsTest {
 

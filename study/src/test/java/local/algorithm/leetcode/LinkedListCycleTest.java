@@ -1,9 +1,10 @@
 package local.algorithm.leetcode;
-import static local.algorithm.leetcode.RemoveListElements.ListNode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static local.algorithm.leetcode.RemoveListElements.ListNode;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author cuixiaoshuang

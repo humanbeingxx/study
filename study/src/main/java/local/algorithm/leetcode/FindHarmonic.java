@@ -16,8 +16,8 @@ public class FindHarmonic {
         int maxLen = 0;
         int firstValue = nums[0], secondValue = nums[0], firstStart = 0, secondStart = 0;
         int i = 1;
-        for (;i < nums.length; i++) {
-            int preNum = nums[i-1];
+        for (; i < nums.length; i++) {
+            int preNum = nums[i - 1];
             int currNum = nums[i];
             if (preNum == currNum) {
                 if (secondValue - firstValue == 1) {

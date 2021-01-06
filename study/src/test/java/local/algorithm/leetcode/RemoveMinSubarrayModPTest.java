@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class RemoveMinSubarrayModPTest {
 
@@ -44,7 +44,7 @@ public class RemoveMinSubarrayModPTest {
 
     @Test
     public void testMinSubarray6() {
-        int result = new RemoveMinSubarrayModP().minSubarray(new int[]{8,32,31,18,34,20,21,13,1,27,23,22,11,15,30,4,2}, 148);
+        int result = new RemoveMinSubarrayModP().minSubarray(new int[]{8, 32, 31, 18, 34, 20, 21, 13, 1, 27, 23, 22, 11, 15, 30, 4, 2}, 148);
         assertEquals(result, 7);
     }
 

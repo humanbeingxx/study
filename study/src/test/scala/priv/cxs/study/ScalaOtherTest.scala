@@ -3,9 +3,9 @@ package priv.cxs.study
 import scala.collection.mutable
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-09
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-09
+ **/
 class ScalaOtherTest extends org.scalatest.FunSuite {
 
   test("test map zip") {
@@ -14,7 +14,7 @@ class ScalaOtherTest extends org.scalatest.FunSuite {
     val zip = map1.zip(map2)
     println(zip)
 
-    val join:mutable.HashMap[String,(String, String, String, String)] = mutable.HashMap()
+    val join: mutable.HashMap[String, (String, String, String, String)] = mutable.HashMap()
 
     for (key <- map1.keySet ++ map2.keySet) {
       if (map1.contains(key) && map2.contains(key)) {

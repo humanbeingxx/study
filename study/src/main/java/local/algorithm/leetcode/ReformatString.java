@@ -12,7 +12,7 @@ public class ReformatString {
                 iCount++;
             }
         }
-        if (cCount != iCount && Math.abs(cCount - iCount) != 1){
+        if (cCount != iCount && Math.abs(cCount - iCount) != 1) {
             return "";
         }
         int cPos = cCount > iCount ? 0 : 1;

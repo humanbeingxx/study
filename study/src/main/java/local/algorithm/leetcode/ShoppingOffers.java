@@ -39,7 +39,7 @@ public class ShoppingOffers {
         return total;
     }
 
-    private int buyNoPackage(List<Integer> price,List<Integer> needs) {
+    private int buyNoPackage(List<Integer> price, List<Integer> needs) {
         int sum = 0;
         for (int i = 0; i < needs.size(); i++) {
             sum += price.get(i) * needs.get(i);

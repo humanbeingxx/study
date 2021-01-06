@@ -22,10 +22,10 @@ public class LevelOrderBottom {
             for (int i = 0; i < size; i++) {
                 TreeNode poll = queue.poll();
                 levelNodes.add(poll.val);
-                if (poll.left != null){
+                if (poll.left != null) {
                     queue.add(poll.left);
                 }
-                if (poll.right != null){
+                if (poll.right != null) {
                     queue.add(poll.right);
                 }
             }
@@ -36,7 +36,7 @@ public class LevelOrderBottom {
 
     private List<List<Integer>> reverse(List<List<Integer>> result) {
         List<List<Integer>> reversed = new ArrayList<>(result.size());
-        for (int i = result.size() - 1; i >=0; i--) {
+        for (int i = result.size() - 1; i >= 0; i--) {
             reversed.add(result.get(i));
         }
         return reversed;

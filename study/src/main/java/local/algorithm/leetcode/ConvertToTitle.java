@@ -11,7 +11,7 @@ public class ConvertToTitle {
         while (n > 0) {
             n--;
             int left = n % 26;
-            sb.append((char)(left + 'A'));
+            sb.append((char) (left + 'A'));
             n /= 26;
         }
         return sb.reverse().toString();

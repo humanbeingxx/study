@@ -1,7 +1,7 @@
 package priv.cxs.springboot2.controller.view;
 
-import com.lowagie.text.*;
 import com.lowagie.text.Font;
+import com.lowagie.text.*;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
 import org.springframework.web.servlet.view.document.AbstractPdfView;
@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.util.List;
 import java.util.Map;
-import java.util.List;
 
 /**
  * @author humanbeingxx@sina.com

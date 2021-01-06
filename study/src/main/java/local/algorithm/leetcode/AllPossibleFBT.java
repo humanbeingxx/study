@@ -2,7 +2,8 @@ package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.common.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AllPossibleFBT {
 

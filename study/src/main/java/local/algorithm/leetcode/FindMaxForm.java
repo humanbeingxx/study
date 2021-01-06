@@ -19,7 +19,7 @@ public class FindMaxForm {
 
             for (int i = m; i >= count0; i--) {
                 for (int j = n; j >= count1; j--) {
-                    forms[i][j] = Math.max(forms[i][j], forms[i-count0][j-count1] + 1);
+                    forms[i][j] = Math.max(forms[i][j], forms[i - count0][j - count1] + 1);
                 }
             }
         }

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertTrue;
 
 public class LongestHappyStringTest {
 
@@ -33,7 +33,7 @@ public class LongestHappyStringTest {
         int b = random.nextInt(100);
         int c = random.nextInt(100);
         System.out.println(a + " " + b + " " + c);
-        String result = new LongestHappyString().longestDiverseString(a,b,c);
+        String result = new LongestHappyString().longestDiverseString(a, b, c);
         System.out.println(result);
         check(result);
     }

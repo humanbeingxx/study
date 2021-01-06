@@ -27,7 +27,7 @@ public class NumPrimeArrangements {
         for (int i = 2; i < n + 1; i++) {
             if (ints[i] != 0) {
                 for (int j = i; j * i < n + 1; j++) {
-                    ints[j*i] = 0;
+                    ints[j * i] = 0;
                 }
             }
         }

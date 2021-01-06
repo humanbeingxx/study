@@ -1,9 +1,9 @@
 package priv.cxs.study
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-10-10
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-10-10
+ **/
 class ScalaAlgorithm extends org.scalatest.FunSuite {
 
   def bubbleSort[T](values: Array[T])(implicit ord: Ordering[T]): Unit = {

@@ -1,6 +1,5 @@
 package local.algorithm.leetcode.lcof;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**

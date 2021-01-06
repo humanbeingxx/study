@@ -7,7 +7,7 @@ package local.algorithm.leetcode;
 public class ConvertToBase7 {
 
     public String convertToBase7(int num) {
-        if (num ==0) {
+        if (num == 0) {
             return "0";
         }
         StringBuilder sb = new StringBuilder();

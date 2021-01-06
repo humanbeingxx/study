@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 public class RemoveDuplicateLettersTest {
 
     @Test
@@ -25,7 +23,7 @@ public class RemoveDuplicateLettersTest {
         StringBuilder stringBuilder = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < 200; i++) {
-            stringBuilder.append((char)(random.nextInt(26) + 'a'));
+            stringBuilder.append((char) (random.nextInt(26) + 'a'));
         }
         System.out.println(stringBuilder.toString());
     }

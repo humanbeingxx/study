@@ -15,7 +15,7 @@ public class FindBestValue {
                 mostClose = Math.min(mostClose, arr[arr.length - 1]);
             }
             if (i > 0) {
-                mostClose = Math.max(mostClose, arr[i-1]);
+                mostClose = Math.max(mostClose, arr[i - 1]);
             }
             int currSum = 0;
             if (mostClose <= arr[i]) {

@@ -11,15 +11,15 @@ public class LongestTurbulentSubarray {
         int[] sizes = new int[arr.length];
         Arrays.fill(sizes, 1);
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > arr[i-1]) {
-                if (sizes[i-1] < 0) {
-                    sizes[i] = -sizes[i-1] + 1;
+            if (arr[i] > arr[i - 1]) {
+                if (sizes[i - 1] < 0) {
+                    sizes[i] = -sizes[i - 1] + 1;
                 } else {
                     sizes[i] = 2;
                 }
-            } else if (arr[i] < arr[i-1]) {
-                if (sizes[i-1] >0) {
-                    sizes[i] = -sizes[i-1]-1;
+            } else if (arr[i] < arr[i - 1]) {
+                if (sizes[i - 1] > 0) {
+                    sizes[i] = -sizes[i - 1] - 1;
                 } else {
                     sizes[i] = -2;
                 }

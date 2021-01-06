@@ -3,8 +3,6 @@ package local.algorithm.leetcode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class CompressString2Test {
 
     @Test

@@ -42,7 +42,6 @@ public class OpenApiSign {
     }
 
     /**
-     *
      * 1. 用户名、密码的md5
      * 2. 时间戳
      * 3.

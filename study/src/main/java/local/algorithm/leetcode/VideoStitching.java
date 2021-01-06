@@ -30,7 +30,7 @@ public class VideoStitching {
                 }
             }
             if (nextRight >= T) {
-                return minClips+1;
+                return minClips + 1;
             }
             if (right >= nextRight) {
                 return -1;

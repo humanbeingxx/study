@@ -1,15 +1,15 @@
 package priv.cxs.study
 
-import scala.collection.immutable.{HashMap, TreeMap}
+import scala.collection.immutable.TreeMap
 import scala.collection.{Map, immutable}
 import scala.reflect.runtime.universe._
 import scala.sys.process._
 import scala.util.parsing.combinator.RegexParsers
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-08-09
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-08-09
+ **/
 class ScalaBasicTest extends org.scalatest.FunSuite {
 
   test("if ok") {
@@ -714,13 +714,13 @@ class ScalaBasicTest extends org.scalatest.FunSuite {
       case "duang" => "bingo"
     }
 
-    val lift:String => Option[String] = func.lift
+    val lift: String => Option[String] = func.lift
 
     val maybeString = lift.apply("dang")
 
     println(maybeString.isDefined)
 
-    val opt:String => Option[String] = (s:String) => {
+    val opt: String => Option[String] = (s: String) => {
       if (s == "dang") {
         Some("bingo")
       } else {
@@ -738,7 +738,7 @@ class ScalaBasicTest extends org.scalatest.FunSuite {
   test("test execute external command") {
     import sys.process._
 
-    val hdfs = "hdfs dfs -du -h /users/datahouse"!!
+    val hdfs = "hdfs dfs -du -h /users/datahouse" !!
 
     val split = hdfs.split("\n")
 
@@ -757,8 +757,8 @@ class ScalaBasicTest extends org.scalatest.FunSuite {
   }
 
   test("test for two iter") {
-    val arr1 = Array(1,2,3)
-    val arr2 = Array('a','b','c')
+    val arr1 = Array(1, 2, 3)
+    val arr2 = Array('a', 'b', 'c')
 
     val tuples = for (k <- arr2; v <- arr1) yield (k, v)
     tuples.foreach(println)

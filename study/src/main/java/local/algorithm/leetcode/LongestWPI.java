@@ -19,7 +19,7 @@ public class LongestWPI {
                 longest = i + 1;
             } else {
                 if (existWP.containsKey(delta - 1)) {
-                    longest = Math.max(longest, i - existWP.get(delta-1));
+                    longest = Math.max(longest, i - existWP.get(delta - 1));
                 }
                 existWP.putIfAbsent(delta, i);
             }

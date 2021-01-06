@@ -11,7 +11,7 @@ public class NumOfSubarraysWithThreshold {
         if (currSum >= thresholdSum) {
             count++;
         }
-        for (;index < arr.length;index++) {
+        for (; index < arr.length; index++) {
             currSum += arr[index];
             currSum -= arr[index - k];
             if (currSum >= thresholdSum) {

@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.Arrays;
 
-import static org.testng.Assert.*;
-
 public class NumberOfSubTreeNodesWithSameLabelTest {
 
     @Test

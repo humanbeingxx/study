@@ -7,7 +7,7 @@ public class FourSumCount {
 
     public int fourSumCount(int[] A, int[] B, int[] C, int[] D) {
         int length = A.length;
-        if (length ==0) {
+        if (length == 0) {
             return 1;
         }
         int count = 0;
@@ -19,8 +19,8 @@ public class FourSumCount {
         }
         for (int c : C) {
             for (int d : D) {
-                if (part.containsKey(-(c+d))) {
-                    count += part.get(-(c+d));
+                if (part.containsKey(-(c + d))) {
+                    count += part.get(-(c + d));
                 }
             }
         }

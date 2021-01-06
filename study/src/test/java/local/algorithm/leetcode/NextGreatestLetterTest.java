@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author cuixiaoshuang
@@ -23,7 +23,6 @@ public class NextGreatestLetterTest {
 
         result = new NextGreatestLetter().nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'z');
         assertEquals(result, 'c');
-
 
 
     }

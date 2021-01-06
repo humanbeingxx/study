@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class MaxProfitIVTest {
 
@@ -23,7 +23,7 @@ public class MaxProfitIVTest {
 
     @Test
     public void testMaxProfit3() {
-        int result = new MaxProfitIV().maxProfit(2, new int[]{4,2,1,7});
+        int result = new MaxProfitIV().maxProfit(2, new int[]{4, 2, 1, 7});
         assertEquals(result, 6);
     }
 

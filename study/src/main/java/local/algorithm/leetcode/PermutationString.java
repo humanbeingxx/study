@@ -54,7 +54,7 @@ public class PermutationString {
                 used[i] = true;
                 makePermutation(chars, used, temp, result);
                 temp.deleteCharAt(temp.length() - 1);
-                used[i]= false;
+                used[i] = false;
             }
         }
     }

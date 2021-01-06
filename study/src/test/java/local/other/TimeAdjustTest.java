@@ -24,8 +24,8 @@ public class TimeAdjustTest {
         LocalDate endDate = LocalDate.parse(end);
 
         List<String> dateList = new ArrayList<>();
-        while (!startDate.isAfter(endDate)){
-            if (startDate.equals(startDate.with(TemporalAdjusters.firstDayOfMonth()))){
+        while (!startDate.isAfter(endDate)) {
+            if (startDate.equals(startDate.with(TemporalAdjusters.firstDayOfMonth()))) {
                 dateList.add(startDate.toString());
             }
             startDate = startDate.with(TemporalAdjusters.firstDayOfNextMonth());

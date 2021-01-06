@@ -21,6 +21,7 @@ public class PalindromeSubStringTest {
         int result = new PalindromeSubString().countSubstrings("abc");
         assertEquals(result, 3);
     }
+
     @Test
     public void testCountSubstrings3() {
         int result = new PalindromeSubString().countSubstrings("dnncbwoneinoplypwgbwktmvkoimcooyiwirgbxlcttgteqthcvyoueyftiwgwwxvxvg");

@@ -17,15 +17,15 @@ public class ValidMountainArray {
             return false;
         }
         for (int i = 2; i < A.length; i++) {
-            if (A[i] == A[i-1]) {
+            if (A[i] == A[i - 1]) {
                 return false;
             }
 
-            if (top == 2 && A[i] > A[i-1]) {
+            if (top == 2 && A[i] > A[i - 1]) {
                 return false;
             }
 
-            if (top == 1 && A[i] < A[i-1]) {
+            if (top == 1 && A[i] < A[i - 1]) {
                 top = 2;
             }
 

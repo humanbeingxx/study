@@ -3,8 +3,6 @@ package local.interview_internal_reference.bytecode;
 import local.algorithm.ListNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class ListGroupReverseTest {
 
     @Test

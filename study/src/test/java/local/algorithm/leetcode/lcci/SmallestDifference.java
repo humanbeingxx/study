@@ -38,14 +38,14 @@ public class SmallestDifference {
                 j++;
             }
         }
-        return min == 0x80000000L ? Integer.MIN_VALUE: (int) min;
+        return min == 0x80000000L ? Integer.MIN_VALUE : (int) min;
     }
 
     int force(int[] a, int[] b) {
         long min = Integer.MAX_VALUE;
         for (int i : a) {
             for (int j : b) {
-                min = Math.min(min, Math.abs((long)i - (long)j));
+                min = Math.min(min, Math.abs((long) i - (long) j));
             }
         }
         return (int) min;

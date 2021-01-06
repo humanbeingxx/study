@@ -6,8 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 public class FindSubsequencesTest {
 
     @Test
@@ -18,7 +16,7 @@ public class FindSubsequencesTest {
 
     @Test
     public void testFindSubsequences2() {
-        List<List<Integer>> result = new FindSubsequences().findSubsequences(new int[]{1,1,1,1});
+        List<List<Integer>> result = new FindSubsequences().findSubsequences(new int[]{1, 1, 1, 1});
         result.forEach(System.out::println);
     }
 

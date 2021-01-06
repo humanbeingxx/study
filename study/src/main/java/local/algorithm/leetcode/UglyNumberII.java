@@ -20,6 +20,6 @@ public class UglyNumberII {
                 index5++;
             }
         }
-        return numbers[n-1];
+        return numbers[n - 1];
     }
 }

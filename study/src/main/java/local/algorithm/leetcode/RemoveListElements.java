@@ -13,7 +13,10 @@ public class RemoveListElements {
             val = x;
             this.next = next;
         }
-        ListNode(int x) { val = x; }
+
+        ListNode(int x) {
+            val = x;
+        }
 
         public String show() {
             ListNode node = this;

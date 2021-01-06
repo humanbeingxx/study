@@ -24,6 +24,6 @@ public class Subsets {
         temp.add(nums[index]);
         collect(nums, index + 1, temp, result);
         temp.remove(temp.size() - 1);
-        collect(nums, index+1, temp, result);
+        collect(nums, index + 1, temp, result);
     }
 }

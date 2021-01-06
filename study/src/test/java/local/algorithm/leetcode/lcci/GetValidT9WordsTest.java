@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 public class GetValidT9WordsTest {
 
     @Test

@@ -28,7 +28,7 @@ public class RotateMatrix {
             left = matrix[n - i - 1][retract];
             matrix[n - i - 1][retract] = down;
 
-            matrix[retract][i]= left;
+            matrix[retract][i] = left;
         }
     }
 }

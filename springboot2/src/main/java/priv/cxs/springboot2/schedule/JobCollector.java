@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.JobKey;
 import org.quartz.TriggerKey;
-import org.springframework.context.ApplicationContext;
 import priv.cxs.springboot2.schedule.jobs.AbstractCronJob;
 
 import java.io.File;

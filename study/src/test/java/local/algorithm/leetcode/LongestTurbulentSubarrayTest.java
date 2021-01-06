@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class LongestTurbulentSubarrayTest {
 
@@ -20,13 +20,13 @@ public class LongestTurbulentSubarrayTest {
 
     @Test
     public void testMaxTurbulenceSize3() {
-        int result = new LongestTurbulentSubarray().maxTurbulenceSize(new int[]{1,2,1,2,1,2,1,2,1,2});
+        int result = new LongestTurbulentSubarray().maxTurbulenceSize(new int[]{1, 2, 1, 2, 1, 2, 1, 2, 1, 2});
         assertEquals(result, 10);
     }
 
     @Test
     public void testMaxTurbulenceSize4() {
-        int result = new LongestTurbulentSubarray().maxTurbulenceSize(new int[]{1,1,1,1,1,2,2,2});
+        int result = new LongestTurbulentSubarray().maxTurbulenceSize(new int[]{1, 1, 1, 1, 1, 2, 2, 2});
         assertEquals(result, 2);
     }
 }

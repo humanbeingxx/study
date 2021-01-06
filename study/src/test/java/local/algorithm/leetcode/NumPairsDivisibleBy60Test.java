@@ -14,7 +14,7 @@ public class NumPairsDivisibleBy60Test {
         int result = new NumPairsDivisibleBy60().numPairsDivisibleBy60(new int[]{30, 20, 150, 100, 40});
         Assert.assertEquals(result, 3);
 
-        result = new NumPairsDivisibleBy60().numPairsDivisibleBy60(new int[]{60,60,60});
+        result = new NumPairsDivisibleBy60().numPairsDivisibleBy60(new int[]{60, 60, 60});
         Assert.assertEquals(result, 3);
 
         result = new NumPairsDivisibleBy60().numPairsDivisibleBy60(new int[]{60});

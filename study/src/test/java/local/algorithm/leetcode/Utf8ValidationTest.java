@@ -2,7 +2,8 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class Utf8ValidationTest {
 
@@ -26,7 +27,7 @@ public class Utf8ValidationTest {
 
     @Test
     public void testValidUtf8_3() {
-        boolean result = new Utf8Validation().validUtf8(new int[]{1,1,1,1});
+        boolean result = new Utf8Validation().validUtf8(new int[]{1, 1, 1, 1});
         assertTrue(result);
     }
 }

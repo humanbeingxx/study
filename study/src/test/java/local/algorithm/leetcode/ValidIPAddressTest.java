@@ -2,10 +2,6 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import java.util.regex.Pattern;
-
-import static org.testng.Assert.*;
-
 public class ValidIPAddressTest {
 
     @Test

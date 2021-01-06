@@ -41,7 +41,7 @@ public class ReturnFinallyTest {
     }
 
     @Test
-    public void testMultiFinally () {
+    public void testMultiFinally() {
         int i = 0;
 //        if (i == 0) {
 //            return;

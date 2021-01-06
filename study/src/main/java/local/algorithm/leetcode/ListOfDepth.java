@@ -33,7 +33,7 @@ public class ListOfDepth {
                     node.next = new ListNode(treeNode.val);
                     node = node.next;
                 }
-                if (treeNode.left!= null) {
+                if (treeNode.left != null) {
                     queue.add(treeNode.left);
                 }
                 if (treeNode.right != null) {

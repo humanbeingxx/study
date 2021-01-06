@@ -50,7 +50,7 @@ public class WidthOfBinaryTree {
             }
 
             if (width > maxWidth) {
-                 maxWidth = width;
+                maxWidth = width;
             }
             if (next.stream().noneMatch(Objects::nonNull)) {
                 break;

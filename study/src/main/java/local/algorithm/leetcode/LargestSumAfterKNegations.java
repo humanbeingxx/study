@@ -15,10 +15,10 @@ public class LargestSumAfterKNegations {
                 A[i] = -A[i];
             } else {
                 if (K % 2 != 0) {
-                    if (i == 0 || A[i] <= A[i-1]) {
+                    if (i == 0 || A[i] <= A[i - 1]) {
                         A[i] = -A[i];
                     } else {
-                        A[i-1] = -A[i-1];
+                        A[i - 1] = -A[i - 1];
                     }
                 }
                 break;

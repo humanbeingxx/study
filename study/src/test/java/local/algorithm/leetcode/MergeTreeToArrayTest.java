@@ -37,7 +37,7 @@ public class MergeTreeToArrayTest {
                         new TreeNode(2)),
                 new TreeNode(7));
         List<Integer> result = new MergeTreeToArray().getAllElements(root1, root2);
-        assertEquals(result, Lists.newArrayList(-10,0,0,1,2,5,7,10));
+        assertEquals(result, Lists.newArrayList(-10, 0, 0, 1, 2, 5, 7, 10));
     }
 
     @Test
@@ -47,6 +47,6 @@ public class MergeTreeToArrayTest {
                 new TreeNode(10));
         TreeNode root2 = null;
         List<Integer> result = new MergeTreeToArray().getAllElements(root1, root2);
-        assertEquals(result, Lists.newArrayList(-10,0,10));
+        assertEquals(result, Lists.newArrayList(-10, 0, 10));
     }
 }

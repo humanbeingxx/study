@@ -1,8 +1,5 @@
 package local.algorithm.leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LongestCommonSubsequence {
 
     public int longestCommonSubsequence(String text1, String text2) {

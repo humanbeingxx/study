@@ -3,8 +3,6 @@ package local.algorithm.leetcode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2019/12/16 22:23
@@ -47,9 +45,9 @@ public class RemoveListElementsTest {
     public void testRemoveElements3() {
         RemoveListElements.ListNode head = new RemoveListElements.ListNode(1,
                 new RemoveListElements.ListNode(2,
-                                new RemoveListElements.ListNode(3,
-                                        new RemoveListElements.ListNode(4,
-                                                new RemoveListElements.ListNode(5, null)))));
+                        new RemoveListElements.ListNode(3,
+                                new RemoveListElements.ListNode(4,
+                                        new RemoveListElements.ListNode(5, null)))));
         RemoveListElements.ListNode node = new RemoveListElements().removeElements(head, 6);
         Assert.assertEquals(node.val, 1);
         node = node.next;

@@ -35,16 +35,16 @@ public class DelTreeNodes {
             del(node.right, toDelete, forest, true);
         } else {
             if (node.left != null && toDelete.contains(node.left.val)) {
-                del(node.left, toDelete, forest,true);
+                del(node.left, toDelete, forest, true);
                 node.left = null;
             } else {
-                del(node.left, toDelete, forest,false);
+                del(node.left, toDelete, forest, false);
             }
             if (node.right != null && toDelete.contains(node.right.val)) {
-                del(node.right, toDelete, forest,true);
+                del(node.right, toDelete, forest, true);
                 node.right = null;
             } else {
-                del(node.right, toDelete, forest,false);
+                del(node.right, toDelete, forest, false);
             }
             if (isCut) {
                 forest.add(node);

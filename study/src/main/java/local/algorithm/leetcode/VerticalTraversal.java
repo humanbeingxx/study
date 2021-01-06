@@ -2,7 +2,9 @@ package local.algorithm.leetcode;
 
 import local.algorithm.leetcode.common.TreeNode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 public class VerticalTraversal {

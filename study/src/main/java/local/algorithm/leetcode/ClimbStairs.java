@@ -25,8 +25,8 @@ public class ClimbStairs {
             ways[n - 1] = n1;
         }
         if (n2 == 0) {
-            n2 = calc(n-2, ways);
-            ways[n-2] = n2;
+            n2 = calc(n - 2, ways);
+            ways[n - 2] = n2;
         }
         return n1 + n2;
     }

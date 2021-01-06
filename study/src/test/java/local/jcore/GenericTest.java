@@ -72,7 +72,7 @@ public class GenericTest {
         for (TypeVariable<? extends Class<? extends List>> typeParameter : list.getClass().getTypeParameters()) {
             System.out.println(typeParameter.getName());
         }
-        ParameterizedType type = (ParameterizedType)list.getClass().getGenericSuperclass();
+        ParameterizedType type = (ParameterizedType) list.getClass().getGenericSuperclass();
         System.out.println(type.getRawType().getTypeName());
         for (Type actualTypeArgument : type.getActualTypeArguments()) {
             System.out.println(actualTypeArgument.getTypeName());
@@ -80,7 +80,7 @@ public class GenericTest {
     }
 
     private void getFieldType(Field field) {
-        ParameterizedType genericType = (ParameterizedType)field.getGenericType();
+        ParameterizedType genericType = (ParameterizedType) field.getGenericType();
         System.out.println(genericType.getActualTypeArguments()[0].getTypeName());
         System.out.println(field.getType().getTypeName());
     }
@@ -96,7 +96,7 @@ public class GenericTest {
         getRealTypeInMethod(list);
 
         System.out.println("*********** get here ***********");
-        ParameterizedType genericSuperclass = (ParameterizedType)list.getClass().getGenericSuperclass();
+        ParameterizedType genericSuperclass = (ParameterizedType) list.getClass().getGenericSuperclass();
         for (Type actualTypeArgument : genericSuperclass.getActualTypeArguments()) {
             System.out.println(actualTypeArgument.getTypeName());
         }

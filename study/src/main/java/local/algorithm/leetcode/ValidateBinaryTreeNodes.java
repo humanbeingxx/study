@@ -26,10 +26,10 @@ public class ValidateBinaryTreeNodes {
             if (in[i] == 0) {
                 if (rootFound) {
                     return false;
-                }else{
+                } else {
                     rootFound = true;
                 }
-            } else if (in[i] > 1){
+            } else if (in[i] > 1) {
                 return false;
             }
             if (out[i] > 2) {

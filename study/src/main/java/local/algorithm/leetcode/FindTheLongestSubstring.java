@@ -30,8 +30,6 @@ public class FindTheLongestSubstring {
         return maxLen;
 
 
-
-
 //        boolean[][] counts = new boolean[s.length()][5];
 //        int maxLen = 0;
 //        for (int i = 0; i < s.length(); i++) {

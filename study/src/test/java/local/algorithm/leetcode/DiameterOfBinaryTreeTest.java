@@ -1,9 +1,8 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import local.algorithm.leetcode.common.TreeNode;
 
 /**
  * @author cuixiaoshuang

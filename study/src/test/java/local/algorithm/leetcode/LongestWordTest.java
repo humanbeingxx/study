@@ -12,7 +12,7 @@ public class LongestWordTest {
 
     @Test
     public void testLongestWord() {
-        String result1 = new LongestWord().longestWord(new String[]{"w","wo","wor","worl", "world"});
+        String result1 = new LongestWord().longestWord(new String[]{"w", "wo", "wor", "worl", "world"});
         assertEquals(result1, "world");
 
         String result2 = new LongestWord().longestWord(new String[]{"a", "banana", "app", "appl", "ap", "apply", "apple"});

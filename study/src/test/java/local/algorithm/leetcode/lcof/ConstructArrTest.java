@@ -3,9 +3,6 @@ package local.algorithm.leetcode.lcof;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
-import java.util.Random;
-
-import static org.testng.Assert.*;
 
 public class ConstructArrTest {
 

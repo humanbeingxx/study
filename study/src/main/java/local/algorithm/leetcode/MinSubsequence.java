@@ -14,7 +14,7 @@ public class MinSubsequence {
         }
         int subSum = 0;
         List<Integer> result = new ArrayList<>();
-        for (int i = nums.length - 1; i >=0; i--) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             subSum += nums[i];
             result.add(nums[i]);
             if (subSum > sum - subSum) {

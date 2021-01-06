@@ -27,7 +27,7 @@ public class OrangesRotting2Test {
 
     @Test
     public void testOrangesRotting3() {
-        int[][] grid = new int[][]{{0,2}};
+        int[][] grid = new int[][]{{0, 2}};
         int result = new OrangesRotting2().orangesRotting(grid);
         assertEquals(result, 0);
     }

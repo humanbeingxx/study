@@ -3,8 +3,6 @@ package local.algorithm.leetcode;
 import local.algorithm.leetcode.RemoveListElements.ListNode;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @author cuixiaoshuang
  * @date 2020-02-06

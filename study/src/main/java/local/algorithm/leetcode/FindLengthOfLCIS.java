@@ -14,7 +14,7 @@ public class FindLengthOfLCIS {
         int preStart = 0, preEnd = 0;
         int start = 0, end = 0, maxLen = 1;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > nums[i-1]) {
+            if (nums[i] > nums[i - 1]) {
                 end++;
                 if (end - start + 1 > maxLen) {
                     preStart = start;

@@ -10,7 +10,7 @@ public class AddBinary {
         int idxA = a.length() - 1, idxB = b.length() - 1;
         char forward = '0';
         StringBuilder sb = new StringBuilder();
-        while (idxA >= 0 && idxB >=0) {
+        while (idxA >= 0 && idxB >= 0) {
             char ca = a.charAt(idxA--);
             char cb = b.charAt(idxB--);
             if (ca == '0' && cb == '0') {
@@ -28,7 +28,7 @@ public class AddBinary {
                 }
             }
         }
-        while (idxA >=0) {
+        while (idxA >= 0) {
             char ca = a.charAt(idxA--);
             if (ca == '0') {
                 sb.append(forward);
@@ -43,7 +43,7 @@ public class AddBinary {
             }
         }
 
-        while (idxB >=0) {
+        while (idxB >= 0) {
             char cb = b.charAt(idxB--);
             if (cb == '0') {
                 sb.append(forward);

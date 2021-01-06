@@ -24,7 +24,7 @@ public class FindCheapestPrice {
                 }
             }
         }
-        return minCosts[dst][K + 1] == Integer.MAX_VALUE ? - 1:minCosts[dst][K + 1];
+        return minCosts[dst][K + 1] == Integer.MAX_VALUE ? -1 : minCosts[dst][K + 1];
     }
 
 }

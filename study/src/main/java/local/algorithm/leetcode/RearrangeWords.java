@@ -9,7 +9,7 @@ public class RearrangeWords {
     public String arrangeWords(String text) {
         TreeMap<Integer, List<String>> buckets = new TreeMap<>();
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append((char)(text.charAt(0) - 'A' + 'a'));
+        stringBuilder.append((char) (text.charAt(0) - 'A' + 'a'));
         for (int i = 1; i < text.length(); i++) {
             char c = text.charAt(i);
             if (c == ' ') {

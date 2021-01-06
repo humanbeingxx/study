@@ -13,7 +13,7 @@ public class ReverseList {
             return head;
         }
         ListNode newHead = rec(head);
-        head.next =null;
+        head.next = null;
         return newHead;
     }
 

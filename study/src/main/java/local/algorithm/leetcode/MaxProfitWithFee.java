@@ -11,7 +11,7 @@ public class MaxProfitWithFee {
             if (prices[i] < curMin) {
                 curMin = prices[i];
             } else if (prices[i] - curMin > fee) {
-                profit += prices[i] -curMin - fee;
+                profit += prices[i] - curMin - fee;
                 curMin = prices[i] - fee;
             }
         }

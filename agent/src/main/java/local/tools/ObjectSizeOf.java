@@ -15,7 +15,7 @@ public class ObjectSizeOf {
     }
 
     public static long sizeOf(Object o) {
-        if(inst == null) {
+        if (inst == null) {
             throw new IllegalStateException("Can not access instrumentation environment.\n" +
                     "Please check if jar file containing SizeOfAgent class is \n" +
                     "specified in the java's \"-javaagent\" command line argument.");

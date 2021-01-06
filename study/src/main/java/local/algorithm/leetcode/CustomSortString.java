@@ -42,7 +42,7 @@ public class CustomSortString {
         }
         for (int i = 0; i < counts.length; i++) {
             for (int j = 0; j < counts[i]; j++) {
-                sb.append((char)(i + 'a'));
+                sb.append((char) (i + 'a'));
             }
         }
         return sb.toString();

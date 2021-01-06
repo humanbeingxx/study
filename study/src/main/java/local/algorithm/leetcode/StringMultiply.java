@@ -18,7 +18,7 @@ public class StringMultiply {
                 int digit1 = num1.charAt(j) - '0';
                 int multi = digit1 * digit2 + carry;
                 carry = multi / 10;
-                sb.append(multi % 10);  
+                sb.append(multi % 10);
             }
             if (carry > 0) {
                 sb.append(carry);

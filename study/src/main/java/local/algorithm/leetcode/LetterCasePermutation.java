@@ -24,8 +24,8 @@ public class LetterCasePermutation {
         if (c >= 'a' && c <= 'z') {
             String newS;
             if (index == 0) {
-                newS = (char)(s.charAt(index) - ('a' - 'A')) + s.substring(index + 1);
-            } else if(index == s.length() - 1) {
+                newS = (char) (s.charAt(index) - ('a' - 'A')) + s.substring(index + 1);
+            } else if (index == s.length() - 1) {
                 newS = s.substring(0, s.length() - 1) + (char) (s.charAt(index) - ('a' - 'A'));
             } else {
                 newS = s.substring(0, index) + (char) (s.charAt(index) - ('a' - 'A')) + s.substring(index + 1);
@@ -35,8 +35,8 @@ public class LetterCasePermutation {
         } else if (c >= 'A' && c <= 'Z') {
             String newS;
             if (index == 0) {
-                newS = (char)(s.charAt(index) + ('a' - 'A')) + s.substring(index + 1);
-            } else if(index == s.length() - 1) {
+                newS = (char) (s.charAt(index) + ('a' - 'A')) + s.substring(index + 1);
+            } else if (index == s.length() - 1) {
                 newS = s.substring(0, s.length() - 1) + (char) (s.charAt(index) + ('a' - 'A'));
             } else {
                 newS = s.substring(0, index) + (char) (s.charAt(index) + ('a' - 'A')) + s.substring(index + 1);

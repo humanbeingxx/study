@@ -12,7 +12,7 @@ public class AlienSorted {
             indices[order.charAt(i) - 'a'] = i;
         }
         for (int i = 0; i < words.length - 1; i++) {
-            if (!isOrdered(words[i], words[i+1], indices)) {
+            if (!isOrdered(words[i], words[i + 1], indices)) {
                 return false;
             }
         }

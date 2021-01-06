@@ -32,10 +32,10 @@ public class Trie {
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
             boolean isLast = i == word.length() - 1;
-            Node nextNode = node.next[c- 'a'];
+            Node nextNode = node.next[c - 'a'];
             if (nextNode == null) {
-                node.next[c- 'a'] = new Node(isLast, c);
-                nextNode = node.next[c- 'a'];
+                node.next[c - 'a'] = new Node(isLast, c);
+                nextNode = node.next[c - 'a'];
             } else if (isLast) {
                 nextNode.isWord = true;
             }
@@ -50,7 +50,7 @@ public class Trie {
         Node node = root, nextNode = null;
         for (int i = 0; i < word.length(); i++) {
             char c = word.charAt(i);
-            nextNode = node.next[c- 'a'];
+            nextNode = node.next[c - 'a'];
             if (nextNode == null) {
                 return false;
             }
@@ -66,7 +66,7 @@ public class Trie {
         Node node = root, nextNode;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
-            nextNode = node.next[c- 'a'];
+            nextNode = node.next[c - 'a'];
             if (nextNode == null) {
                 return false;
             }

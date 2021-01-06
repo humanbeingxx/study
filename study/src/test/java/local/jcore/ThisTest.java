@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 public class ThisTest {
 
     class S {
-        protected  int val = -1;
+        protected int val = -1;
     }
 
-    class Sup extends S  {
+    class Sup extends S {
 
 //        protected int val = 0;
 

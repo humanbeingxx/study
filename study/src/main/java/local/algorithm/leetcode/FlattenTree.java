@@ -18,7 +18,7 @@ public class FlattenTree {
         if (left == null) {
             return;
         }
-        while (node.right!= null) {
+        while (node.right != null) {
             node = node.right;
         }
         node.right = root.right;

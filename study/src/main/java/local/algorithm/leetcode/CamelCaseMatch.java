@@ -41,14 +41,14 @@ public class CamelCaseMatch {
             if (source.charAt(indexSource) == pattern.charAt(indexPattern)) {
                 indexSource++;
                 indexPattern++;
-            } else if (source.charAt(indexSource) >='a' && source.charAt(indexSource) <= 'z') {
+            } else if (source.charAt(indexSource) >= 'a' && source.charAt(indexSource) <= 'z') {
                 indexSource++;
             } else {
                 return false;
             }
         }
         while (indexSource < source.length()) {
-            if (source.charAt(indexSource) <'a' || source.charAt(indexSource) > 'z') {
+            if (source.charAt(indexSource) < 'a' || source.charAt(indexSource) > 'z') {
                 return false;
             }
             indexSource++;

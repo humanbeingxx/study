@@ -51,7 +51,7 @@ public class OneLineKeyBoard {
             boolean oneLine = true;
             for (int i = 0; i < word.length(); i++) {
                 if (!set.contains(low(word.charAt(i)))) {
-                    oneLine =false;
+                    oneLine = false;
                     break;
                 }
             }
@@ -64,7 +64,7 @@ public class OneLineKeyBoard {
 
     private char low(char c) {
         if (c >= 'A' && c <= 'Z') {
-            return (char)(c + 'a' - 'A');
+            return (char) (c + 'a' - 'A');
         } else {
             return c;
         }

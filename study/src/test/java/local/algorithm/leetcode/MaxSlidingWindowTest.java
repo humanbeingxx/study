@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.testng.Assert.*;
-
 public class MaxSlidingWindowTest {
 
     @Test

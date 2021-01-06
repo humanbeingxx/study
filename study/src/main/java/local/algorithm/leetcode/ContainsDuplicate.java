@@ -14,7 +14,7 @@ public class ContainsDuplicate {
         for (int num : nums) {
             if (saw.contains(num)) {
                 return true;
-            }else {
+            } else {
                 saw.add(num);
             }
         }

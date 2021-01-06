@@ -2,7 +2,8 @@ package local.algorithm.leetcode;
 
 import javafx.util.Pair;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 public class KDiffPairs {
 

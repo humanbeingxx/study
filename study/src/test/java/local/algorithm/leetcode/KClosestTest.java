@@ -21,7 +21,7 @@ public class KClosestTest {
 
     @Test
     public void testKClosest2() {
-        int[][] result = new KClosest().kClosest(new int[][]{{3,3},{5,-1},{-2,4}}, 2);
+        int[][] result = new KClosest().kClosest(new int[][]{{3, 3}, {5, -1}, {-2, 4}}, 2);
         for (int[] ints : result) {
             System.out.println(Arrays.toString(ints));
         }

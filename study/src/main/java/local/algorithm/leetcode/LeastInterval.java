@@ -1,6 +1,6 @@
 package local.algorithm.leetcode;
 
-import java.util.*;
+import java.util.Arrays;
 
 /**
  * @author cuixiaoshuang

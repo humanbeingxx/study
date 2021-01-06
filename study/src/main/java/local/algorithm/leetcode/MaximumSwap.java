@@ -1,7 +1,5 @@
 package local.algorithm.leetcode;
 
-import java.util.Arrays;
-
 /**
  * @author cuixiaoshuang
  * @date 2020-02-05

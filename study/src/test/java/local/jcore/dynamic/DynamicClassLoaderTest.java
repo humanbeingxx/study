@@ -4,8 +4,6 @@ import org.testng.annotations.Test;
 
 import java.lang.reflect.Field;
 
-import static org.testng.Assert.*;
-
 public class DynamicClassLoaderTest {
 
     @Test

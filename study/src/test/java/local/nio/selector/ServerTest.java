@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-import static org.testng.Assert.*;
-
 /**
  * @author humanbeingxx@sina.com
  * @date 2020/7/10 15:52

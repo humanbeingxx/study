@@ -1,9 +1,7 @@
 package local.algorithm.leetcode;
 
-import java.util.Comparator;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 
 public class MaxSlidingWindow {
 

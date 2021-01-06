@@ -15,7 +15,7 @@ public class LongestSubarray {
             int curr = nums[i];
             if (inBoundary(curr, currMax, limit) && inBoundary(curr, currMin, limit)) {
                 currLen++;
-                maxLen = Math.max(maxLen,currLen);
+                maxLen = Math.max(maxLen, currLen);
                 if (curr > currMax) {
                     currMax = curr;
                 } else if (curr < currMin) {

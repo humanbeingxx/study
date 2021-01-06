@@ -24,7 +24,7 @@ public class DayOfYear {
 
     private int dayPass(int month, int month2) {
         int pass = 0;
-        for (int i = 1; i < month ; i++) {
+        for (int i = 1; i < month; i++) {
             if (i == 2) {
                 pass += month2;
             } else {

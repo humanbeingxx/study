@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import java.util.Stack;
 
-import static local.algorithm.leetcode.RemoveListElements.*;
+import static local.algorithm.leetcode.RemoveListElements.ListNode;
 
 /**
  * @author humanbeingxx@sina.com

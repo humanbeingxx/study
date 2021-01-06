@@ -12,13 +12,13 @@ public class LongestWordTest {
 
     @Test
     public void testLongestWord1() {
-        String result = new LongestWord().longestWord(new String[]{"cat", "dogwalkerwalker",  "dogwalkerwalkerer", "banana", "dog", "nana", "walk", "walker", "dogwalker"});
+        String result = new LongestWord().longestWord(new String[]{"cat", "dogwalkerwalker", "dogwalkerwalkerer", "banana", "dog", "nana", "walk", "walker", "dogwalker"});
         assertEquals(result, "dogwalkerwalker");
     }
 
     @Test
     public void testLongestWord2() {
-        String result = new LongestWord().longestWord(new String[]{"llllcccl","clclll","ccc","llccllccl","lcclccclcl","c"});
+        String result = new LongestWord().longestWord(new String[]{"llllcccl", "clclll", "ccc", "llccllccl", "lcclccclcl", "c"});
         assertEquals(result, "ccc");
     }
 }

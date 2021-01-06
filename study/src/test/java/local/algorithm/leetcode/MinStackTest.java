@@ -1,10 +1,7 @@
 package local.algorithm.leetcode;
 
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 /**
  * @author cuixiaoshuang

@@ -5,8 +5,6 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
 
-import static org.testng.Assert.*;
-
 /**
  * @date 2019-05-14
  **/

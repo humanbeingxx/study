@@ -1,7 +1,9 @@
 package local.proxy;
 
 import net.sf.cglib.core.DebuggingClassWriter;
-import net.sf.cglib.proxy.*;
+import net.sf.cglib.proxy.Enhancer;
+import net.sf.cglib.proxy.MethodInterceptor;
+import net.sf.cglib.proxy.MethodProxy;
 import org.testng.annotations.Test;
 
 import java.lang.reflect.Method;

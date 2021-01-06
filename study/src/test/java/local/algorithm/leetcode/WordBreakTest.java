@@ -3,7 +3,8 @@ package local.algorithm.leetcode;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 /**
  * @author cuixiaoshuang

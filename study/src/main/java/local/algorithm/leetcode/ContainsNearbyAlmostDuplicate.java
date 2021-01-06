@@ -11,7 +11,7 @@ public class ContainsNearbyAlmostDuplicate {
             for (int j = i + 1; j < Math.min(nums.length, i + k + 1); j++) {
                 int v1 = nums[i];
                 int v2 = nums[j];
-                if (v1 - (long)v2 <= t && v2 - (long)v1 <= t) {
+                if (v1 - (long) v2 <= t && v2 - (long) v1 <= t) {
                     return true;
                 }
             }

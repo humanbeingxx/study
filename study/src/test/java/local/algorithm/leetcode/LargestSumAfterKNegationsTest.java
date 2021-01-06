@@ -24,7 +24,7 @@ public class LargestSumAfterKNegationsTest {
         result = new LargestSumAfterKNegations().largestSumAfterKNegations(new int[]{4, 2, 3}, 10);
         assertEquals(result, 9);
 
-        result = new LargestSumAfterKNegations().largestSumAfterKNegations(new int[]{-8,3,-5,-3,-5,-2}, 6);
+        result = new LargestSumAfterKNegations().largestSumAfterKNegations(new int[]{-8, 3, -5, -3, -5, -2}, 6);
         assertEquals(result, 22);
     }
 }

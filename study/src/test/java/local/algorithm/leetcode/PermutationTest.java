@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 /**
  * @author humanbeingxx@sina.com
@@ -14,7 +14,7 @@ public class PermutationTest {
 
     @Test
     public void testPermute() {
-        List<List<Integer>> result = new Permutation().permute(new int[]{1,2,3,4,5});
+        List<List<Integer>> result = new Permutation().permute(new int[]{1, 2, 3, 4, 5});
         assertEquals(result.size(), 120);
     }
 }

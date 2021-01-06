@@ -36,7 +36,7 @@ public class ExcelOutput {
         createHeader(sheet, infos);
         putData(sheet, data, infos);
 
-        try(FileOutputStream fos = new FileOutputStream(file)) {
+        try (FileOutputStream fos = new FileOutputStream(file)) {
             workbook.write(fos);
         }
     }

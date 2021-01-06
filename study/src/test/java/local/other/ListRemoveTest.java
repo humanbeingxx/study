@@ -28,8 +28,8 @@ public class ListRemoveTest {
             data.add(1);
         }
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 100000/2; i++) {
-            data.remove(100000/2 - 1);
+        for (int i = 0; i < 100000 / 2; i++) {
+            data.remove(100000 / 2 - 1);
         }
         System.out.println(System.currentTimeMillis() - startTime);
     }
@@ -67,7 +67,7 @@ public class ListRemoveTest {
             data.add(1);
         }
         long startTime = System.currentTimeMillis();
-        for (int i = 0; i < 100000/2; i++) {
+        for (int i = 0; i < 100000 / 2; i++) {
             data.remove(i);
         }
         System.out.println(System.currentTimeMillis() - startTime);

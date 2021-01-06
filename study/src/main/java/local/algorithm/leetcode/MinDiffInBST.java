@@ -19,7 +19,7 @@ public class MinDiffInBST {
         }
         rec(node.left);
         if (pre != null) {
-            min = Math.min(node.val - pre.val,min);
+            min = Math.min(node.val - pre.val, min);
         }
         pre = node;
         rec(node.right);

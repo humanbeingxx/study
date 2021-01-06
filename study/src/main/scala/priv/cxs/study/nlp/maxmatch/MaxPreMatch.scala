@@ -1,9 +1,9 @@
 package priv.cxs.study.nlp.maxmatch
 
 /**
-  * @author cuixiaoshuang
-  * @date 2019-11-21
-  **/
+ * @author cuixiaoshuang
+ * @date 2019-11-21
+ **/
 object MaxPreMatch {
 
   def cut(origin: String, maxWordLen: Int): List[String] = {

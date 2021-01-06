@@ -9,7 +9,7 @@ public class ReverseStrK {
     public String reverseStr(String s, int k) {
         char[] chars = new char[s.length()];
         int start = 0;
-        for (;start < s.length(); start += 2 * k) {
+        for (; start < s.length(); start += 2 * k) {
             reverse(s.substring(start, Math.min(start + 2 * k, s.length())), chars, start, k);
         }
 

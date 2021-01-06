@@ -18,12 +18,16 @@ public class WordDictionary {
 
     private Node head;
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public WordDictionary() {
         head = new Node((char) 0, false);
     }
 
-    /** Adds a word into the data structure. */
+    /**
+     * Adds a word into the data structure.
+     */
     public void addWord(String word) {
         if (word == null || word.isEmpty()) {
             return;
@@ -44,12 +48,14 @@ public class WordDictionary {
         nextNode.isWord = true;
     }
 
-    /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+    /**
+     * Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
+     */
     public boolean search(String word) {
         if (word == null || word.isEmpty()) {
             return true;
         }
-        return searchRec(word,0, head.nextNodes);
+        return searchRec(word, 0, head.nextNodes);
     }
 
     private boolean searchRec(String word, int index, Map<Character, Node> nextNodes) {

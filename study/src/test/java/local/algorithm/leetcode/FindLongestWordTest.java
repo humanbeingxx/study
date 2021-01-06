@@ -13,7 +13,7 @@ public class FindLongestWordTest {
 
     @Test
     public void testFindLongestWord() {
-        String result = new FindLongestWord().findLongestWord("abpcplea", Lists.newArrayList("ale","apple","monkey","plea"));
+        String result = new FindLongestWord().findLongestWord("abpcplea", Lists.newArrayList("ale", "apple", "monkey", "plea"));
         assertEquals(result, "apple");
     }
 

@@ -1,11 +1,9 @@
 package priv.cxs.springboot2.schedule.jobs;
 
 import com.google.common.base.Joiner;
-import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
-import org.springframework.context.ApplicationContext;
 import priv.cxs.springboot2.model.Job;
 import priv.cxs.springboot2.service.JobService;
 

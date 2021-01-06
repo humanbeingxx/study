@@ -2,7 +2,7 @@ package local.algorithm.leetcode;
 
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class FractionToDecimalTest {
 
@@ -49,7 +49,7 @@ public class FractionToDecimalTest {
 
     @Test
     public void test() {
-        System.out.println(((double)Integer.MIN_VALUE) / Integer.MAX_VALUE);
-        System.out.println(((double)Integer.MAX_VALUE) / Integer.MIN_VALUE);
+        System.out.println(((double) Integer.MIN_VALUE) / Integer.MAX_VALUE);
+        System.out.println(((double) Integer.MAX_VALUE) / Integer.MIN_VALUE);
     }
 }

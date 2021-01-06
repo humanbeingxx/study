@@ -14,7 +14,7 @@ public class IsBalancedTree {
         }
         int leftDepth = calcDepth(node.left, level + 1);
         int rightDepth = calcDepth(node.right, level + 1);
-        if (leftDepth == - 1 || rightDepth == -1) {
+        if (leftDepth == -1 || rightDepth == -1) {
             return -1;
         }
         if (Math.abs(leftDepth - rightDepth) > 1) {

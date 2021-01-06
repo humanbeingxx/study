@@ -33,7 +33,7 @@ public class CheckValidString {
                 return false;
             }
             Integer star = starStack.pop();
-            if (left > star){
+            if (left > star) {
                 return false;
             }
         }

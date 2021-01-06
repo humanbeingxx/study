@@ -3,8 +3,6 @@ package local.algorithm;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 /**
  * @date 2019-05-07
  **/
@@ -34,7 +32,7 @@ public class HyperLogLogTest {
 
     @Test
     public void testHarmonicMean() {
-        double mean = HyperLogLog.harmonicMean(new int[]{2,2,2,2,2,0});
+        double mean = HyperLogLog.harmonicMean(new int[]{2, 2, 2, 2, 2, 0});
         System.out.println(mean);
     }
 }

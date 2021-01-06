@@ -1,6 +1,7 @@
 package local.algorithm.leetcode.lcci;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StreamRank {
 
@@ -19,8 +20,8 @@ public class StreamRank {
     }
 
     public int getRankOfNumber(int x) {
-        int pos = binarySearch(x+1);
-        return pos >=0 ? pos : -pos - 1;
+        int pos = binarySearch(x + 1);
+        return pos >= 0 ? pos : -pos - 1;
     }
 
     int binarySearch(int target) {

@@ -11,9 +11,9 @@ public class NumMovesStones {
         int z = Math.max(a, Math.max(b, c));
         int y = (a + b + c) - x - z;
         int min;
-        if (z-y == 1 && y-x == 1) {
+        if (z - y == 1 && y - x == 1) {
             min = 0;
-        } else if (z - y ==2 || y -x == 2) {
+        } else if (z - y == 2 || y - x == 2) {
             min = 1;
         } else {
             min = 2;

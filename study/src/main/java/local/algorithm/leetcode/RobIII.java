@@ -26,7 +26,7 @@ public class RobIII {
             useRoot += rec(root.right.left, calculated) + rec(root.right.right, calculated);
         }
         int result = Math.max(useRoot, rec(root.left, calculated) + rec(root.right, calculated));
-        calculated.put(root,  result);
+        calculated.put(root, result);
         return result;
     }
 }

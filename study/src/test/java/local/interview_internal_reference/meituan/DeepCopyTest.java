@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.beanutils.BeanUtils;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
 public class DeepCopyTest {
 
     @NoArgsConstructor

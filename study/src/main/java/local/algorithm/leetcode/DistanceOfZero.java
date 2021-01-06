@@ -35,7 +35,7 @@ public class DistanceOfZero {
                     //down
                     distances[i][j] = Math.min(distances[i][j], distances[i + 1][j] + 1);
                 }
-                if (j < n- 1) {
+                if (j < n - 1) {
                     //left
                     distances[i][j] = Math.min(distances[i][j], distances[i][j + 1] + 1);
                 }

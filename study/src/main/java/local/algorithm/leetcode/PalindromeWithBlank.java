@@ -34,11 +34,11 @@ public class PalindromeWithBlank {
 
     private boolean equal(char c1, char c2) {
         if (c1 >= 'a') {
-            c1 -= ('a' -'A');
+            c1 -= ('a' - 'A');
         }
 
         if (c2 >= 'a') {
-            c2 -= ('a' -'A');
+            c2 -= ('a' - 'A');
         }
         return c1 == c2;
     }

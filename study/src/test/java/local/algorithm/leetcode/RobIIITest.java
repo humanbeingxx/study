@@ -1,9 +1,9 @@
 package local.algorithm.leetcode;
 
+import local.algorithm.leetcode.common.TreeNode;
 import org.testng.annotations.Test;
 
-import local.algorithm.leetcode.common.TreeNode;
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class RobIIITest {
 

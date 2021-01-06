@@ -1,15 +1,11 @@
 package local.algorithm;
 
 import com.google.common.collect.Sets;
-import com.google.common.io.Files;
-import org.apache.commons.codec.Charsets;
 import org.testng.annotations.Test;
 import org.testng.collections.Lists;
-import org.testng.collections.Maps;
 
 import java.io.*;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
@@ -59,15 +55,15 @@ public class FindDuplicationTest {
         List<String> result = Lists.newArrayList();
 
         long startTime = System.currentTimeMillis();
-        try(BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_A"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_A"))) {
             String line;
-            while ((line  = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 count.add(line);
             }
         }
-        try(BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_B"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_B"))) {
             String line;
-            while ((line  = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 if (count.contains(line)) {
                     result.add(line);
                 }
@@ -85,15 +81,15 @@ public class FindDuplicationTest {
         List<String> result = Lists.newArrayList();
 
         long startTime = System.currentTimeMillis();
-        try(BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_B"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_B"))) {
             String line;
-            while ((line  = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 count.add(line);
             }
         }
-        try(BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_C"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("/Users/cxs/temp/test_duplication/duplication_C"))) {
             String line;
-            while ((line  = reader.readLine()) != null) {
+            while ((line = reader.readLine()) != null) {
                 if (count.contains(line)) {
                     result.add(line);
                 }

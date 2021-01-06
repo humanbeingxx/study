@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import java.util.Arrays;
 import java.util.Random;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 
 public class SumSubarrayMinsTest {
 
