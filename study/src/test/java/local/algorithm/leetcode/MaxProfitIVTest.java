@@ -28,6 +28,12 @@ public class MaxProfitIVTest {
     }
 
     @Test
+    public void testMaxProfit4() {
+        int result = new MaxProfitIV().maxProfit(2, new int[]{1,2,3,4,5});
+        assertEquals(result, 4);
+    }
+
+    @Test
     public void testRandom() {
         for (int t = 0; t < 10; t++) {
             int[] data = new int[1000];
