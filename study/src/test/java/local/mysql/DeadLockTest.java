@@ -38,6 +38,15 @@ public class DeadLockTest {
     }
 
     @Test
+    public void insertData() throws Exception {
+        Statement statement = connections[0].createStatement();
+        for (int i = 0; i < 10000; i++) {
+            statement.execute("insert into test_page_size (text) values (repeat('A', 8000));");
+            statement.execute("commit");
+        }
+    }
+
+    @Test
     public void testDuplicationKeyUpdate() throws Exception {
         for (int i = 0; i < 10; i++) {
             int index = i;
