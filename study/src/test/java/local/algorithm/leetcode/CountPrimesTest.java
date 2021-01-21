@@ -25,5 +25,7 @@ public class CountPrimesTest {
 
         result = new CountPrimes().countPrimes(499979);
         Assert.assertEquals(result, 41537);
+
+        System.out.println(new CountPrimes().countPrimes(1000));
     }
 }
