@@ -23,7 +23,7 @@ public class SundaySearch {
                     } else {
                         int lastIndexOfAlign = lastIndex[source.charAt(nextAlignIndex)];
                         if (lastIndexOfAlign == -1) {
-                            sourceIndex = nextAlignIndex;
+                            sourceIndex = nextAlignIndex + 1;
                         } else {
                             sourceIndex = sourceIndexOneTurn + target.length() - lastIndexOfAlign;
                         }

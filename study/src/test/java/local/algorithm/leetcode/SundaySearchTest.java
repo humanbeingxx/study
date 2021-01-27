@@ -11,7 +11,6 @@ public class SundaySearchTest {
     public void testSearch1() {
         int pos = SundaySearch.search("substring searching", "hing");
         System.out.println(pos);
-        System.out.println(0xFFFF);
     }
 
     @Test
