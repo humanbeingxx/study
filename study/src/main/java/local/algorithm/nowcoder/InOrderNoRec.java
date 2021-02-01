@@ -15,7 +15,7 @@ public class InOrderNoRec {
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
         while (!stack.isEmpty() || node != null) {
-            if (node.left != null) {
+            if (node != null) {
                 stack.push(node);
                 node = node.left;
             } else {
