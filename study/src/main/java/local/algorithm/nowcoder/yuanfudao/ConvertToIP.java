@@ -1,4 +1,4 @@
-package local.algorithm.nowcoder;
+package local.algorithm.nowcoder.yuanfudao;
 
 import java.util.ArrayList;
 import java.util.List;

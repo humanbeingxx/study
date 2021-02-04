@@ -5,11 +5,11 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class ConvertToIPTest {
+public class ConvertToIP2Test {
 
     @Test
-    public void testConvertToIP() {
-        List<List<String>> result = new ConvertToIP().convertToIP("11111");
+    public void testConvert() {
+        List<List<String>> result = new ConvertToIP().convertToIP("1111111");
         System.out.println(result);
     }
 }
